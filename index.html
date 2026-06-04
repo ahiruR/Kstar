@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-POP CARD GAME</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-container">
+
+    <!-- ===== 認証画面 ===== -->
+    <section id="auth-screen" class="screen active">
+        <div class="auth-header">
+            <h1>K-POP CARD GAME</h1>
+            <p>推しのカードを集めてバトル！</p>
+        </div>
+
+        <!-- 新規登録フォーム -->
+        <div id="register-form" class="form-box">
+            <h2>新規登録</h2>
+            <div class="input-group">
+                <label>ニックネーム</label>
+                <input type="text" id="reg-nickname" placeholder="ニックネームを入力" required>
+            </div>
+            <div class="input-group">
+                <label>推しグループ</label>
+                <select id="reg-group" style="width:100%; padding:12px; background:#252525; border:1px solid #333; border-radius:8px; color:#fff; font-size:14px;">
+                    <option value="IVE">IVE</option>
+                    <option value="aespa">aespa</option>
+                    <option value="NewJeans">NewJeans</option>
+                    <option value="TWICE">TWICE</option>
+                </select>
+            </div>
+            <button id="btn-register">登録してスタート</button>
+            <p class="toggle-text">既にアカウントをお持ちの方は<span id="go-to-login">ログイン</span></p>
+        </div>
+
+        <!-- ログインフォーム -->
+        <div id="login-form" class="form-box hidden">
+            <h2>ログイン</h2>
+            <div class="input-group">
+                <label>ニックネーム</label>
+                <input type="text" id="input-nickname" placeholder="登録したニックネームを入力">
+            </div>
+            <button id="btn-login-submit">ログイン</button>
+            <p class="toggle-text">初めての方は<span id="go-to-register">新規登録</span></p>
+        </div>
+    </section>
+
+    <!-- ===== メイン画面 ===== -->
+    <main id="main-screen" class="screen hidden" style="padding:0; display:flex; flex-direction:column;">
+
+        <!-- ヘッダー -->
+        <div class="user-info-bar">
+            <span id="user-icon-display">🎤</span>
+            <span id="user-name-display" style="font-weight:bold; font-size:13px;">ゲスト</span>
+            <span id="user-oshi-display" class="user-badge">TWICE</span>
+            <button id="btn-logout" style="width:auto; padding:4px 10px; font-size:11px; margin-left:auto; background:#333; box-shadow:none;">ログアウト</button>
+        </div>
+
+        <!-- タブコンテンツ エリア -->
+        <div class="main-content">
+
+            <!-- ガチャタブ -->
+            <section id="gacha-tab" class="tab-content">
+                <h2 style="font-size:18px; margin-bottom:16px;">🎁 パック開封</h2>
+                <div class="pack-container">
+                    <div class="pack-visual">K-POP<br>PACK</div>
+                    <p class="timer-text" id="pack-timer">読み込み中...</p>
+                    <button id="btn-draw-pack" class="btn-large">パックを開封する</button>
+                </div>
+            </section>
+
+            <!-- 図鑑タブ -->
+            <section id="collection-tab" class="tab-content hidden">
+                <h2 style="font-size:18px; margin-bottom:16px;">📖 カードコレクション</h2>
+                <div id="collection-list" class="card-grid"></div>
+            </section>
+
+            <!-- クイズタブ -->
+            <section id="mission-tab" class="tab-content hidden">
+                <h2 style="font-size:18px; margin-bottom:6px;">🎯 グループ別クイズ</h2>
+                <p class="mission-desc" style="font-size:12px; color:#aaa; margin-bottom:12px;">正解するとタイマーなしで1パック開封できます！</p>
+                <div id="quiz-container"></div>
+            </section>
+
+            <!-- バトルタブ -->
+            <section id="battle-tab" class="tab-content hidden">
+                <h2 style="font-size:18px; margin-bottom:16px;">⚔️ カードバトル</h2>
+
+                <!-- セットアップゾーン -->
+                <div id="battle-setup-zone"></div>
+
+                <!-- バトルフィールド -->
+                <div id="battle-field" class="hidden">
+                    <div class="battle-header-bar">
+                        <span id="bf-p1-name">Player 1</span>
+                        <span style="color:#ff477e; font-weight:bold;">VS</span>
+                        <span id="bf-p2-name">CPU</span>
+                    </div>
+                    <div class="player-zone" id="p2-zone">
+                        <h3 id="p2-zone-title">相手</h3>
+                        <div class="battle-slots" id="p2-slots"></div>
+                    </div>
+                    <div class="battle-log-area" id="battle-field-log">バトルログ...</div>
+                    <div class="player-zone" id="p1-zone">
+                        <h3 id="p1-zone-title" style="color:#4cd964;">あなた</h3>
+                        <div class="battle-slots" id="p1-slots"></div>
+                    </div>
+                    <div id="battle-actions" style="margin-top:10px;"></div>
+                </div>
+            </section>
+
+        </div><!-- /main-content -->
+
+        <!-- ボトムナビ -->
+        <nav class="bottom-nav">
+            <button class="nav-item active" data-tab="gacha">
+                <span class="nav-icon">🎁</span>ガチャ
+            </button>
+            <button class="nav-item" data-tab="collection">
+                <span class="nav-icon">📖</span>図鑑
+            </button>
+            <button class="nav-item" data-tab="mission">
+                <span class="nav-icon">🎯</span>クイズ
+            </button>
+            <button class="nav-item" data-tab="battle">
+                <span class="nav-icon">⚔️</span>バトル
+            </button>
+        </nav>
+    </main>
+
+</div><!-- /app-container -->
+
+<!-- ガチャオーバーレイ -->
+<div id="gacha-overlay" class="gacha-overlay">
+    <div class="gacha-animation-box">
+        <div id="gacha-effect-zone" style="font-size:28px; font-weight:900; color:#ff477e; margin-bottom:16px;"></div>
+        <div id="gacha-result-display" class="gacha-result-container"></div>
+        <button id="btn-close-gacha" class="hidden" style="margin-top:16px; width:180px;">閉じる</button>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

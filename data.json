@@ -1,0 +1,35 @@
+{
+  "cards": [
+    { 
+      "id": 1, "name": "ウォニョン", "group": "IVE", "rarity": "SSR", "hp": 120, "atk": 30, 
+      "img": "images/wonyoung.jpg",
+      "skill": { "name": "絶対的センター", "type": "heal", "value": 50, "desc": "味方のHPを50回復！" }
+    },
+    { 
+      "id": 2, "name": "モモ", "group": "TWICE", "rarity": "SR", "hp": 100, "atk": 40, 
+      "img": "images/momo.jpg",
+      "skill": { "name": "ネクストレベル・スマッシュ", "type": "attack", "value": 60, "desc": "敵に60の大ダメージ！" }
+    },
+    { 
+      "id": 3, "name": "ミナ", "group": "TWICE", "rarity": "R", "hp": 90, "atk": 25, 
+      "img": "images/mina.jpg",
+      "skill": { "name": "アイ・シールド", "type": "defense", "value": 20, "desc": "次のターン、受けるダメージを20軽減！" }
+    },
+    { 
+      "id": 4, "name": "サナ", "group": "TWICE", "rarity": "N", "hp": 80, "atk": 20, 
+      "img": "images/sana.jpg",
+      "skill": { "name": "シャシャシャ・リバイブ", "type": "revive", "value": 40, "desc": "ひん死の味方1名をHP40で復活！" }
+    }
+  ],
+  "quizzes": { "IVE": [
+
+  ], "aespa": [
+
+  ], "NewJeans": [
+
+  ], "TWICE": [{
+        "question": "TWICEのデビュー曲のタイトルは何でしょう？",
+        "choices": ["CHEER UP", "Like OOH-AHH", "TT", "FANCY"],
+        "answer": 1
+      }] }
+}
