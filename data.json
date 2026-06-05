@@ -1,35 +1,351 @@
 {
   "cards": [
-    { 
-      "id": 1, "name": "ウォニョン", "group": "IVE", "rarity": "SSR", "hp": 120, "atk": 30, 
+    {
+      "id": 1, "name": "ナヨン", "group": "TWICE", "rarity": "N", "hp": 75, "atk": 18,
+      "img": "images/N/nayeon.jpg",
+      "skill": null
+    },
+    {
+      "id": 2, "name": "ジョンヨン", "group": "TWICE", "rarity": "N", "hp": 75, "atk": 18,
+      "img": "images/N/jeongyeon.jpg",
+      "skill": null
+    },
+    {
+      "id": 3, "name": "モモ", "group": "TWICE", "rarity": "N", "hp": 75, "atk": 18,
+      "img": "images/N/momo.jpg",
+      "skill": null
+    },
+    {
+      "id": 4, "name": "サナ", "group": "TWICE", "rarity": "N", "hp": 75, "atk": 18,
+      "img": "images/N/sana.jpg",
+      "skill": null
+    },
+    {
+      "id": 5, "name": "ジヒョ", "group": "TWICE", "rarity": "N", "hp": 75, "atk": 18,
+      "img": "images/N/jihyo.jpg",
+      "skill": null
+    },
+    {
+      "id": 6, "name": "ミナ", "group": "TWICE", "rarity": "N", "hp": 75, "atk": 18,
+      "img": "images/N/mina.jpg",
+      "skill": null
+    },
+    {
+      "id": 7, "name": "ダヒョン", "group": "TWICE", "rarity": "N", "hp": 75, "atk": 18,
+      "img": "images/N/dahyun.jpg",
+      "skill": null
+    },
+    {
+      "id": 8, "name": "チェヨン", "group": "TWICE", "rarity": "N", "hp": 75, "atk": 18,
+      "img": "images/N/chaeyoung.jpg",
+      "skill": null
+    },
+    {
+      "id": 9, "name": "ツウィ", "group": "TWICE", "rarity": "N", "hp": 75, "atk": 18,
+      "img": "images/N/tzuyu.jpg",
+      "skill": null
+    },
+    {
+      "id": 10, "name": "ナヨン", "group": "TWICE", "rarity": "R", "hp": 80, "atk": 22,
+      "img": "images/R/nayeon.jpg",
+      "skill": null
+    },
+    {
+      "id": 11, "name": "ジョンヨン", "group": "TWICE", "rarity": "R", "hp": 80, "atk": 22,
+      "img": "images/R/jeongyeon.jpg",
+      "skill": null
+    },
+    {
+      "id": 12, "name": "モモ", "group": "TWICE", "rarity": "R", "hp": 80, "atk": 22,
+      "img": "images/R/momo.jpg",
+      "skill": null
+    },
+    {
+      "id": 13, "name": "サナ", "group": "TWICE", "rarity": "R", "hp": 80, "atk": 22,
+      "img": "images/R/sana.jpg",
+      "skill": null
+    },
+    {
+      "id": 14, "name": "ジヒョ", "group": "TWICE", "rarity": "R", "hp": 80, "atk": 22,
+      "img": "images/R/jihyo.jpg",
+      "skill": null
+    },
+    {
+      "id": 15, "name": "ミナ", "group": "TWICE", "rarity": "R", "hp": 80, "atk": 22,
+      "img": "images/R/mina.jpg",
+      "skill": null
+    },
+    {
+      "id": 16, "name": "ダヒョン", "group": "TWICE", "rarity": "R", "hp": 80, "atk": 22,
+      "img": "images/R/dahyun.jpg",
+      "skill": null
+    },
+    {
+      "id": 17, "name": "チェヨン", "group": "TWICE", "rarity": "R", "hp": 80, "atk": 22,
+      "img": "images/R/chaeyoung.jpg",
+      "skill": null
+    },
+    {
+      "id": 18, "name": "ツウィ", "group": "TWICE", "rarity": "R", "hp": 80, "atk": 22,
+      "img": "images/R/tzuyu.jpg",
+      "skill": null
+    },
+    {
+      "id": 19, "name": "ナヨン", "group": "TWICE", "rarity": "SR", "hp": 90, "atk": 26,
+      "img": "images/SR/nayeon.jpg",
+      "skill": null
+    },
+    {
+      "id": 20, "name": "ジョンヨン", "group": "TWICE", "rarity": "SR", "hp": 90, "atk": 26,
+      "img": "images/SR/jeongyeon.jpg",
+      "skill": null
+    },
+    {
+      "id": 21, "name": "モモ", "group": "TWICE", "rarity": "SR", "hp": 90, "atk": 26,
+      "img": "images/SR/momo.jpg",
+      "skill": null
+    },
+    {
+      "id": 22, "name": "サナ", "group": "TWICE", "rarity": "SR", "hp": 90, "atk": 26,
+      "img": "images/SR/sana.jpg",
+      "skill": null
+    },
+    {
+      "id": 23, "name": "ジヒョ", "group": "TWICE", "rarity": "SR", "hp": 90, "atk": 26,
+      "img": "images/SR/jihyo.jpg",
+      "skill": null
+    },
+    {
+      "id": 24, "name": "ミナ", "group": "TWICE", "rarity": "SR", "hp": 90, "atk": 26,
+      "img": "images/SR/mina.jpg",
+      "skill": null
+    },
+    {
+      "id": 25, "name": "ダヒョン", "group": "TWICE", "rarity": "SR", "hp": 90, "atk": 26,
+      "img": "images/SR/dahyun.jpg",
+      "skill": null
+    },
+    {
+      "id": 26, "name": "チェヨン", "group": "TWICE", "rarity": "SR", "hp": 90, "atk": 26,
+      "img": "images/SR/chaeyoung.jpg",
+      "skill": null
+    },
+    {
+      "id": 27, "name": "ツウィ", "group": "TWICE", "rarity": "SR", "hp": 90, "atk": 26,
+      "img": "images/SR/tzuyu.jpg",
+      "skill": null
+    },
+    {
+      "id": 28, "name": "ナヨン", "group": "TWICE", "rarity": "SSR", "hp": 100, "atk": 30,
+      "img": "images/SSR/nayeon.jpg",
+      "skill": null
+    },
+    {
+      "id": 29, "name": "ジョンヨン", "group": "TWICE", "rarity": "SSR", "hp": 100, "atk": 30,
+      "img": "images/SSR/jeongyeon.jpg",
+      "skill": null
+    },
+    {
+      "id": 30, "name": "モモ", "group": "TWICE", "rarity": "SSR", "hp": 100, "atk": 30,
+      "img": "images/SSR/momo.jpg",
+      "skill": null
+    },
+    {
+      "id": 31, "name": "サナ", "group": "TWICE", "rarity": "SSR", "hp": 100, "atk": 30,
+      "img": "images/SSR/sana.jpg",
+      "skill": null
+    },
+    {
+      "id": 32, "name": "ジヒョ", "group": "TWICE", "rarity": "SSR", "hp": 100, "atk": 30,
+      "img": "images/SSR/jihyo.jpg",
+      "skill": null
+    },
+    {
+      "id": 33, "name": "ミナ", "group": "TWICE", "rarity": "SSR", "hp": 100, "atk": 30,
+      "img": "images/SSR/mina.jpg",
+      "skill": null
+    },
+    {
+      "id": 34, "name": "ダヒョン", "group": "TWICE", "rarity": "SSR", "hp": 100, "atk": 30,
+      "img": "images/SSR/dahyun.jpg",
+      "skill": null
+    },
+    {
+      "id": 35, "name": "チェヨン", "group": "TWICE", "rarity": "SSR", "hp": 100, "atk": 30,
+      "img": "images/SSR/chaeyoung.jpg",
+      "skill": null
+    },
+    {
+      "id": 36, "name": "ツウィ", "group": "TWICE", "rarity": "SSR", "hp": 100, "atk": 30,
+      "img": "images/SSR/tzuyu.jpg",
+      "skill": null
+    },
+    {
+      "id": 37, "name": "ナヨン", "group": "TWICE", "rarity": "HR", "hp": 110, "atk": 35,
+      "img": "images/HR/nayeon.jpg",
+      "skill": null
+    },
+    {
+      "id": 38, "name": "ジョンヨン", "group": "TWICE", "rarity": "HR", "hp": 110, "atk": 35,
+      "img": "images/HR/jeongyeon.jpg",
+      "skill": null
+    },
+    {
+      "id": 39, "name": "モモ", "group": "TWICE", "rarity": "HR", "hp": 110, "atk": 35,
+      "img": "images/HR/momo.jpg",
+      "skill": null
+    },
+    {
+      "id": 40, "name": "サナ", "group": "TWICE", "rarity": "HR", "hp": 110, "atk": 35,
+      "img": "images/HR/sana.jpg",
+      "skill": null
+    },
+    {
+      "id": 41, "name": "ジヒョ", "group": "TWICE", "rarity": "HR", "hp": 110, "atk": 35,
+      "img": "images/HR/jihyo.jpg",
+      "skill": null
+    },
+    {
+      "id": 42, "name": "ミナ", "group": "TWICE", "rarity": "HR", "hp": 110, "atk": 35,
+      "img": "images/HR/mina.jpg",
+      "skill": null
+    },
+    {
+      "id": 43, "name": "ダヒョン", "group": "TWICE", "rarity": "HR", "hp": 110, "atk": 35,
+      "img": "images/HR/dahyun.jpg",
+      "skill": null
+    },
+    {
+      "id": 44, "name": "チェヨン", "group": "TWICE", "rarity": "HR", "hp": 110, "atk": 35,
+      "img": "images/HR/chaeyoung.jpg",
+      "skill": null
+    },
+    {
+      "id": 45, "name": "ツウィ", "group": "TWICE", "rarity": "HR", "hp": 110, "atk": 35,
+      "img": "images/HR/tzuyu.jpg",
+      "skill": null
+    },
+    {
+      "id": 46, "name": "ナヨン", "group": "TWICE", "rarity": "UR", "hp": 130, "atk": 40,
+      "img": "images/UR/nayeon.jpg",
+      "skill":  { "name": "みわしましょう～!", "type": "attack", "value": 80, "desc": "相手に70攻撃！（URのみ使用可）" }
+    },
+    {
+      "id": 47, "name": "ジョンヨン", "group": "TWICE", "rarity": "UR", "hp": 130, "atk": 40,
+      "img": "images/UR/jeongyeon.jpg",
+      "skill": { "name": "東京ドーム、いっくよ～!", "type": "attack", "value": 80, "desc": "相手に70攻撃！（URのみ使用可）" }
+    },
+    {
+      "id": 48, "name": "モモ", "group": "TWICE", "rarity": "UR", "hp": 130, "atk": 40,
+      "img": "images/UR/momo.jpg",
+      "skill": { "name": "にっこにっこにー", "type": "heal", "value": 60, "desc": "味方のHPを60回復！（URのみ使用可）" }
+    },
+    {
+      "id": 49, "name": "サナ", "group": "TWICE", "rarity": "UR", "hp": 130, "atk": 40,
+      "img": "images/UR/sana.jpg",
+      "skill": { "name": "サナポッター", "type": "defence", "value": 70, "desc": "次回敵の攻撃を70防御！（URのみ使用可）" }
+    },
+    {
+      "id": 50, "name": "ジヒョ", "group": "TWICE", "rarity": "UR", "hp": 130, "atk": 40,
+      "img": "images/UR/jihyo.jpg",
+      "skill": { "name": "よいしょ～", "type": "heal", "value": 60, "desc": "味方のHPを60回復！（URのみ使用可）" }
+    },
+    {
+      "id": 51, "name": "ミナ", "group": "TWICE", "rarity": "UR", "hp": 130, "atk": 40,
+      "img": "images/UR/mina.jpg",
+      "skill": { "name": "ミッチゲッソ", "type": "attack", "value": 70, "desc": "相手に70攻撃！（URのみ使用可）" }
+    },
+    {
+      "id": 52, "name": "ダヒョン", "group": "TWICE", "rarity": "UR", "hp": 130, "atk": 40,
+      "img": "images/UR/dahyun.jpg",
+      "skill": { "name": "ビ、ビビンバァ!", "type": "attack", "value": 70, "desc": "相手に70攻撃！（URのみ使用可）" }
+    },
+    {
+      "id": 53, "name": "チェヨン", "group": "TWICE", "rarity": "UR", "hp": 130, "atk": 40,
+      "img": "images/UR/chaeyoung.jpg",
+      "skill":  { "name": "ふたちゅくくり", "type": "heal", "value": 60, "desc": "味方のHPを60回復！（URのみ使用可）" }
+    },
+    {
+      "id": 54, "name": "ツウィ", "group": "TWICE", "rarity": "UR", "hp": 130, "atk": 40,
+      "img": "images/UR/tzuyu.jpg",
+      "skill":  { "name": "だまれ！", "type": "attack", "value": 70, "desc": "相手に70攻撃！（URのみ使用可）" }
+    },
+    {
+      "id": 1000, "name": "ウォニョン", "group": "IVE", "rarity": "UR", "hp": 180, "atk": 50,
       "img": "images/wonyoung.jpg",
-      "skill": { "name": "絶対的センター", "type": "heal", "value": 50, "desc": "味方のHPを50回復！" }
-    },
-    { 
-      "id": 2, "name": "モモ", "group": "TWICE", "rarity": "SR", "hp": 100, "atk": 40, 
-      "img": "images/momo.jpg",
-      "skill": { "name": "ネクストレベル・スマッシュ", "type": "attack", "value": 60, "desc": "敵に60の大ダメージ！" }
-    },
-    { 
-      "id": 3, "name": "ミナ", "group": "TWICE", "rarity": "R", "hp": 90, "atk": 25, 
-      "img": "images/mina.jpg",
-      "skill": { "name": "アイ・シールド", "type": "defense", "value": 20, "desc": "次のターン、受けるダメージを20軽減！" }
-    },
-    { 
-      "id": 4, "name": "サナ", "group": "TWICE", "rarity": "N", "hp": 80, "atk": 20, 
-      "img": "images/sana.jpg",
-      "skill": { "name": "シャシャシャ・リバイブ", "type": "revive", "value": 40, "desc": "ひん死の味方1名をHP40で復活！" }
+      "skill": { "name": "絶対的センター", "type": "heal", "value": 60, "desc": "味方のHPを60回復！（URのみ使用可）" }
     }
   ],
-  "quizzes": { "IVE": [
-
-  ], "aespa": [
-
-  ], "NewJeans": [
-
-  ], "TWICE": [{
+  "quizzes": {
+    "IVE": [
+      {
+        "id": "IVE_0",
+        "question": "IVEのデビュー曲のタイトルは何でしょう？",
+        "choices": ["LOVE DIVE", "I AM", "ATTITUDE", "ELEVEN"],
+        "answer": 3
+      },
+      {
+        "id": "IVE_1",
+        "question": "IVEのデビュー日はいつでしょう？",
+        "choices": ["2021年12月1日", "2022年12月1日", "2021年6月1日", "2022年6月1日"],
+        "answer": 0
+      }
+    ],
+    "aespa": [
+      {
+        "id": "aespa_0",
+        "question": "aespaのデビュー曲のタイトルは何でしょう？",
+        "choices": ["Supernova", "Savage", "Next Level", "Black Mamba"],
+        "answer": 3
+      },
+      {
+        "id": "aespa_1",
+        "question": "aespaのデビュー日はいつでしょう？",
+        "choices": ["2019年12月31日", "2020年11月17日", "2021年6月18日", "2022年10月1日"],
+        "answer": 1
+      }
+    ],
+    "NewJeans": [
+      {
+        "id": "NewJeans_0",
+        "question": "NewJeansのデビュー曲のタイトルは何でしょう？",
+        "choices": ["Attention", "Hype Boy", "Cookie", "OMG"],
+        "answer": 0
+      },
+      {
+        "id": "NewJeans_1",
+        "question": "NewJeansのデビュー日はいつでしょう？",
+        "choices": ["2022年7月22日", "2022年7月7日", "2022年8月7日", "2022年8月22日"],
+        "answer": 0
+      }
+    ],
+    "TWICE": [
+      {
+        "id": "TWICE_0",
         "question": "TWICEのデビュー曲のタイトルは何でしょう？",
         "choices": ["CHEER UP", "Like OOH-AHH", "TT", "FANCY"],
         "answer": 1
-      }] }
+      },
+      {
+        "id": "TWICE_1",
+        "question": "TWICEのデビュー日はいつでしょう？",
+        "choices": ["2014年7月7日", "2015年7月7日", "2014年10月20日", "2015年10月20日"],
+        "answer": 3
+      }
+    ],
+    "LE SSERAFIM": [
+      {
+        "id": "LESSERAFIM_0",
+        "question": "LE SSERAFIMのデビュー曲のタイトルは何でしょう？",
+        "choices": ["CRAZY", "UNFORGIVEN", "FEARLESS", "ANTIFRAGILE"],
+        "answer": 2
+      },
+      {
+        "id": "LESSERAFIM_1",
+        "question": "LE SSERAFIMのデビュー日はいつでしょう？",
+        "choices": ["2022年8月5日", "2022年5月2日", "2022年8月2日", "2022年5月5日"],
+        "answer": 1
+      }
+    ]
+  }
 }
