@@ -7,7 +7,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/nayeon.jpg",
+      "img": "N/nayeon.jpg",
       "skill": null
     },
     {
@@ -17,7 +17,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/jeonyoung.jpg",
+      "img": "N/jeonyoung.jpg",
       "skill": null
     },
     {
@@ -27,7 +27,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/momo.jpg",
+      "img": "N/momo.jpg",
       "skill": null
     },
     {
@@ -37,7 +37,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/sana.jpg",
+      "img": "N/sana.jpg",
       "skill": null
     },
     {
@@ -47,7 +47,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/jihyo.jpg",
+      "img": "N/jihyo.jpg",
       "skill": null
     },
     {
@@ -57,7 +57,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/mina.jpg",
+      "img": "N/mina.jpg",
       "skill": null
     },
     {
@@ -67,7 +67,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/dahyun.jpg",
+      "img": "N/dahyun.jpg",
       "skill": null
     },
     {
@@ -77,7 +77,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/chaeyoung.jpg",
+      "img": "N/chaeyoung.jpg",
       "skill": null
     },
     {
@@ -87,7 +87,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/tzuyu.jpg",
+      "img": "N/tzuyu.jpg",
       "skill": null
     },
     {
@@ -97,7 +97,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/nayeon.jpg",
+      "img": "R/nayeon.jpg",
       "skill": null
     },
     {
@@ -107,7 +107,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/jeonyoung.jpg",
+      "img": "R/jeonyoung.jpg",
       "skill": null
     },
     {
@@ -117,7 +117,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/momo.jpg",
+      "img": "R/momo.jpg",
       "skill": null
     },
     {
@@ -127,7 +127,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/sana.jpg",
+      "img": "R/sana.jpg",
       "skill": null
     },
     {
@@ -137,7 +137,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/jihyo.jpg",
+      "img": "R/jihyo.jpg",
       "skill": null
     },
     {
@@ -147,7 +147,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/mina.jpg",
+      "img": "R/mina.jpg",
       "skill": null
     },
     {
@@ -157,7 +157,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/dahyun.jpg",
+      "img": "R/dahyun.jpg",
       "skill": null
     },
     {
@@ -167,7 +167,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/chaeyoung.jpg",
+      "img": "R/chaeyoung.jpg",
       "skill": null
     },
     {
@@ -177,7 +177,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/tzuyu.jpg",
+      "img": "R/tzuyu.jpg",
       "skill": null
     },
     {
@@ -187,7 +187,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/nayeon.jpg",
+      "img": "SR/nayeon.jpg",
       "skill": null
     },
     {
@@ -197,7 +197,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/jeonyoung.jpg",
+      "img": "SR/jeonyoung.jpg",
       "skill": null
     },
     {
@@ -207,7 +207,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/momo.jpg",
+      "img": "SR/momo.jpg",
       "skill": null
     },
     {
@@ -217,7 +217,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/sana.jpg",
+      "img": "SR/sana.jpg",
       "skill": null
     },
     {
@@ -227,7 +227,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/jihyo.jpg",
+      "img": "SR/jihyo.jpg",
       "skill": null
     },
     {
@@ -237,7 +237,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/mina.jpg",
+      "img": "SR/mina.jpg",
       "skill": null
     },
     {
@@ -247,7 +247,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/dahyun.jpg",
+      "img": "SR/dahyun.jpg",
       "skill": null
     },
     {
@@ -257,7 +257,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/chaeyoung.jpg",
+      "img": "SR/chaeyoung.jpg",
       "skill": null
     },
     {
@@ -267,7 +267,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/tzuyu.jpg",
+      "img": "SR/tzuyu.jpg",
       "skill": null
     },
     {
@@ -277,7 +277,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/nayeon.jpg",
+      "img": "SSR/nayeon.jpg",
       "skill": null
     },
     {
@@ -287,7 +287,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/jeonyoung.jpg",
+      "img": "SSR/jeonyoung.jpg",
       "skill": null
     },
     {
@@ -297,7 +297,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/momo.jpg",
+      "img": "SSR/momo.jpg",
       "skill": null
     },
     {
@@ -307,7 +307,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/sana.jpg",
+      "img": "SSR/sana.jpg",
       "skill": null
     },
     {
@@ -317,7 +317,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/jihyo.jpg",
+      "img": "SSR/jihyo.jpg",
       "skill": null
     },
     {
@@ -327,7 +327,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/mina.jpg",
+      "img": "SSR/mina.jpg",
       "skill": null
     },
     {
@@ -337,7 +337,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/dahyun.jpg",
+      "img": "SSR/dahyun.jpg",
       "skill": null
     },
     {
@@ -347,7 +347,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/chaeyoung.jpg",
+      "img": "SSR/chaeyoung.jpg",
       "skill": null
     },
     {
@@ -357,7 +357,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/tzuyu.jpg",
+      "img": "SSR/tzuyu.jpg",
       "skill": null
     },
     {
@@ -367,7 +367,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/nayeon.jpg",
+      "img": "HR/nayeon.jpg",
       "skill": null
     },
     {
@@ -377,7 +377,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/jeonyoung.jpg",
+      "img": "HR/jeonyoung.jpg",
       "skill": null
     },
     {
@@ -387,7 +387,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/momo.jpg",
+      "img": "HR/momo.jpg",
       "skill": null
     },
     {
@@ -397,7 +397,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/sana.jpg",
+      "img": "HR/sana.jpg",
       "skill": null
     },
     {
@@ -407,7 +407,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/jihyo.jpg",
+      "img": "HR/jihyo.jpg",
       "skill": null
     },
     {
@@ -417,7 +417,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/mina.jpg",
+      "img": "HR/mina.jpg",
       "skill": null
     },
     {
@@ -427,7 +427,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/dahyun.jpg",
+      "img": "HR/dahyun.jpg",
       "skill": null
     },
     {
@@ -437,7 +437,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/chaeyoung.jpg",
+      "img": "HR/chaeyoung.jpg",
       "skill": null
     },
     {
@@ -447,7 +447,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/tzuyu.jpg",
+      "img": "HR/tzuyu.jpg",
       "skill": null
     },
     {
@@ -457,7 +457,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/nayeon.jpg",
+      "img": "UR/nayeon.jpg",
       "skill": {
         "name": "みわしましょう～!",
         "type": "atk1",
@@ -472,7 +472,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/jeonyoung.jpg",
+      "img": "UR/jeonyoung.jpg",
       "skill": {
         "name": "東京ドーム、いっくよ～!",
         "type": "atk2",
@@ -487,7 +487,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/momo.jpg",
+      "img": "UR/momo.jpg",
       "skill": {
         "name": "&@%#^*$€",
         "type": "rampage",
@@ -502,7 +502,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/sana.jpg",
+      "img": "UR/sana.jpg",
       "skill": {
         "name": "なぁ↑ももりん",
         "type": "heal2",
@@ -517,7 +517,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/jihyo.jpg",
+      "img": "UR/jihyo.jpg",
       "skill": {
         "name": "よいしょ～",
         "type": "heal2",
@@ -532,7 +532,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/mina.jpg",
+      "img": "UR/mina.jpg",
       "skill": {
         "name": "沼れ",
         "type": "curse",
@@ -547,7 +547,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/dahyun.jpg",
+      "img": "UR/dahyun.jpg",
       "skill": {
         "name": "ビ、ビビンバァ!",
         "type": "burst",
@@ -562,7 +562,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/chaeyoung.jpg",
+      "img": "UR/chaeyoung.jpg",
       "skill": {
         "name": "ふたちゅくくり",
         "type": "regen",
@@ -577,7 +577,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/tzuyu.jpg",
+      "img": "UR/tzuyu.jpg",
       "skill": {
         "name": "だまれ！",
         "type": "snipe",
@@ -592,7 +592,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/wonyoung.jpg",
+      "img": "N/wonyoung.jpg",
       "skill": null
     },
     {
@@ -602,7 +602,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/rei.jpg",
+      "img": "N/rei.jpg",
       "skill": null
     },
     {
@@ -612,7 +612,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/gaeul.jpg",
+      "img": "N/gaeul.jpg",
       "skill": null
     },
     {
@@ -622,7 +622,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/yujin.jpg",
+      "img": "N/yujin.jpg",
       "skill": null
     },
     {
@@ -632,7 +632,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/leeseo.jpg",
+      "img": "N/leeseo.jpg",
       "skill": null
     },
     {
@@ -642,7 +642,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/liz.jpg",
+      "img": "N/liz.jpg",
       "skill": null
     },
     {
@@ -652,7 +652,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/wonyoung.jpg",
+      "img": "R/wonyoung.jpg",
       "skill": null
     },
     {
@@ -662,7 +662,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/rei.jpg",
+      "img": "R/rei.jpg",
       "skill": null
     },
     {
@@ -672,7 +672,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/gaeul.jpg",
+      "img": "R/gaeul.jpg",
       "skill": null
     },
     {
@@ -682,7 +682,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/yujin.jpg",
+      "img": "R/yujin.jpg",
       "skill": null
     },
     {
@@ -692,7 +692,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/leeseo.jpg",
+      "img": "R/leeseo.jpg",
       "skill": null
     },
     {
@@ -702,7 +702,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/liz.jpg",
+      "img": "R/liz.jpg",
       "skill": null
     },
     {
@@ -712,7 +712,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/wonyoung.jpg",
+      "img": "SR/wonyoung.jpg",
       "skill": null
     },
     {
@@ -722,7 +722,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/rei.jpg",
+      "img": "SR/rei.jpg",
       "skill": null
     },
     {
@@ -732,7 +732,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/gaeul.jpg",
+      "img": "SR/gaeul.jpg",
       "skill": null
     },
     {
@@ -742,7 +742,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/yujin.jpg",
+      "img": "SR/yujin.jpg",
       "skill": null
     },
     {
@@ -752,7 +752,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/leeseo.jpg",
+      "img": "SR/leeseo.jpg",
       "skill": null
     },
     {
@@ -762,7 +762,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/liz.jpg",
+      "img": "SR/liz.jpg",
       "skill": null
     },
     {
@@ -772,7 +772,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/wonyoung.jpg",
+      "img": "SSR/wonyoung.jpg",
       "skill": null
     },
     {
@@ -782,7 +782,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/rei.jpg",
+      "img": "SSR/rei.jpg",
       "skill": null
     },
     {
@@ -792,7 +792,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/gaeul.jpg",
+      "img": "SSR/gaeul.jpg",
       "skill": null
     },
     {
@@ -802,7 +802,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/yujin.jpg",
+      "img": "SSR/yujin.jpg",
       "skill": null
     },
     {
@@ -812,7 +812,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/leeseo.jpg",
+      "img": "SSR/leeseo.jpg",
       "skill": null
     },
     {
@@ -822,7 +822,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/liz.jpg",
+      "img": "SSR/liz.jpg",
       "skill": null
     },
     {
@@ -832,7 +832,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/wonyoung.jpg",
+      "img": "HR/wonyoung.jpg",
       "skill": null
     },
     {
@@ -842,7 +842,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/rei.jpg",
+      "img": "HR/rei.jpg",
       "skill": null
     },
     {
@@ -852,7 +852,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/gaeul.jpg",
+      "img": "HR/gaeul.jpg",
       "skill": null
     },
     {
@@ -862,7 +862,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/yujin.jpg",
+      "img": "HR/yujin.jpg",
       "skill": null
     },
     {
@@ -872,7 +872,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/leeseo.jpg",
+      "img": "HR/leeseo.jpg",
       "skill": null
     },
     {
@@ -882,7 +882,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/liz.jpg",
+      "img": "HR/liz.jpg",
       "skill": null
     },
     {
@@ -892,7 +892,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/wonyoung.jpg",
+      "img": "UR/wonyoung.jpg",
       "skill": {
         "name": "はたしてだれなのーか",
         "type": "drain",
@@ -907,7 +907,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/rei.jpg",
+      "img": "UR/rei.jpg",
       "skill": {
         "name": "コンsドリーム",
         "type": "poison",
@@ -922,7 +922,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/gaeul.jpg",
+      "img": "UR/gaeul.jpg",
       "skill": {
         "name": "あいへぼん",
         "type": "lifelink",
@@ -937,7 +937,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/yujin.jpg",
+      "img": "UR/yujin.jpg",
       "skill": {
         "name": "とろろそばでござる",
         "type": "revival",
@@ -952,7 +952,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/leeseo.jpg",
+      "img": "UR/leeseo.jpg",
       "skill": {
         "name": "シャボン玉事件",
         "type": "reflect",
@@ -967,7 +967,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/liz.jpg",
+      "img": "UR/liz.jpg",
       "skill": {
         "name": "じゃがいもの歌",
         "type": "encore",
@@ -982,7 +982,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/minji.jpg",
+      "img": "N/minji.jpg",
       "skill": null
     },
     {
@@ -992,7 +992,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/hanni.jpg",
+      "img": "N/hanni.jpg",
       "skill": null
     },
     {
@@ -1002,7 +1002,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/danielle.jpg",
+      "img": "N/danielle.jpg",
       "skill": null
     },
     {
@@ -1012,7 +1012,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/haerin.jpg",
+      "img": "N/haerin.jpg",
       "skill": null
     },
     {
@@ -1022,7 +1022,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/hyein.jpg",
+      "img": "N/hyein.jpg",
       "skill": null
     },
     {
@@ -1032,7 +1032,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/minji.jpg",
+      "img": "R/minji.jpg",
       "skill": null
     },
     {
@@ -1042,7 +1042,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/hanni.jpg",
+      "img": "R/hanni.jpg",
       "skill": null
     },
     {
@@ -1052,7 +1052,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/danielle.jpg",
+      "img": "R/danielle.jpg",
       "skill": null
     },
     {
@@ -1062,7 +1062,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/haerin.jpg",
+      "img": "R/haerin.jpg",
       "skill": null
     },
     {
@@ -1072,7 +1072,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/hyein.jpg",
+      "img": "R/hyein.jpg",
       "skill": null
     },
     {
@@ -1082,7 +1082,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/minji.jpg",
+      "img": "SR/minji.jpg",
       "skill": null
     },
     {
@@ -1092,7 +1092,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/hanni.jpg",
+      "img": "SR/hanni.jpg",
       "skill": null
     },
     {
@@ -1102,7 +1102,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/danielle.jpg",
+      "img": "SR/danielle.jpg",
       "skill": null
     },
     {
@@ -1112,7 +1112,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/haerin.jpg",
+      "img": "SR/haerin.jpg",
       "skill": null
     },
     {
@@ -1122,7 +1122,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/hyein.jpg",
+      "img": "SR/hyein.jpg",
       "skill": null
     },
     {
@@ -1132,7 +1132,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/minji.jpg",
+      "img": "SSR/minji.jpg",
       "skill": null
     },
     {
@@ -1142,7 +1142,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/hanni.jpg",
+      "img": "SSR/hanni.jpg",
       "skill": null
     },
     {
@@ -1152,7 +1152,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/danielle.jpg",
+      "img": "SSR/danielle.jpg",
       "skill": null
     },
     {
@@ -1162,7 +1162,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/haerin.jpg",
+      "img": "SSR/haerin.jpg",
       "skill": null
     },
     {
@@ -1172,7 +1172,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/hyein.jpg",
+      "img": "SSR/hyein.jpg",
       "skill": null
     },
     {
@@ -1182,7 +1182,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/minji.jpg",
+      "img": "HR/minji.jpg",
       "skill": null
     },
     {
@@ -1192,7 +1192,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/hanni.jpg",
+      "img": "HR/hanni.jpg",
       "skill": null
     },
     {
@@ -1202,7 +1202,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/danielle.jpg",
+      "img": "HR/danielle.jpg",
       "skill": null
     },
     {
@@ -1212,7 +1212,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/haerin.jpg",
+      "img": "HR/haerin.jpg",
       "skill": null
     },
     {
@@ -1222,7 +1222,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/hyein.jpg",
+      "img": "HR/hyein.jpg",
       "skill": null
     },
     {
@@ -1232,7 +1232,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/minji.jpg",
+      "img": "UR/minji.jpg",
       "skill": {
         "name": "チャンミョ...?",
         "type": "timelock",
@@ -1247,7 +1247,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/hanni.jpg",
+      "img": "UR/hanni.jpg",
       "skill": {
         "name": "オッチョラゴ～",
         "type": "shield_break",
@@ -1262,7 +1262,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/danielle.jpg",
+      "img": "UR/danielle.jpg",
       "skill": {
         "name": "アイゴー、オマイド!",
         "type": "sacrifice",
@@ -1277,7 +1277,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/haerin.jpg",
+      "img": "UR/haerin.jpg",
       "skill": {
         "name": "クニャン...",
         "type": "snipe",
@@ -1292,7 +1292,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/hyein.jpg",
+      "img": "UR/hyein.jpg",
       "skill": {
         "name": "オンマ～！これ見て～!",
         "type": "atk2",
@@ -1307,7 +1307,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/chaewon.jpg",
+      "img": "N/chaewon.jpg",
       "skill": null
     },
     {
@@ -1317,7 +1317,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/sakura.jpg",
+      "img": "N/sakura.jpg",
       "skill": null
     },
     {
@@ -1327,7 +1327,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/yunjin.jpg",
+      "img": "N/yunjin.jpg",
       "skill": null
     },
     {
@@ -1337,7 +1337,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/kazuha.jpg",
+      "img": "N/kazuha.jpg",
       "skill": null
     },
     {
@@ -1347,7 +1347,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/eunchae.jpg",
+      "img": "N/eunchae.jpg",
       "skill": null
     },
     {
@@ -1357,7 +1357,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/chaewon.jpg",
+      "img": "R/chaewon.jpg",
       "skill": null
     },
     {
@@ -1367,7 +1367,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/sakura.jpg",
+      "img": "R/sakura.jpg",
       "skill": null
     },
     {
@@ -1377,7 +1377,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/yunjin.jpg",
+      "img": "R/yunjin.jpg",
       "skill": null
     },
     {
@@ -1387,7 +1387,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/kazuha.jpg",
+      "img": "R/kazuha.jpg",
       "skill": null
     },
     {
@@ -1397,7 +1397,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/eunchae.jpg",
+      "img": "R/eunchae.jpg",
       "skill": null
     },
     {
@@ -1407,7 +1407,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/chaewon.jpg",
+      "img": "SR/chaewon.jpg",
       "skill": null
     },
     {
@@ -1417,7 +1417,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/sakura.jpg",
+      "img": "SR/sakura.jpg",
       "skill": null
     },
     {
@@ -1427,7 +1427,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/yunjin.jpg",
+      "img": "SR/yunjin.jpg",
       "skill": null
     },
     {
@@ -1437,7 +1437,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/kazuha.jpg",
+      "img": "SR/kazuha.jpg",
       "skill": null
     },
     {
@@ -1447,7 +1447,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/eunchae.jpg",
+      "img": "SR/eunchae.jpg",
       "skill": null
     },
     {
@@ -1457,7 +1457,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/chaewon.jpg",
+      "img": "SSR/chaewon.jpg",
       "skill": null
     },
     {
@@ -1467,7 +1467,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/sakura.jpg",
+      "img": "SSR/sakura.jpg",
       "skill": null
     },
     {
@@ -1477,7 +1477,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/yunjin.jpg",
+      "img": "SSR/yunjin.jpg",
       "skill": null
     },
     {
@@ -1487,7 +1487,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/kazuha.jpg",
+      "img": "SSR/kazuha.jpg",
       "skill": null
     },
     {
@@ -1497,7 +1497,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/eunchae.jpg",
+      "img": "SSR/eunchae.jpg",
       "skill": null
     },
     {
@@ -1507,7 +1507,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/chaewon.jpg",
+      "img": "HR/chaewon.jpg",
       "skill": null
     },
     {
@@ -1517,7 +1517,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/sakura.jpg",
+      "img": "HR/sakura.jpg",
       "skill": null
     },
     {
@@ -1527,7 +1527,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/yunjin.jpg",
+      "img": "HR/yunjin.jpg",
       "skill": null
     },
     {
@@ -1537,7 +1537,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/kazuha.jpg",
+      "img": "HR/kazuha.jpg",
       "skill": null
     },
     {
@@ -1547,7 +1547,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/eunchae.jpg",
+      "img": "HR/eunchae.jpg",
       "skill": null
     },
     {
@@ -1557,7 +1557,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/chaewon.jpg",
+      "img": "UR/chaewon.jpg",
       "skill": {
         "name": "可愛くてごめん!",
         "type": "defense",
@@ -1572,7 +1572,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/sakura.jpg",
+      "img": "UR/sakura.jpg",
       "skill": {
         "name": "何してんの?",
         "type": "gravity",
@@ -1587,7 +1587,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/yunjin.jpg",
+      "img": "UR/yunjin.jpg",
       "skill": {
         "name": "ファン・ガングン!",
         "type": "counter",
@@ -1602,7 +1602,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/kazuha.jpg",
+      "img": "UR/kazuha.jpg",
       "skill": {
         "name": "神秘トマト",
         "type": "poison",
@@ -1617,7 +1617,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/eunchae.jpg",
+      "img": "UR/eunchae.jpg",
       "skill": {
         "name": "ハガナヨ!",
         "type": "reflect",
@@ -1632,7 +1632,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/karina.jpg",
+      "img": "N/karina.jpg",
       "skill": null
     },
     {
@@ -1642,7 +1642,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/giselle.jpg",
+      "img": "N/giselle.jpg",
       "skill": null
     },
     {
@@ -1652,7 +1652,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/winter.jpg",
+      "img": "N/winter.jpg",
       "skill": null
     },
     {
@@ -1662,7 +1662,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/ningning.jpg",
+      "img": "N/ningning.jpg",
       "skill": null
     },
     {
@@ -1672,7 +1672,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/karina.jpg",
+      "img": "R/karina.jpg",
       "skill": null
     },
     {
@@ -1682,7 +1682,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/giselle.jpg",
+      "img": "R/giselle.jpg",
       "skill": null
     },
     {
@@ -1692,7 +1692,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/winter.jpg",
+      "img": "R/winter.jpg",
       "skill": null
     },
     {
@@ -1702,7 +1702,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/ningning.jpg",
+      "img": "R/ningning.jpg",
       "skill": null
     },
     {
@@ -1712,7 +1712,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/karina.jpg",
+      "img": "SR/karina.jpg",
       "skill": null
     },
     {
@@ -1722,7 +1722,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/giselle.jpg",
+      "img": "SR/giselle.jpg",
       "skill": null
     },
     {
@@ -1732,7 +1732,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/winter.jpg",
+      "img": "SR/winter.jpg",
       "skill": null
     },
     {
@@ -1742,7 +1742,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/ningning.jpg",
+      "img": "SR/ningning.jpg",
       "skill": null
     },
     {
@@ -1752,7 +1752,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/karina.jpg",
+      "img": "SSR/karina.jpg",
       "skill": null
     },
     {
@@ -1762,7 +1762,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/giselle.jpg",
+      "img": "SSR/giselle.jpg",
       "skill": null
     },
     {
@@ -1772,7 +1772,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/winter.jpg",
+      "img": "SSR/winter.jpg",
       "skill": null
     },
     {
@@ -1782,7 +1782,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/ningning.jpg",
+      "img": "SSR/ningning.jpg",
       "skill": null
     },
     {
@@ -1792,7 +1792,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/karina.jpg",
+      "img": "HR/karina.jpg",
       "skill": null
     },
     {
@@ -1802,7 +1802,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/giselle.jpg",
+      "img": "HR/giselle.jpg",
       "skill": null
     },
     {
@@ -1812,7 +1812,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/winter.jpg",
+      "img": "HR/winter.jpg",
       "skill": null
     },
     {
@@ -1822,7 +1822,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/ningning.jpg",
+      "img": "HR/ningning.jpg",
       "skill": null
     },
     {
@@ -1832,7 +1832,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/karina.jpg",
+      "img": "UR/karina.jpg",
       "skill": {
         "name": "宿舎のハンター",
         "type": "chain",
@@ -1847,7 +1847,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/giselle.jpg",
+      "img": "UR/giselle.jpg",
       "skill": {
         "name": "それな！",
         "type": "atk2",
@@ -1862,7 +1862,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/winter.jpg",
+      "img": "UR/winter.jpg",
       "skill": {
         "name": "コキコキッ!",
         "type": "burst",
@@ -1877,7 +1877,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/ningning.jpg",
+      "img": "UR/ningning.jpg",
       "skill": {
         "name": "アハハハハ!!!",
         "type": "overload",
@@ -1892,7 +1892,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/ruka.jpg",
+      "img": "N/ruka.jpg",
       "skill": null
     },
     {
@@ -1902,7 +1902,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/pharita.jpg",
+      "img": "N/pharita.jpg",
       "skill": null
     },
     {
@@ -1912,7 +1912,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/asa.jpg",
+      "img": "N/asa.jpg",
       "skill": null
     },
     {
@@ -1922,7 +1922,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/ahyeon.jpg",
+      "img": "N/ahyeon.jpg",
       "skill": null
     },
     {
@@ -1932,7 +1932,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/rami.jpg",
+      "img": "N/rami.jpg",
       "skill": null
     },
     {
@@ -1942,7 +1942,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/rora.jpg",
+      "img": "N/rora.jpg",
       "skill": null
     },
     {
@@ -1952,7 +1952,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/chiquita.jpg",
+      "img": "N/chiquita.jpg",
       "skill": null
     },
     {
@@ -1962,7 +1962,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/ruka.jpg",
+      "img": "R/ruka.jpg",
       "skill": null
     },
     {
@@ -1972,7 +1972,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/pharita.jpg",
+      "img": "R/pharita.jpg",
       "skill": null
     },
     {
@@ -1982,7 +1982,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/asa.jpg",
+      "img": "R/asa.jpg",
       "skill": null
     },
     {
@@ -1992,7 +1992,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/ahyeon.jpg",
+      "img": "R/ahyeon.jpg",
       "skill": null
     },
     {
@@ -2002,7 +2002,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/rami.jpg",
+      "img": "R/rami.jpg",
       "skill": null
     },
     {
@@ -2012,7 +2012,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/rora.jpg",
+      "img": "R/rora.jpg",
       "skill": null
     },
     {
@@ -2022,7 +2022,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/chiquita.jpg",
+      "img": "R/chiquita.jpg",
       "skill": null
     },
     {
@@ -2032,7 +2032,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/ruka.jpg",
+      "img": "SR/ruka.jpg",
       "skill": null
     },
     {
@@ -2042,7 +2042,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/pharita.jpg",
+      "img": "SR/pharita.jpg",
       "skill": null
     },
     {
@@ -2052,7 +2052,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/asa.jpg",
+      "img": "SR/asa.jpg",
       "skill": null
     },
     {
@@ -2062,7 +2062,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/ahyeon.jpg",
+      "img": "SR/ahyeon.jpg",
       "skill": null
     },
     {
@@ -2072,7 +2072,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/rami.jpg",
+      "img": "SR/rami.jpg",
       "skill": null
     },
     {
@@ -2082,7 +2082,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/rora.jpg",
+      "img": "SR/rora.jpg",
       "skill": null
     },
     {
@@ -2092,7 +2092,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/chiquita.jpg",
+      "img": "SR/chiquita.jpg",
       "skill": null
     },
     {
@@ -2102,7 +2102,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/ruka.jpg",
+      "img": "SSR/ruka.jpg",
       "skill": null
     },
     {
@@ -2112,7 +2112,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/pharita.jpg",
+      "img": "SSR/pharita.jpg",
       "skill": null
     },
     {
@@ -2122,7 +2122,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/asa.jpg",
+      "img": "SSR/asa.jpg",
       "skill": null
     },
     {
@@ -2132,7 +2132,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/ahyeon.jpg",
+      "img": "SSR/ahyeon.jpg",
       "skill": null
     },
     {
@@ -2142,7 +2142,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/rami.jpg",
+      "img": "SSR/rami.jpg",
       "skill": null
     },
     {
@@ -2152,7 +2152,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/rora.jpg",
+      "img": "SSR/rora.jpg",
       "skill": null
     },
     {
@@ -2162,7 +2162,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/chiquita.jpg",
+      "img": "SSR/chiquita.jpg",
       "skill": null
     },
     {
@@ -2172,7 +2172,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/ruka.jpg",
+      "img": "HR/ruka.jpg",
       "skill": null
     },
     {
@@ -2182,7 +2182,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/pharita.jpg",
+      "img": "HR/pharita.jpg",
       "skill": null
     },
     {
@@ -2192,7 +2192,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/asa.jpg",
+      "img": "HR/asa.jpg",
       "skill": null
     },
     {
@@ -2202,7 +2202,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/ahyeon.jpg",
+      "img": "HR/ahyeon.jpg",
       "skill": null
     },
     {
@@ -2212,7 +2212,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/rami.jpg",
+      "img": "HR/rami.jpg",
       "skill": null
     },
     {
@@ -2222,7 +2222,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/rora.jpg",
+      "img": "HR/rora.jpg",
       "skill": null
     },
     {
@@ -2232,7 +2232,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/chiquita.jpg",
+      "img": "HR/chiquita.jpg",
       "skill": null
     },
     {
@@ -2242,7 +2242,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/ruka.jpg",
+      "img": "UR/ruka.jpg",
       "skill": {
         "name": "ニホンゴ・ムジュカシイ",
         "type": "timelock",
@@ -2257,7 +2257,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/pharita.jpg",
+      "img": "UR/pharita.jpg",
       "skill": {
         "name": "プリンセスになりたい",
         "type": "defense",
@@ -2272,7 +2272,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/asa.jpg",
+      "img": "UR/asa.jpg",
       "skill": {
         "name": "マイ・ベストフレンド・ベッド",
         "type": "regen",
@@ -2287,7 +2287,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/ahyeon.jpg",
+      "img": "UR/ahyeon.jpg",
       "skill": {
         "name": "ソルロンタン!",
         "type": "heal2",
@@ -2302,7 +2302,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/rami.jpg",
+      "img": "UR/rami.jpg",
       "skill": {
         "name": "チキンチョア",
         "type": "heal",
@@ -2317,7 +2317,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/rora.jpg",
+      "img": "UR/rora.jpg",
       "skill": {
         "name": "ノット・ハルモニ!!",
         "type": "counter",
@@ -2332,7 +2332,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/chiquita.jpg",
+      "img": "UR/chiquita.jpg",
       "skill": {
         "name": "ノリノリ・マンドゥ",
         "type": "encore",
@@ -2347,7 +2347,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/jisoo.jpg",
+      "img": "N/jisoo.jpg",
       "skill": null
     },
     {
@@ -2357,7 +2357,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/jennie.jpg",
+      "img": "N/jennie.jpg",
       "skill": null
     },
     {
@@ -2367,7 +2367,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/rose.jpg",
+      "img": "N/rose.jpg",
       "skill": null
     },
     {
@@ -2377,7 +2377,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/lisa.jpg",
+      "img": "N/lisa.jpg",
       "skill": null
     },
     {
@@ -2387,7 +2387,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/jisoo.jpg",
+      "img": "R/jisoo.jpg",
       "skill": null
     },
     {
@@ -2397,7 +2397,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/jennie.jpg",
+      "img": "R/jennie.jpg",
       "skill": null
     },
     {
@@ -2407,7 +2407,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/rose.jpg",
+      "img": "R/rose.jpg",
       "skill": null
     },
     {
@@ -2417,7 +2417,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/lisa.jpg",
+      "img": "R/lisa.jpg",
       "skill": null
     },
     {
@@ -2427,7 +2427,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/jisoo.jpg",
+      "img": "SR/jisoo.jpg",
       "skill": null
     },
     {
@@ -2437,7 +2437,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/jennie.jpg",
+      "img": "SR/jennie.jpg",
       "skill": null
     },
     {
@@ -2447,7 +2447,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/rose.jpg",
+      "img": "SR/rose.jpg",
       "skill": null
     },
     {
@@ -2457,7 +2457,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/lisa.jpg",
+      "img": "SR/lisa.jpg",
       "skill": null
     },
     {
@@ -2467,7 +2467,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/jisoo.jpg",
+      "img": "SSR/jisoo.jpg",
       "skill": null
     },
     {
@@ -2477,7 +2477,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/jennie.jpg",
+      "img": "SSR/jennie.jpg",
       "skill": null
     },
     {
@@ -2487,7 +2487,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/rose.jpg",
+      "img": "SSR/rose.jpg",
       "skill": null
     },
     {
@@ -2497,7 +2497,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/lisa.jpg",
+      "img": "SSR/lisa.jpg",
       "skill": null
     },
     {
@@ -2507,7 +2507,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/jisoo.jpg",
+      "img": "HR/jisoo.jpg",
       "skill": null
     },
     {
@@ -2517,7 +2517,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/jennie.jpg",
+      "img": "HR/jennie.jpg",
       "skill": null
     },
     {
@@ -2527,7 +2527,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/rose.jpg",
+      "img": "HR/rose.jpg",
       "skill": null
     },
     {
@@ -2537,7 +2537,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/lisa.jpg",
+      "img": "HR/lisa.jpg",
       "skill": null
     },
     {
@@ -2547,7 +2547,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/jisoo.jpg",
+      "img": "UR/jisoo.jpg",
       "skill": {
         "name": "アンニョン、私はジスだよ",
         "type": "gravity",
@@ -2562,7 +2562,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/jennie.jpg",
+      "img": "UR/jennie.jpg",
       "skill": {
         "name": "私は怖くないから先に行くね！",
         "type": "berserker",
@@ -2577,7 +2577,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/rose.jpg",
+      "img": "UR/rose.jpg",
       "skill": {
         "name": "モグモグ・チップマンクス",
         "type": "drain",
@@ -2592,7 +2592,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/lisa.jpg",
+      "img": "UR/lisa.jpg",
       "skill": {
         "name": "100億₩の広告くれたら前髪あげる",
         "type": "last_stand",
@@ -2607,7 +2607,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/mako.jpg",
+      "img": "N/mako.jpg",
       "skill": null
     },
     {
@@ -2617,7 +2617,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/riku.jpg",
+      "img": "N/riku.jpg",
       "skill": null
     },
     {
@@ -2627,7 +2627,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/rima.jpg",
+      "img": "N/rima.jpg",
       "skill": null
     },
     {
@@ -2637,7 +2637,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/rio.jpg",
+      "img": "N/rio.jpg",
       "skill": null
     },
     {
@@ -2647,7 +2647,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/maya.jpg",
+      "img": "N/maya.jpg",
       "skill": null
     },
     {
@@ -2657,7 +2657,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/miihi.jpg",
+      "img": "N/miihi.jpg",
       "skill": null
     },
     {
@@ -2667,7 +2667,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/mayuka.jpg",
+      "img": "N/mayuka.jpg",
       "skill": null
     },
     {
@@ -2677,7 +2677,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/ayaka.jpg",
+      "img": "N/ayaka.jpg",
       "skill": null
     },
     {
@@ -2687,7 +2687,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/nina.jpg",
+      "img": "N/nina.jpg",
       "skill": null
     },
     {
@@ -2697,7 +2697,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/mako.jpg",
+      "img": "R/mako.jpg",
       "skill": null
     },
     {
@@ -2707,7 +2707,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/riku.jpg",
+      "img": "R/riku.jpg",
       "skill": null
     },
     {
@@ -2717,7 +2717,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/rima.jpg",
+      "img": "R/rima.jpg",
       "skill": null
     },
     {
@@ -2727,7 +2727,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/rio.jpg",
+      "img": "R/rio.jpg",
       "skill": null
     },
     {
@@ -2737,7 +2737,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/maya.jpg",
+      "img": "R/maya.jpg",
       "skill": null
     },
     {
@@ -2747,7 +2747,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/miihi.jpg",
+      "img": "R/miihi.jpg",
       "skill": null
     },
     {
@@ -2757,7 +2757,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/mayuka.jpg",
+      "img": "R/mayuka.jpg",
       "skill": null
     },
     {
@@ -2767,7 +2767,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/ayaka.jpg",
+      "img": "R/ayaka.jpg",
       "skill": null
     },
     {
@@ -2777,7 +2777,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/nina.jpg",
+      "img": "R/nina.jpg",
       "skill": null
     },
     {
@@ -2787,7 +2787,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/mako.jpg",
+      "img": "SR/mako.jpg",
       "skill": null
     },
     {
@@ -2797,7 +2797,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/riku.jpg",
+      "img": "SR/riku.jpg",
       "skill": null
     },
     {
@@ -2807,7 +2807,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/rima.jpg",
+      "img": "SR/rima.jpg",
       "skill": null
     },
     {
@@ -2817,7 +2817,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/rio.jpg",
+      "img": "SR/rio.jpg",
       "skill": null
     },
     {
@@ -2827,7 +2827,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/maya.jpg",
+      "img": "SR/maya.jpg",
       "skill": null
     },
     {
@@ -2837,7 +2837,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/miihi.jpg",
+      "img": "SR/miihi.jpg",
       "skill": null
     },
     {
@@ -2847,7 +2847,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/mayuka.jpg",
+      "img": "SR/mayuka.jpg",
       "skill": null
     },
     {
@@ -2857,7 +2857,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/ayaka.jpg",
+      "img": "SR/ayaka.jpg",
       "skill": null
     },
     {
@@ -2867,7 +2867,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/nina.jpg",
+      "img": "SR/nina.jpg",
       "skill": null
     },
     {
@@ -2877,7 +2877,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/mako.jpg",
+      "img": "SSR/mako.jpg",
       "skill": null
     },
     {
@@ -2887,7 +2887,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/riku.jpg",
+      "img": "SSR/riku.jpg",
       "skill": null
     },
     {
@@ -2897,7 +2897,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/rima.jpg",
+      "img": "SSR/rima.jpg",
       "skill": null
     },
     {
@@ -2907,7 +2907,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/rio.jpg",
+      "img": "SSR/rio.jpg",
       "skill": null
     },
     {
@@ -2917,7 +2917,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/maya.jpg",
+      "img": "SSR/maya.jpg",
       "skill": null
     },
     {
@@ -2927,7 +2927,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/miihi.jpg",
+      "img": "SSR/miihi.jpg",
       "skill": null
     },
     {
@@ -2937,7 +2937,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/mayuka.jpg",
+      "img": "SSR/mayuka.jpg",
       "skill": null
     },
     {
@@ -2947,7 +2947,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/ayaka.jpg",
+      "img": "SSR/ayaka.jpg",
       "skill": null
     },
     {
@@ -2957,7 +2957,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/nina.jpg",
+      "img": "SSR/nina.jpg",
       "skill": null
     },
     {
@@ -2967,7 +2967,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/mako.jpg",
+      "img": "HR/mako.jpg",
       "skill": null
     },
     {
@@ -2977,7 +2977,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/riku.jpg",
+      "img": "HR/riku.jpg",
       "skill": null
     },
     {
@@ -2987,7 +2987,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/rima.jpg",
+      "img": "HR/rima.jpg",
       "skill": null
     },
     {
@@ -2997,7 +2997,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/rio.jpg",
+      "img": "HR/rio.jpg",
       "skill": null
     },
     {
@@ -3007,7 +3007,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/maya.jpg",
+      "img": "HR/maya.jpg",
       "skill": null
     },
     {
@@ -3017,7 +3017,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/miihi.jpg",
+      "img": "HR/miihi.jpg",
       "skill": null
     },
     {
@@ -3027,7 +3027,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/mayuka.jpg",
+      "img": "HR/mayuka.jpg",
       "skill": null
     },
     {
@@ -3037,7 +3037,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/ayaka.jpg",
+      "img": "HR/ayaka.jpg",
       "skill": null
     },
     {
@@ -3047,7 +3047,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/nina.jpg",
+      "img": "HR/nina.jpg",
       "skill": null
     },
     {
@@ -3057,7 +3057,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/mako.jpg",
+      "img": "UR/mako.jpg",
       "skill": {
         "name": "トゥギャザーしようぜ",
         "type": "lifelink",
@@ -3072,7 +3072,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/riku.jpg",
+      "img": "UR/riku.jpg",
       "skill": {
         "name": "喋らんとけば美人",
         "type": "reflect",
@@ -3087,7 +3087,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/rima.jpg",
+      "img": "UR/rima.jpg",
       "skill": {
         "name": "トリリンガル・パニック",
         "type": "blizzard",
@@ -3102,7 +3102,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/rio.jpg",
+      "img": "UR/rio.jpg",
       "skill": {
         "name": "あ、間違えちゃった",
         "type": "rampage",
@@ -3117,7 +3117,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/maya.jpg",
+      "img": "UR/maya.jpg",
       "skill": {
         "name": "宿舎のオカン・ビーム",
         "type": "curse",
@@ -3132,7 +3132,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/miihi.jpg",
+      "img": "UR/miihi.jpg",
       "skill": {
         "name": "トトロのパン、どこ?",
         "type": "snipe",
@@ -3147,7 +3147,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/mayuka.jpg",
+      "img": "UR/mayuka.jpg",
       "skill": {
         "name": "カメレオン・シンクロ",
         "type": "clone",
@@ -3162,7 +3162,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/ayaka.jpg",
+      "img": "UR/ayaka.jpg",
       "skill": {
         "name": "テニス講座",
         "type": "atk1",
@@ -3177,7 +3177,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/nina.jpg",
+      "img": "UR/nina.jpg",
       "skill": {
         "name": "ワンちゃん・ハグ",
         "type": "heal",
@@ -3192,7 +3192,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/yunah.jpg",
+      "img": "N/yunah.jpg",
       "skill": null
     },
     {
@@ -3202,7 +3202,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/minju.jpg",
+      "img": "N/minju.jpg",
       "skill": null
     },
     {
@@ -3212,7 +3212,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/moka.jpg",
+      "img": "N/moka.jpg",
       "skill": null
     },
     {
@@ -3222,7 +3222,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/wonhee.jpg",
+      "img": "N/wonhee.jpg",
       "skill": null
     },
     {
@@ -3232,7 +3232,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/iroha.jpg",
+      "img": "N/iroha.jpg",
       "skill": null
     },
     {
@@ -3242,7 +3242,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/yunah.jpg",
+      "img": "R/yunah.jpg",
       "skill": null
     },
     {
@@ -3252,7 +3252,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/minju.jpg",
+      "img": "R/minju.jpg",
       "skill": null
     },
     {
@@ -3262,7 +3262,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/moka.jpg",
+      "img": "R/moka.jpg",
       "skill": null
     },
     {
@@ -3272,7 +3272,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/wonhee.jpg",
+      "img": "R/wonhee.jpg",
       "skill": null
     },
     {
@@ -3282,7 +3282,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/iroha.jpg",
+      "img": "R/iroha.jpg",
       "skill": null
     },
     {
@@ -3292,7 +3292,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/yunah.jpg",
+      "img": "SR/yunah.jpg",
       "skill": null
     },
     {
@@ -3302,7 +3302,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/minju.jpg",
+      "img": "SR/minju.jpg",
       "skill": null
     },
     {
@@ -3312,7 +3312,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/moka.jpg",
+      "img": "SR/moka.jpg",
       "skill": null
     },
     {
@@ -3322,7 +3322,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/wonhee.jpg",
+      "img": "SR/wonhee.jpg",
       "skill": null
     },
     {
@@ -3332,7 +3332,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/iroha.jpg",
+      "img": "SR/iroha.jpg",
       "skill": null
     },
     {
@@ -3342,7 +3342,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/yunah.jpg",
+      "img": "SSR/yunah.jpg",
       "skill": null
     },
     {
@@ -3352,7 +3352,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/minju.jpg",
+      "img": "SSR/minju.jpg",
       "skill": null
     },
     {
@@ -3362,7 +3362,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/moka.jpg",
+      "img": "SSR/moka.jpg",
       "skill": null
     },
     {
@@ -3372,7 +3372,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/wonhee.jpg",
+      "img": "SSR/wonhee.jpg",
       "skill": null
     },
     {
@@ -3382,7 +3382,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/iroha.jpg",
+      "img": "SSR/iroha.jpg",
       "skill": null
     },
     {
@@ -3392,7 +3392,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/yunah.jpg",
+      "img": "HR/yunah.jpg",
       "skill": null
     },
     {
@@ -3402,7 +3402,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/minju.jpg",
+      "img": "HR/minju.jpg",
       "skill": null
     },
     {
@@ -3412,7 +3412,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/moka.jpg",
+      "img": "HR/moka.jpg",
       "skill": null
     },
     {
@@ -3422,7 +3422,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/wonhee.jpg",
+      "img": "HR/wonhee.jpg",
       "skill": null
     },
     {
@@ -3432,7 +3432,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/iroha.jpg",
+      "img": "HR/iroha.jpg",
       "skill": null
     },
     {
@@ -3442,7 +3442,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/yunah.jpg",
+      "img": "UR/yunah.jpg",
       "skill": {
         "name": "私がポテトチップスに見えますか?",
         "type": "mirror",
@@ -3457,7 +3457,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/minju.jpg",
+      "img": "UR/minju.jpg",
       "skill": {
         "name": "楽しいぃ？",
         "type": "quake",
@@ -3472,7 +3472,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/moka.jpg",
+      "img": "UR/moka.jpg",
       "skill": {
         "name": "コーヒーじゃないです、モカです",
         "type": "swap",
@@ -3487,7 +3487,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/wonhee.jpg",
+      "img": "UR/wonhee.jpg",
       "skill": {
         "name": "ダーリン",
         "type": "regen",
@@ -3502,7 +3502,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/iroha.jpg",
+      "img": "UR/iroha.jpg",
       "skill": {
         "name": "たぁこやき～",
         "type": "atk1",
@@ -3517,7 +3517,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/MISAMOmina.jpg",
+      "img": "N/MISAMOmina.jpg",
       "skill": null
     },
     {
@@ -3527,7 +3527,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/MISAMOsana.jpg",
+      "img": "N/MISAMOsana.jpg",
       "skill": null
     },
     {
@@ -3537,7 +3537,7 @@
       "rarity": "N",
       "hp": 80,
       "atk": 15,
-      "img": "images/N/MISAMOmomo.jpg",
+      "img": "N/MISAMOmomo.jpg",
       "skill": null
     },
     {
@@ -3547,7 +3547,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/MISAMOmina.jpg",
+      "img": "R/MISAMOmina.jpg",
       "skill": null
     },
     {
@@ -3557,7 +3557,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/MISAMOsana.jpg",
+      "img": "R/MISAMOsana.jpg",
       "skill": null
     },
     {
@@ -3567,7 +3567,7 @@
       "rarity": "R",
       "hp": 100,
       "atk": 20,
-      "img": "images/R/MISAMOmomo.jpg",
+      "img": "R/MISAMOmomo.jpg",
       "skill": null
     },
     {
@@ -3577,7 +3577,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/MISAMOmina.jpg",
+      "img": "SR/MISAMOmina.jpg",
       "skill": null
     },
     {
@@ -3587,7 +3587,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/MISAMOsana.jpg",
+      "img": "SR/MISAMOsana.jpg",
       "skill": null
     },
     {
@@ -3597,7 +3597,7 @@
       "rarity": "SR",
       "hp": 125,
       "atk": 27,
-      "img": "images/SR/MISAMOmomo.jpg",
+      "img": "SR/MISAMOmomo.jpg",
       "skill": null
     },
     {
@@ -3607,7 +3607,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/MISAMOmina.jpg",
+      "img": "SSR/MISAMOmina.jpg",
       "skill": null
     },
     {
@@ -3617,7 +3617,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/MISAMOsana.jpg",
+      "img": "SSR/MISAMOsana.jpg",
       "skill": null
     },
     {
@@ -3627,7 +3627,7 @@
       "rarity": "SSR",
       "hp": 155,
       "atk": 35,
-      "img": "images/SSR/MISAMOmomo.jpg",
+      "img": "SSR/MISAMOmomo.jpg",
       "skill": null
     },
     {
@@ -3637,7 +3637,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/MISAMOmina.jpg",
+      "img": "HR/MISAMOmina.jpg",
       "skill": null
     },
     {
@@ -3647,7 +3647,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/MISAMOsana.jpg",
+      "img": "HR/MISAMOsana.jpg",
       "skill": null
     },
     {
@@ -3657,7 +3657,7 @@
       "rarity": "HR",
       "hp": 190,
       "atk": 45,
-      "img": "images/HR/MISAMOmomo.jpg",
+      "img": "HR/MISAMOmomo.jpg",
       "skill": null
     },
     {
@@ -3667,7 +3667,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/MISAMOmina.jpg",
+      "img": "UR/MISAMOmina.jpg",
       "skill": {
         "name": "沼れ",
         "type": "curse",
@@ -3682,7 +3682,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/MISAMOsana.jpg",
+      "img": "UR/MISAMOsana.jpg",
       "skill": {
         "name": "なぁ↑ももりん",
         "type": "heal2",
@@ -3697,7 +3697,7 @@
       "rarity": "UR",
       "hp": 230,
       "atk": 55,
-      "img": "images/UR/MISAMOmomo.jpg",
+      "img": "UR/MISAMOmomo.jpg",
       "skill": {
         "name": "&@%#^*$€",
         "type": "rampage",
