@@ -3704,6 +3704,21 @@
         "value": 0,
         "desc": "言葉にならない！ATK×2でランダム攻撃！"
       }
+    },
+    {
+      "id": 349,
+      "name": "ハメ王",
+      "group": "HAMEOU",
+      "rarity": "LR",
+      "hp": 250,
+      "atk": 70,
+      "img": "UR/special.jpg",
+      "skill": {
+        "name": "木端微塵!",
+        "type": "akt2",
+        "value": 50,
+        "desc": "まるで人がゴミのようだ！"
+      }
     }
   ],
   "quizzes": {
