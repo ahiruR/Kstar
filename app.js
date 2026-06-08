@@ -23,11 +23,11 @@
 // 1. 定数・設定
 // ==========================================
 // レアリティ確率（通常パック）
-const RARITY_PROB_NORMAL = { UR: 0.01, HR: 0.03, SSR: 0.06, SR: 0.15, R: 0.30, N: 0.45 };
+const RARITY_PROB_NORMAL = { LR: 0.003, UR: 0.01, HR: 0.03, SSR: 0.06, SR: 0.15, R: 0.30, N: 0.447 }; 
 // グループパック確率（低め）
-const RARITY_PROB_GROUP  = { UR: 0.005, HR: 0.015, SSR: 0.04, SR: 0.10, R: 0.25, N: 0.59 };
-const RARITY_ORDER = ['UR','HR','SSR','SR','R','N'];
-const RARITY_WEIGHTS = { UR: 6, HR: 5, SSR: 4, SR: 3, R: 2, N: 1 };
+const RARITY_PROB_GROUP  = { LR: 0, UR: 0.005, HR: 0.015, SSR: 0.04, SR: 0.10, R: 0.25, N: 0.59 };
+const RARITY_ORDER = ['LR','UR','HR','SSR','SR','R','N'];
+const RARITY_WEIGHTS = { LR: 7, UR: 6, HR: 5, SSR: 4, SR: 3, R: 2, N: 1 };
 
 const MAX_PACKS = 2;          // 最大ストック数
 const PACK_INTERVAL_MS = 12 * 60 * 60 * 1000; // 12時間
@@ -45,6 +45,7 @@ let battleFxLocked = false;
 let cpuTurnTimer = null;
 
 const GACHA_RARITY_META = {
+    LR:  { label: '🌈 LR LEGENDARY！', color: '#00ffcc', delay: 1200, opening: '🌈 伝説を超えた存在が…！' },
     UR:  { label: '✨ UR 超激レア！', color: '#ff00ff', delay: 900,  opening: '🌟 伝説のカードが…！' },
     HR:  { label: '🔥 HR 激レア！',   color: '#ff6600', delay: 750,  opening: '🔥 激レア出現の予感…！' },
     SSR: { label: '⭐ SSR レア！',    color: '#ffcc00', delay: 600,  opening: '⭐ レアカード接近…！' },
@@ -333,10 +334,11 @@ function drawPack(groupFilter = null) {
 }
 
 function determineCardByRarity(probTable, groupFilter) {
-    // グループフィルターがある場合、そのグループのカードのみで確率を再抽選する
+    // グループパック時: 指定グループのみ（SPECIALは除外）
+    // 通常パック時: SPECIAL含む全カード対象
     const candidatePool = groupFilter
-        ? gameState.allCards.filter(c => c.group === groupFilter)
-        : gameState.allCards;
+        ? gameState.allCards.filter(c => c.group === groupFilter && c.group !== 'SPECIAL')
+        : gameState.allCards; // 通常パックはSPECIALも出る
 
     if (candidatePool.length === 0) {
         // フォールバック：全カードから
@@ -437,7 +439,7 @@ function showGachaCardDetail(card, overlayEl) {
         text-align:center;
     `;
 
-    const rarityColors = { UR:'#ff00ff', HR:'#ff6600', SSR:'#ffcc00', SR:'#bf5af2', R:'#0a84ff', N:'#888' };
+    const rarityColors = { LR:'#00ffcc', UR:'#ff00ff', HR:'#ff6600', SSR:'#ffcc00', SR:'#bf5af2', R:'#0a84ff', N:'#888' };
     const col = rarityColors[card.rarity] || '#888';
 
     const cardPreview = document.createElement('div');
@@ -446,7 +448,7 @@ function showGachaCardDetail(card, overlayEl) {
     if (card.img) cardPreview.style.backgroundImage = `url(${card.img})`;
     cardPreview.innerHTML = `<div class="card-rarity">${card.rarity}</div>`;
 
-    const skillHTML = (card.rarity === 'UR' && card.skill)
+    const skillHTML = (['UR','LR'].includes(card.rarity) && card.skill)
         ? `<div style="background:#1e1e1e;border:1px solid #333;border-radius:8px;padding:8px;margin-top:8px;text-align:left;">
                <p style="font-size:12px;color:#ff477e;font-weight:bold;margin-bottom:4px;">✨ 必殺技【${card.skill.name}】</p>
                <p style="font-size:11px;color:#aaa;">${card.skill.desc}</p>
@@ -509,7 +511,7 @@ function revealGachaCard(card, container, overlay) {
     wrap.appendChild(cardEl);
     container.appendChild(wrap);
 
-    if (['UR', 'HR', 'SSR'].includes(card.rarity) && overlay) {
+    if (['LR', 'UR', 'HR', 'SSR'].includes(card.rarity) && overlay) {
         overlay.classList.remove('rarity-flash-UR', 'rarity-flash-HR', 'rarity-flash-SSR');
         void overlay.offsetWidth;
         overlay.classList.add(`rarity-flash-${card.rarity}`);
@@ -539,6 +541,7 @@ function initQuizGroupSelect() {
             <select id="quiz-group-select" style="flex:1;padding:6px;font-size:12px;background:#252525;border:1px solid #333;color:#fff;border-radius:6px;">
                 <option value="MY_OSHI">🌟自分の推しグループ</option>
                 ${GROUP_PACK_GROUPS.map(g => `<option value="${g}">${g}</option>`).join('')}
+                <option value="SPECIAL">⭐ SPECIAL</option>
             </select>
         </div>`;
 
@@ -677,6 +680,7 @@ function setupFilterEventListeners() {
             <select id="col-filter-group" style="flex:1;padding:6px;font-size:11px;background:#252525;border:1px solid #333;color:#fff;border-radius:6px;">
                 <option value="ALL">🎤 全グループ</option>
                 ${GROUP_PACK_GROUPS.map(g => `<option value="${g}">${g}</option>`).join('')}
+                <option value="SPECIAL">⭐ SPECIAL</option>
             </select>
         </div>
         <select id="col-sort-type" style="width:100%;padding:6px;font-size:11px;background:#2d2d2d;border:1px solid #333;color:#fff;border-radius:6px;">
@@ -748,7 +752,7 @@ function createCardElement(card, inDeck, count) {
     el.className = `card ${card.rarity}`;
     if (card.img) el.style.backgroundImage = `url(${card.img})`;
 
-    const skillTag = card.rarity === 'UR' && card.skill
+    const skillTag = ['UR','LR'].includes(card.rarity) && card.skill
         ? `<div style="position:absolute;top:6px;right:6px;background:#9b59b6;color:#fff;font-size:8px;padding:1px 4px;border-radius:3px;z-index:2;">必殺技</div>`
         : '';
     const deckBadge = inDeck
@@ -797,10 +801,10 @@ function openCardDetailModal(card, options = {}) {
 
     // URのみ必殺技あり
     const skillEl = document.getElementById('modal-card-skill');
-    if (card.rarity === 'UR' && card.skill) {
+    if (['UR','LR'].includes(card.rarity) && card.skill) {
         skillEl.innerHTML = `✨ 必殺技: <b>【${card.skill.name}】</b><br><span style="font-size:11px;color:#aaa;">${card.skill.desc}</span>`;
         skillEl.style.display = '';
-    } else if (card.skill && card.rarity !== 'UR') {
+    } else if (card.skill && !['UR','LR'].includes(card.rarity)) {
         skillEl.innerHTML = `<span style="font-size:11px;color:#555;">必殺技はURカードのみ使用可能です。</span>`;
         skillEl.style.display = '';
     } else {
@@ -1319,7 +1323,7 @@ function updateBattleUI(options = {}) {
     } else if (bState.actionStep === 'pick_target') {
         const atk = bState.p1.field[bState.attackerFieldIdx];
         actionZone.innerHTML = `<p style="text-align:center;color:#ff477e;font-size:12px;font-weight:bold;">攻撃対象をタップ（${atk ? atk.name : ''}）</p>`;
-        if (atk && atk.rarity === 'UR' && atk.skill && !bState.p1.usedSkills.has(atk.id)) {
+        if (atk && ['UR','LR'].includes(atk.rarity) && atk.skill && !bState.p1.usedSkills.has(atk.id)) {
             const skillBtn = document.createElement('button');
             skillBtn.textContent = `✨ 必殺技: ${atk.skill.name}`;
             skillBtn.style.background = 'linear-gradient(45deg,#9b59b6,#8e44ad)';
@@ -1444,7 +1448,7 @@ async function executePlayerAction(attackerIdx, targetIdx) {
     let skillName = null;
     let actualDmg = 0;
 
-    if (isSkillMode && attacker.rarity === 'UR' && attacker.skill) {
+    if (isSkillMode && ['UR','LR'].includes(attacker.rarity) && attacker.skill) {
         const skill = attacker.skill;
         fxKind = 'skill';
         skillName = skill.name;
@@ -1955,7 +1959,7 @@ async function executeCPUTurn() {
     let logMsg = '';
     let fxKind = 'attack';
     let skillName = null;
-    const useSkill = Math.random() < 0.25 && attacker.rarity === 'UR' && attacker.skill && !bState.p2.usedSkills.has(attacker.id);
+    const useSkill = Math.random() < 0.25 && ['UR','LR'].includes(attacker.rarity) && attacker.skill && !bState.p2.usedSkills.has(attacker.id);
     if (useSkill) {
         const skill = attacker.skill;
         fxKind = 'skill'; skillName = skill.name;
@@ -2355,7 +2359,7 @@ function updateOnlineBattleUI() {
         az.innerHTML = `<p style="text-align:center;color:#ff477e;font-size:12px;font-weight:bold;">攻撃対象をタップ（${atk ? atk.name : ''}）</p>`;
 
         // UR必殺技ボタン
-        if (atk && atk.rarity === 'UR' && atk.skill) {
+        if (atk && ['UR','LR'].includes(atk.rarity) && atk.skill) {
             if (!b.usedSkills) b.usedSkills = new Set();
             if (!b.usedSkills.has(atk.id)) {
                 const skillBtn = document.createElement('button');
@@ -2428,7 +2432,7 @@ async function sendOnlineAttack(attackerIdx, targetIdx) {
     if (u && attacker.group === u.oshiGroup) { damage = Math.floor(damage * 1.2); logMsg += '✨ 推し補正！<br>'; }
 
     // 必殺技処理
-    if (b.skillModeOnline && attacker.rarity === 'UR' && attacker.skill) {
+    if (b.skillModeOnline && ['UR','LR'].includes(attacker.rarity) && attacker.skill) {
         const skill = attacker.skill;
         fxKind = 'skill'; skillName = skill.name;
         if (!b.usedSkills) b.usedSkills = new Set();
@@ -2611,6 +2615,7 @@ function createSettingModalDOM() {
                 <label style="display:block;font-size:11px;color:#aaa;margin-bottom:4px;">推しグループ</label>
                 <select id="setting-select-oshi" style="width:100%;padding:6px;background:#111;border:1px solid #444;color:#fff;border-radius:4px;">
                     ${GROUP_PACK_GROUPS.map(g => `<option value="${g}">${g}</option>`).join('')}
+                    <option value="SPECIAL">⭐ SPECIAL</option>
                 </select>
             </div>
             <div style="display:flex;gap:8px;">
@@ -2819,6 +2824,7 @@ function renderDeckEditor() {
             <select id="deck-filter-group" style="flex:1;min-width:100px;padding:6px;font-size:11px;background:#252525;border:1px solid #333;color:#fff;border-radius:6px;">
                 <option value="ALL">🎤 全グループ</option>
                 ${GROUP_PACK_GROUPS.map(g => `<option>${g}</option>`).join('')}
+                <option value="SPECIAL">⭐ SPECIAL</option>
             </select>
         </div>
 

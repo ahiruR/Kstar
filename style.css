@@ -368,6 +368,19 @@ button:disabled {
 .card-info-box p { font-size: 10px; color: #ccc; }
 
 /* レアリティ別スタイル（6種） */
+/* LR - 虹色アニメーション（SPECIAL専用・最高レアリティ） */
+.card.LR  {
+    border-color: #00ffcc;
+    box-shadow: 0 0 18px rgba(0,255,204,0.9), 0 0 30px rgba(0,200,255,0.5);
+    animation: lrShimmer 2s infinite alternate;
+}
+.card.LR  .card-rarity { background: linear-gradient(45deg, #00ffcc, #0080ff, #ff00ff); }
+
+@keyframes lrShimmer {
+    from { box-shadow: 0 0 18px rgba(0,255,204,0.9), 0 0 30px rgba(0,200,255,0.5); border-color: #00ffcc; }
+    to   { box-shadow: 0 0 22px rgba(255,0,255,0.9), 0 0 36px rgba(0,255,204,0.5); border-color: #ff00ff; }
+}
+
 .card.UR  { border-color: #ff00ff; box-shadow: 0 0 14px rgba(255,0,255,0.7); }
 .card.UR  .card-rarity { background: linear-gradient(45deg, #ff00ff, #9b59b6); }
 
@@ -978,9 +991,17 @@ select:focus {
     white-space: nowrap;
 }
 
+.gacha-overlay.rarity-flash-LR  { animation: overlayRarityFlashLR 0.6s ease; }
 .gacha-overlay.rarity-flash-UR  { animation: overlayRarityFlash 0.4s ease; }
 .gacha-overlay.rarity-flash-HR  { animation: overlayRarityFlash 0.35s ease; }
 .gacha-overlay.rarity-flash-SSR { animation: overlayRarityFlash 0.3s ease; }
+
+@keyframes overlayRarityFlashLR {
+    0%   { background-color: rgba(10,10,10,0.95); }
+    30%  { background-color: rgba(0,255,204,0.5); }
+    60%  { background-color: rgba(255,0,255,0.5); }
+    100% { background-color: rgba(10,10,10,0.95); }
+}
 
 @keyframes overlayRarityFlash {
     0%, 100% { filter: none; }
