@@ -6,7 +6,18 @@
     margin: 0;
     padding: 0;
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    /* ピンチズーム無効化（念のためCSS側でも） */
+}
+
+/* スクロール可能なコンテナのみ縦スクロール許可。
+   button・card 等インタラクティブ要素には設定しない（長押し・タップが壊れるため）*/
+.main-content,
+#auth-screen,
+.modal-content,
+.gacha-animation-box,
+.gacha-result-container,
+#card-select-overlay,
+#swap-overlay,
+#swap-overlay-forced {
     touch-action: pan-y;
 }
 
@@ -24,12 +35,12 @@ body {
     width: 100%;
     max-width: 420px;
     height: 100vh;
-    max-height: 850px;
+    max-height: 100vh;    /* 850px固定をやめてviewport高さに合わせる */
     background-color: #1a1a1a;
     position: relative;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow: hidden;     /* 外側はhiddenのまま、内側のmain-contentでスクロール */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
 }
 
@@ -46,6 +57,9 @@ body {
     flex-direction: column;
     padding: 24px;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    min-height: 0;
 }
 
 #auth-screen {
@@ -191,8 +205,11 @@ button:disabled {
 .main-content {
     flex: 1;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
     padding: 16px;
     padding-bottom: 80px;
+    min-height: 0; /* flexboxでスクロールが効くために必須 */
 }
 
 .tab-content {
@@ -377,11 +394,15 @@ button:disabled {
     top: 0; left: 0;
     width: 100%; height: 100%;
     background-color: rgba(10, 10, 10, 0.95);
-    z-index: 1000;
+    z-index: 1200;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* justify-content:center を外してスクロール可能に */
+    justify-content: flex-start;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
     padding: 20px;
     opacity: 0;
     pointer-events: none;
@@ -390,6 +411,14 @@ button:disabled {
 
 .gacha-overlay.active {
     opacity: 1;
+    pointer-events: none; /* カード以外のタッチを通過させる */
+}
+
+/* カード・ボタン等インタラクティブ要素だけpointer-eventsを有効化 */
+.gacha-overlay.active .gacha-animation-box,
+.gacha-overlay.active button,
+.gacha-overlay.active .card,
+.gacha-overlay.active .gacha-card-reveal {
     pointer-events: auto;
 }
 
@@ -399,7 +428,8 @@ button:disabled {
     align-items: center;
     width: 100%;
     max-width: 400px;
-    padding: 20px;
+    padding: 20px 20px 60px 20px; /* 下にパディングを多めに取りボタンが見切れないように */
+    min-height: 100%;
 }
 
 .gacha-result-container {
@@ -440,8 +470,8 @@ button:disabled {
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.8);
-    z-index: 500;
+    background-color: rgba(0,0,0,0.85);
+    z-index: 3000;   /* ガチャ(1000)・カード選択(800)より必ず上 */
     display: flex;
     align-items: center;
     justify-content: center;

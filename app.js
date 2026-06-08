@@ -33,8 +33,9 @@ const MAX_PACKS = 2;          // 最大ストック数
 const PACK_INTERVAL_MS = 12 * 60 * 60 * 1000; // 12時間
 const FIELD_SLOTS = 3;
 const BENCH_SLOTS = 2;
-const BATTLE_DECK_SIZE = 5;
-const GROUP_PACK_GROUPS = ['IVE', 'TWICE', 'NewJeans', 'aespa', 'LE SSERAFIM'];
+const BATTLE_DECK_SIZE = 5;   // バトルに持ち込む枚数（場3+ベンチ2）
+const DECK_MAX = 10;          // デッキ編成最大枚数
+const GROUP_PACK_GROUPS = ['IVE', 'TWICE', 'NewJeans', 'aespa', 'LE SSERAFIM', 'BLACKPINK', 'NiziU', 'BABYMONSTER', 'ILLIT', 'MISAMO'];
 
 let isSkillMode = false;
 let logoutClickCount = 0;
@@ -392,6 +393,7 @@ function showGachaAnimation(cards) {
 
     closeBtn.classList.add('hidden');
     overlay.classList.add('active');
+    overlay.scrollTop = 0; // 開く時は先頭へ
     resultDisplay.innerHTML = `<div class="pack-animation">K-POP PACK</div>`;
     if (effectZone) {
         effectZone.innerHTML = `<div class="gacha-opening-text" style="color:${packMeta.color}">${packMeta.opening}</div>`;
@@ -409,10 +411,78 @@ function showGachaAnimation(cards) {
             cumulative += meta.delay;
             setTimeout(() => revealGachaCard(card, resultDisplay, overlay), cumulative);
             if (index === cards.length - 1) {
-                setTimeout(() => closeBtn.classList.remove('hidden'), cumulative + 400);
+                setTimeout(() => {
+                    closeBtn.classList.remove('hidden');
+                    // 全カード表示後、閉じるボタンが見えるよう一番下までスクロール
+                    overlay.scrollTop = overlay.scrollHeight;
+                }, cumulative + 400);
             }
         });
     }, 1000);
+}
+
+// ガチャ結果画面内カード詳細ポップアップ（オーバーレイ内に表示するため z-index 問題を回避）
+function showGachaCardDetail(card, overlayEl) {
+    const existing = overlayEl.querySelector('#gacha-card-detail-popup');
+    if (existing) existing.remove();
+
+    const popup = document.createElement('div');
+    popup.id = 'gacha-card-detail-popup';
+    popup.style.cssText = `
+        position:fixed; top:50%; left:50%; transform:translate(-50%,-50%);
+        background:#222; border:1px solid #444; border-radius:14px;
+        padding:20px; width:88%; max-width:320px;
+        box-shadow:0 8px 32px rgba(0,0,0,0.9);
+        z-index:9999;
+        text-align:center;
+    `;
+
+    const rarityColors = { UR:'#ff00ff', HR:'#ff6600', SSR:'#ffcc00', SR:'#bf5af2', R:'#0a84ff', N:'#888' };
+    const col = rarityColors[card.rarity] || '#888';
+
+    const cardPreview = document.createElement('div');
+    cardPreview.className = `card ${card.rarity}`;
+    cardPreview.style.cssText = `width:120px;height:168px;margin:0 auto 12px;flex-shrink:0;background-size:cover;background-position:center;`;
+    if (card.img) cardPreview.style.backgroundImage = `url(${card.img})`;
+    cardPreview.innerHTML = `<div class="card-rarity">${card.rarity}</div>`;
+
+    const skillHTML = (card.rarity === 'UR' && card.skill)
+        ? `<div style="background:#1e1e1e;border:1px solid #333;border-radius:8px;padding:8px;margin-top:8px;text-align:left;">
+               <p style="font-size:12px;color:#ff477e;font-weight:bold;margin-bottom:4px;">✨ 必殺技【${card.skill.name}】</p>
+               <p style="font-size:11px;color:#aaa;">${card.skill.desc}</p>
+           </div>`
+        : '';
+
+    popup.innerHTML = `
+        <p style="font-size:16px;font-weight:bold;color:${col};margin-bottom:4px;">${card.name}</p>
+        <p style="font-size:12px;color:#aaa;margin-bottom:12px;">${card.group} [<span style="color:${col}">${card.rarity}</span>]</p>
+    `;
+    popup.insertBefore(cardPreview, popup.firstChild);
+
+    const stats = document.createElement('div');
+    stats.style.cssText = 'background:#1e1e1e;border:1px solid #333;border-radius:8px;padding:8px;margin-top:8px;text-align:left;';
+    stats.innerHTML = `<p style="font-size:13px;line-height:1.8;">❤️ HP: ${card.hp}<br>⚔️ ATK: ${card.atk}</p>`;
+    popup.appendChild(stats);
+
+    if (skillHTML) {
+        const skillDiv = document.createElement('div');
+        skillDiv.innerHTML = skillHTML;
+        popup.appendChild(skillDiv.firstChild);
+    }
+
+    const closeBtn = document.createElement('button');
+    closeBtn.textContent = '閉じる';
+    closeBtn.style.cssText = 'margin-top:14px;width:100%;padding:10px;background:linear-gradient(45deg,#ff477e,#ff758f);border:none;border-radius:8px;color:#fff;font-weight:bold;cursor:pointer;font-size:14px;';
+    closeBtn.addEventListener('click', (e) => { e.stopPropagation(); popup.remove(); });
+    popup.appendChild(closeBtn);
+
+    // オーバーレイ外タップで閉じる用の背景
+    const backdrop = document.createElement('div');
+    backdrop.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;z-index:9998;';
+    backdrop.addEventListener('click', () => { popup.remove(); backdrop.remove(); });
+
+    document.body.appendChild(backdrop);
+    document.body.appendChild(popup);
 }
 
 function revealGachaCard(card, container, overlay) {
@@ -432,6 +502,10 @@ function revealGachaCard(card, container, overlay) {
     wrap.appendChild(label);
 
     const cardEl = createCardElement(card);
+    addLongPress(cardEl, () => showGachaCardDetail(card, overlay));
+    cardEl.addEventListener('click', () => {
+        if (!wrap.classList.contains('is-shown')) return;
+    });
     wrap.appendChild(cardEl);
     container.appendChild(wrap);
 
@@ -464,11 +538,7 @@ function initQuizGroupSelect() {
             <label style="font-size:12px;color:#aaa;margin-right:6px;">グループ:</label>
             <select id="quiz-group-select" style="flex:1;padding:6px;font-size:12px;background:#252525;border:1px solid #333;color:#fff;border-radius:6px;">
                 <option value="MY_OSHI">🌟自分の推しグループ</option>
-                <option value="IVE">IVE</option>
-                <option value="aespa">aespa</option>
-                <option value="NewJeans">NewJeans</option>
-                <option value="TWICE">TWICE</option>
-                <option value="LE SSERAFIM">LE SSERAFIM</option>
+                ${GROUP_PACK_GROUPS.map(g => `<option value="${g}">${g}</option>`).join('')}
             </select>
         </div>`;
 
@@ -606,11 +676,7 @@ function setupFilterEventListeners() {
             </select>
             <select id="col-filter-group" style="flex:1;padding:6px;font-size:11px;background:#252525;border:1px solid #333;color:#fff;border-radius:6px;">
                 <option value="ALL">🎤 全グループ</option>
-                <option value="IVE">IVE</option>
-                <option value="TWICE">TWICE</option>
-                <option value="NewJeans">NewJeans</option>
-                <option value="aespa">aespa</option>
-                <option value="LE SSERAFIM">LE SSERAFIM</option>
+                ${GROUP_PACK_GROUPS.map(g => `<option value="${g}">${g}</option>`).join('')}
             </select>
         </div>
         <select id="col-sort-type" style="width:100%;padding:6px;font-size:11px;background:#2d2d2d;border:1px solid #333;color:#fff;border-radius:6px;">
@@ -797,7 +863,7 @@ function openCardDetailModal(card, options = {}) {
                 gameState.currentUser.deck = gameState.currentUser.deck.filter(id => id !== card.id);
                 alert('デッキから外しました。');
             } else {
-                if (gameState.currentUser.deck.length >= 6) { alert('デッキは最大6枚です！'); return; }
+                if (gameState.currentUser.deck.length >= DECK_MAX) { alert(`デッキは最大${DECK_MAX}枚です！`); return; }
                 gameState.currentUser.deck.push(card.id);
                 alert('デッキに編成しました！');
             }
@@ -967,7 +1033,7 @@ function initBattleSetup() {
         setupZone.innerHTML = `
             <div style="text-align:center;padding:30px 15px;color:#aaa;">
                 <p style="font-weight:bold;font-size:14px;color:#ff477e;margin-bottom:10px;">⚠️ デッキが不足しています</p>
-                <p style="font-size:12px;line-height:1.6;">対戦にはデッキを<b>${BATTLE_DECK_SIZE}枚</b>編成してください（現在: ${userDeckIds.length}枚）</p>
+                <p style="font-size:12px;line-height:1.6;">対戦にはデッキを<b>${BATTLE_DECK_SIZE}枚以上</b>編成してください（現在: ${userDeckIds.length}枚／最大${DECK_MAX}枚）</p>
             </div>`;
         return;
     }
@@ -1001,10 +1067,11 @@ function startBattle() {
     if (!u) return;
     const fullDeck = u.deck.map(id => u.collection.find(c => c.id === id)).filter(Boolean);
     if (fullDeck.length < BATTLE_DECK_SIZE) {
-        alert(`バトルにはデッキ${BATTLE_DECK_SIZE}枚が必要です。`);
+        alert(`バトルにはデッキ${BATTLE_DECK_SIZE}枚以上が必要です。`);
         return;
     }
-    showBattleFormationSelect(fullDeck.slice(0, BATTLE_DECK_SIZE), (formation) => {
+    // デッキ全枚数（最大DECK_MAX）からバトルに持ち込む5枚を選ぶ
+    showBattleFormationSelect(fullDeck, (formation) => {
         beginCpuBattle(u, formation);
     });
 }
@@ -1020,7 +1087,7 @@ function showBattleFormationSelect(deck5, callback) {
     const overlay = document.createElement('div');
     overlay.id = 'card-select-overlay';
     overlay.className = 'card-select-overlay';
-    overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);z-index:800;display:flex;flex-direction:column;padding:16px;overflow-y:auto;';
+    overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);z-index:800;display:flex;flex-direction:column;padding:16px;overflow-y:auto;touch-action:pan-y;-webkit-overflow-scrolling:touch;';
 
     const statusEl = document.createElement('p');
     statusEl.style.cssText = 'font-size:12px;color:#aaa;text-align:center;margin-bottom:10px;';
@@ -1034,7 +1101,8 @@ function showBattleFormationSelect(deck5, callback) {
     };
 
     overlay.innerHTML = `
-        <h2 style="color:#ff477e;font-size:15px;text-align:center;margin-bottom:6px;">編成（場3＋ベンチ2）</h2>`;
+        <h2 style="color:#ff477e;font-size:15px;text-align:center;margin-bottom:4px;">出陣カードを選択（${FIELD_SLOTS}＋${BENCH_SLOTS}枚）</h2>
+        <p style="font-size:11px;color:#888;text-align:center;margin-bottom:6px;">デッキ${deck5.length}枚から場${FIELD_SLOTS}体＋ベンチ${BENCH_SLOTS}体を選ぶ</p>`;
     overlay.appendChild(statusEl);
     const grid = document.createElement('div');
     grid.id = 'card-select-grid';
@@ -1285,7 +1353,7 @@ function showSwapBenchUI() {
 
     const overlay = document.createElement('div');
     overlay.id = 'swap-overlay';
-    overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:900;display:flex;flex-direction:column;padding:20px;overflow-y:auto;';
+    overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:900;display:flex;flex-direction:column;padding:20px;overflow-y:auto;touch-action:pan-y;-webkit-overflow-scrolling:touch;';
     overlay.innerHTML = `
         <h2 style="color:#4cd964;font-size:15px;text-align:center;">交換する場のスロットを選ぶ</h2>
         <p style="font-size:11px;color:#aaa;text-align:center;margin:12px 0;">場のスロット → ベンチのカード</p>
@@ -1330,6 +1398,32 @@ function showSwapBenchUI() {
     document.getElementById('swap-cancel').addEventListener('click', () => overlay.remove());
 }
 
+// 場＋ベンチ全カードが同じグループかチェック
+function isFullTeamSameGroup(player) {
+    const allCards = [...player.field, ...player.bench].filter(c => c && isCardAlive(c));
+    if (allCards.length <= 1) return false;
+    const g = allCards[0].group;
+    return allCards.every(c => c.group === g);
+}
+
+// 攻撃ダメージにチーム補正を適用
+function applyTeamBonus(attacker, baseDmg, player) {
+    const u = gameState.currentUser;
+    let dmg = baseDmg;
+    let log = '';
+    // 推し補正1.2倍
+    if (u && attacker.group === u.oshiGroup) {
+        dmg = Math.floor(dmg * 1.2);
+        log += '✨ 推し補正1.2倍！<br>';
+    }
+    // 全チーム統一補正1.1倍
+    if (isFullTeamSameGroup(player)) {
+        dmg = Math.floor(dmg * 1.1);
+        log += `🤝 全チーム[${attacker.group}]補正1.1倍！<br>`;
+    }
+    return { dmg, log };
+}
+
 async function executePlayerAction(attackerIdx, targetIdx) {
     if (battleFxLocked) return;
     const bState = gameState.battle;
@@ -1338,69 +1432,434 @@ async function executePlayerAction(attackerIdx, targetIdx) {
     if (!attacker || !target || !isCardAlive(attacker) || !isCardAlive(target)) return;
 
     battleFxLocked = true;
-    let damage = attacker.atk;
     let logMsg = '';
     let fxKind = 'attack';
     let skillName = null;
-    const u = gameState.currentUser;
-    if (u && attacker.group === u.oshiGroup) {
-        damage = Math.floor(damage * 1.2);
-        logMsg += '✨ 推し補正！<br>';
-    }
+    let actualDmg = 0;
 
     if (isSkillMode && attacker.rarity === 'UR' && attacker.skill) {
         const skill = attacker.skill;
         fxKind = 'skill';
         skillName = skill.name;
-        if (skill.type === 'attack') {
-            damage = skill.value;
-            logMsg += `🌟 必殺技【${skill.name}】！<br>`;
-        } else if (skill.type === 'heal') {
-            logMsg += `💚 必殺技でHP+${skill.value}！<br>`;
-            damage = 0;
-        } else if (skill.type === 'defense') {
-            attacker._shield = (attacker._shield || 0) + skill.value;
-            logMsg += `🛡️ 必殺技でシールド+${skill.value}！<br>`;
-            damage = 0;
-        }
+        logMsg += `🌟 必殺技【${skill.name}】発動！<br>`;
         bState.p1.usedSkills.add(attacker.id);
         isSkillMode = false;
+
+        switch (skill.type) {
+            case 'atk1': {
+                // 特定の敵1体に固定ダメージ
+                const { dmg, log } = applyTeamBonus(attacker, skill.value, bState.p1);
+                logMsg += log;
+                const sh = target._shield || 0;
+                const d = Math.max(0, dmg - sh);
+                target._shield = Math.max(0, sh - dmg);
+                target.hp -= d; actualDmg = d;
+                logMsg += `💥 [${target.name}] に ${d} ダメージ！`;
+                break;
+            }
+            case 'atk2': {
+                // 相手バトル場全体に25ダメージ
+                logMsg += '💥 相手バトル場全体攻撃！<br>';
+                bState.p2.field.forEach(c => {
+                    if (!c || !isCardAlive(c)) return;
+                    const sh = c._shield || 0;
+                    const d = Math.max(0, skill.value - sh);
+                    c._shield = Math.max(0, sh - skill.value);
+                    c.hp -= d;
+                    logMsg += `[${c.name}]に${d}ダメ `;
+                });
+                actualDmg = skill.value;
+                fxKind = 'attack';
+                break;
+            }
+            case 'heal': {
+                // 自分バトル場全体を20回復
+                logMsg += '💚 自分バトル場全体を回復！<br>';
+                bState.p1.field.forEach(c => {
+                    if (!c || !isCardAlive(c)) return;
+                    const before = c.hp;
+                    c.hp = Math.min(c.hp + skill.value, c.maxHp || c.hp + skill.value);
+                    logMsg += `[${c.name}]+${c.hp - before} `;
+                });
+                actualDmg = skill.value; fxKind = 'heal';
+                break;
+            }
+            case 'heal2': {
+                // 自分1体を60回復
+                const before = attacker.hp;
+                attacker.hp += skill.value;
+                actualDmg = attacker.hp - before;
+                logMsg += `💚 [${attacker.name}]のHPを${actualDmg}回復！`;
+                fxKind = 'heal';
+                break;
+            }
+            case 'defense': {
+                // 自分バトル場全体にシールド
+                bState.p1.field.forEach(c => {
+                    if (!c || !isCardAlive(c)) return;
+                    c._shield = (c._shield || 0) + skill.value;
+                });
+                logMsg += `🛡️ 自分バトル場全体にシールド+${skill.value}！(70未満は完全防御)`;
+                actualDmg = 0; fxKind = 'defense';
+                break;
+            }
+            case 'revival': {
+                // 倒されたカードをHP80で1体復活（キルカウントはそのまま）
+                const deadInBench = bState.p1.bench.findIndex(c => c && !isCardAlive(c));
+                const deadInField = bState.p1.field.findIndex(c => !c || !isCardAlive(c));
+                let revived = false;
+                if (deadInBench >= 0) {
+                    bState.p1.bench[deadInBench].hp = 80;
+                    bState.p1.bench[deadInBench]._shield = 0;
+                    logMsg += `✨ [${bState.p1.bench[deadInBench].name}]をHP80で復活！`;
+                    revived = true;
+                } else if (deadInField >= 0 && bState.p1.field[deadInField]) {
+                    bState.p1.field[deadInField].hp = 80;
+                    bState.p1.field[deadInField]._shield = 0;
+                    logMsg += `✨ [${bState.p1.field[deadInField].name}]をHP80で復活！`;
+                    revived = true;
+                }
+                if (!revived) logMsg += '復活できるカードがいません。';
+                actualDmg = 0; fxKind = 'heal';
+                break;
+            }
+            case 'poison': {
+                // 毒：相手バトル場全体に毎ターン10ダメージを3ターン付与
+                bState.p2.field.forEach(c => {
+                    if (!c || !isCardAlive(c)) return;
+                    c._poison = (c._poison || 0) + 1;
+                });
+                logMsg += `☠️ 相手バトル場全体に毒を付与！3ターン毎ターン10ダメージ！`;
+                actualDmg = 0; fxKind = 'attack';
+                break;
+            }
+            case 'drain': {
+                // 吸収：相手1体にATKダメージ＆そのダメージ分自分を回復
+                const { dmg: drainDmg, log: drainLog } = applyTeamBonus(attacker, attacker.atk, bState.p1);
+                logMsg += drainLog;
+                const drainSh = target._shield || 0;
+                const drainActual = Math.max(0, drainDmg - drainSh);
+                target._shield = Math.max(0, drainSh - drainDmg);
+                target.hp -= drainActual;
+                attacker.hp += drainActual;
+                actualDmg = drainActual;
+                logMsg += `🩸 吸収！[${target.name}]に${drainActual}ダメージ→[${attacker.name}]が${drainActual}回復！`;
+                break;
+            }
+            case 'timelock': {
+                // 封印：相手バトル場でHPが最も低い敵を1ターン行動不能に
+                const weakest = bState.p2.field
+                    .map((c, i) => ({ c, i }))
+                    .filter(x => x.c && isCardAlive(x.c))
+                    .sort((a, b) => a.c.hp - b.c.hp)[0];
+                if (weakest) {
+                    weakest.c._sealed = 1;
+                    logMsg += `⏳ 封印！[${weakest.c.name}]を次のターン行動不能に！`;
+                } else {
+                    logMsg += '対象なし';
+                }
+                actualDmg = 0; fxKind = 'attack';
+                break;
+            }
+            case 'reflect': {
+                // 反射：次に受けるダメージを攻撃者に跳ね返すマークを自分全体に付与
+                bState.p1.field.forEach(c => {
+                    if (!c || !isCardAlive(c)) return;
+                    c._reflect = true;
+                });
+                logMsg += `🪞 反射！次に攻撃してきた敵にダメージを跳ね返す！`;
+                actualDmg = 0; fxKind = 'defense';
+                break;
+            }
+            case 'lifelink': {
+                // 生命共鳴：自分の場全員のHPを平均値に統一
+                const alive = bState.p1.field.filter(isCardAlive);
+                if (alive.length > 1) {
+                    const avg = Math.floor(alive.reduce((s, c) => s + c.hp, 0) / alive.length);
+                    alive.forEach(c => { c.hp = avg; });
+                    logMsg += `💫 生命共鳴！場のHP平均${avg}に統一！`;
+                } else {
+                    logMsg += '効果なし（カードが1体以下）';
+                }
+                actualDmg = 0; fxKind = 'heal';
+                break;
+            }
+            case 'counter': {
+                // カウンター：相手の場で最もHPが高い敵に attacker.atk×2 ダメージ
+                const strongest = bState.p2.field
+                    .map((c, i) => ({ c, i }))
+                    .filter(x => x.c && isCardAlive(x.c))
+                    .sort((a, b) => b.c.hp - a.c.hp)[0];
+                if (strongest) {
+                    const { dmg, log } = applyTeamBonus(attacker, attacker.atk * 2, bState.p1);
+                    logMsg += log;
+                    const sh = strongest.c._shield || 0;
+                    const d = Math.max(0, dmg - sh);
+                    strongest.c._shield = Math.max(0, sh - dmg);
+                    strongest.c.hp -= d; actualDmg = d;
+                    logMsg += `🎯 カウンター！最強の敵[${strongest.c.name}]に${d}ダメージ！`;
+                } else {
+                    logMsg += '対象なし';
+                }
+                break;
+            }
+            case 'encore': {
+                // アンコール：このターン終了後、もう1ターン連続行動できる
+                bState._encoreTurn = true;
+                logMsg += `🎤 アンコール！もう1回行動できる！`;
+                actualDmg = 0; fxKind = 'heal';
+                break;
+            }
+            // =========================================
+            // 新規17種
+            // =========================================
+            case 'burst': {
+                // 爆発：自分のATK×3の大ダメージを与えるが、自分も自分のATK分のダメージを受ける
+                const { dmg: burstDmg, log: burstLog } = applyTeamBonus(attacker, attacker.atk * 3, bState.p1);
+                logMsg += burstLog;
+                const burstSh = target._shield || 0;
+                const burstActual = Math.max(0, burstDmg - burstSh);
+                target._shield = Math.max(0, burstSh - burstDmg);
+                target.hp -= burstActual;
+                attacker.hp -= attacker.atk; // 自分もダメージ
+                actualDmg = burstActual;
+                logMsg += `💣 爆発！[${target.name}]に${burstActual}ダメージ！でも[${attacker.name}]も${attacker.atk}のダメージ！`;
+                break;
+            }
+            case 'snipe': {
+                // 狙撃：相手のベンチ含む全カードの中で最もHPが低いカードに75ダメージ
+                const allEnemy = [...bState.p2.field, ...bState.p2.bench].filter(c => c && isCardAlive(c));
+                const snipeTarget = allEnemy.sort((a, b) => a.hp - b.hp)[0];
+                if (snipeTarget) {
+                    snipeTarget.hp -= skill.value;
+                    actualDmg = skill.value;
+                    logMsg += `🎯 狙撃！最もHPが低い[${snipeTarget.name}]に${skill.value}ダメージ（ベンチも対象）！`;
+                }
+                break;
+            }
+            case 'quake': {
+                // 地震：相手の場＋ベンチ全体に15ダメージ
+                let quakeTargets = [...bState.p2.field, ...bState.p2.bench].filter(c => c && isCardAlive(c));
+                quakeTargets.forEach(c => { c.hp -= skill.value; });
+                actualDmg = skill.value;
+                logMsg += `🌍 地震！相手全員（場＋ベンチ）に${skill.value}ダメージ！`;
+                break;
+            }
+            case 'blizzard': {
+                // 吹雪：相手バトル場全体を2ターン凍結（行動不能）
+                bState.p2.field.forEach(c => { if (c && isCardAlive(c)) c._sealed = 2; });
+                logMsg += `❄️ 吹雪！相手バトル場全体を2ターン凍結！`;
+                actualDmg = 0; fxKind = 'attack';
+                break;
+            }
+            case 'curse': {
+                // 呪い：相手バトル場全体のATKを半分にする（永続）
+                bState.p2.field.forEach(c => { if (c && isCardAlive(c)) c.atk = Math.floor(c.atk / 2); });
+                logMsg += `🔮 呪い！相手バトル場全体のATKを半分に！`;
+                actualDmg = 0; fxKind = 'attack';
+                break;
+            }
+            case 'swap': {
+                // 入替：相手バトル場の先頭とベンチの先頭を強制交換
+                if (bState.p2.bench.length > 0 && bState.p2.field.length > 0) {
+                    const swapIdx = bState.p2.field.findIndex(c => c && isCardAlive(c));
+                    const swapBench = bState.p2.bench.findIndex(c => c && isCardAlive(c));
+                    if (swapIdx >= 0 && swapBench >= 0) {
+                        [bState.p2.field[swapIdx], bState.p2.bench[swapBench]] = [bState.p2.bench[swapBench], bState.p2.field[swapIdx]];
+                        logMsg += `🔀 入替！相手の[${bState.p2.field[swapIdx].name}]を強制的にベンチへ、[${bState.p2.bench[swapBench].name}]が場に！`;
+                    }
+                } else { logMsg += '入替対象がいません。'; }
+                actualDmg = 0; fxKind = 'attack';
+                break;
+            }
+            case 'clone': {
+                // 分身：このターン攻撃を2回行う（通常攻撃をもう1回）
+                const { dmg: cloneDmg, log: cloneLog } = applyTeamBonus(attacker, attacker.atk, bState.p1);
+                logMsg += cloneLog;
+                const cloneSh = target._shield || 0;
+                const cloneActual = Math.max(0, cloneDmg - cloneSh);
+                target._shield = Math.max(0, cloneSh - cloneDmg);
+                target.hp -= cloneActual;
+                actualDmg = cloneActual;
+                logMsg += `👥 分身！[${target.name}]に${cloneActual}の追加攻撃！（計2回攻撃）`;
+                break;
+            }
+            case 'shield_break': {
+                // 鎧砕き：相手バトル場全体のシールドを無効化＆ATK分のダメージ
+                bState.p2.field.forEach(c => { if (c && isCardAlive(c)) { c._shield = 0; c._reflect = false; } });
+                const { dmg: sbDmg } = applyTeamBonus(attacker, attacker.atk, bState.p1);
+                const sbSh = target._shield || 0;
+                const sbActual = Math.max(0, sbDmg - sbSh);
+                target.hp -= sbActual; actualDmg = sbActual;
+                logMsg += `⚒️ 鎧砕き！相手の防御を全解除＆[${target.name}]に${sbActual}ダメージ！`;
+                break;
+            }
+            case 'berserker': {
+                // 狂戦士：自分のHPが50%以下なら攻撃力2倍、それ以外は1.5倍
+                const maxHp = attacker.maxHp || attacker.hp;
+                const mult = attacker.hp <= maxHp * 0.5 ? 2.0 : 1.5;
+                const { dmg: bsDmg, log: bsLog } = applyTeamBonus(attacker, Math.floor(attacker.atk * mult), bState.p1);
+                logMsg += bsLog;
+                const bsSh = target._shield || 0;
+                const bsActual = Math.max(0, bsDmg - bsSh);
+                target._shield = Math.max(0, bsSh - bsDmg);
+                target.hp -= bsActual; actualDmg = bsActual;
+                logMsg += `😤 狂戦士(${mult}倍)！[${target.name}]に${bsActual}ダメージ！`;
+                break;
+            }
+            case 'last_stand': {
+                // 瀕死の一撃：自分のHPが10以下なら150ダメージ、そうでなければ30ダメージ
+                const lsDmg = attacker.hp <= 10 ? 150 : 30;
+                const lsSh = target._shield || 0;
+                const lsActual = Math.max(0, lsDmg - lsSh);
+                target._shield = Math.max(0, lsSh - lsDmg);
+                target.hp -= lsActual; actualDmg = lsActual;
+                logMsg += attacker.hp <= 10
+                    ? `💀 瀕死の一撃！[${target.name}]に${lsActual}の大ダメージ！`
+                    : `💀 瀕死の一撃（HP十分）[${target.name}]に${lsActual}ダメージ`;
+                break;
+            }
+            case 'sacrifice': {
+                // 犠牲：自分を倒す代わりに相手バトル場全体に100ダメージ
+                attacker.hp = 0;
+                bState.p2.field.forEach(c => { if (c && isCardAlive(c)) c.hp -= skill.value; });
+                actualDmg = skill.value;
+                logMsg += `💔 犠牲！[${attacker.name}]が自らを犠牲に相手全体に${skill.value}ダメージ！`;
+                break;
+            }
+            case 'chain': {
+                // 連鎖：相手バトル場の全カードに順番に攻撃（ダメージが減衰：1体目100%→2体目60%→3体目30%）
+                const chainRates = [1.0, 0.6, 0.3];
+                let chainLog = '⛓️ 連鎖攻撃！ ';
+                bState.p2.field.forEach((c, i) => {
+                    if (!c || !isCardAlive(c)) return;
+                    const { dmg: cDmg } = applyTeamBonus(attacker, Math.floor(attacker.atk * (chainRates[i] || 0.2)), bState.p1);
+                    const cSh = c._shield || 0;
+                    const cActual = Math.max(0, cDmg - cSh);
+                    c._shield = Math.max(0, cSh - cDmg);
+                    c.hp -= cActual;
+                    chainLog += `[${c.name}]:${cActual} `;
+                });
+                logMsg += chainLog; actualDmg = attacker.atk;
+                break;
+            }
+            case 'gravity': {
+                // 重力：相手バトル場全体の移動を禁止（ベンチ交換できなくなる）2ターン
+                bState.p2._gravityTurn = 2;
+                logMsg += `🌑 重力！相手は2ターンベンチ交換不能！`;
+                actualDmg = 0; fxKind = 'attack';
+                break;
+            }
+            case 'overload': {
+                // オーバーロード：自分の全カードのATKを+10（永続）するが自分全体に10ダメージ
+                bState.p1.field.forEach(c => { if (c && isCardAlive(c)) { c.atk += 10; c.hp -= 10; } });
+                bState.p1.bench.forEach(c => { if (c && isCardAlive(c)) c.atk += 10; });
+                logMsg += `⚡ オーバーロード！自分全カードATK+10！でも場のカードに10ダメージ！`;
+                actualDmg = 0; fxKind = 'attack';
+                break;
+            }
+            case 'mirror': {
+                // 鏡写し：相手の最後の攻撃ダメージを相手にそのまま返す
+                const lastDmg = bState._lastEnemyDmg || 20;
+                const mirSh = target._shield || 0;
+                const mirActual = Math.max(0, lastDmg - mirSh);
+                target._shield = Math.max(0, mirSh - lastDmg);
+                target.hp -= mirActual; actualDmg = mirActual;
+                logMsg += `🪞 鏡写し！相手の前回ダメージ${lastDmg}を[${target.name}]に返した！`;
+                break;
+            }
+            case 'regen': {
+                // 再生：自分のバトル場全体に毎ターン+15HPの再生効果を3ターン付与
+                bState.p1.field.forEach(c => { if (c && isCardAlive(c)) c._regen = (c._regen || 0) + 1; });
+                logMsg += `🌿 再生！自分バトル場全体に3ターン間毎ターン15HP回復！`;
+                actualDmg = 0; fxKind = 'heal';
+                break;
+            }
+            case 'rampage': {
+                // 暴走：ATK×2で相手全体を攻撃するが対象がランダム（自分の場に当たることも）
+                const allTargets = [
+                    ...bState.p2.field.filter(c => c && isCardAlive(c)).map(c => ({ c, side: 'enemy' })),
+                    ...bState.p1.field.filter(c => c && isCardAlive(c)).map(c => ({ c, side: 'ally' }))
+                ];
+                if (allTargets.length > 0) {
+                    const { dmg: rDmg } = applyTeamBonus(attacker, attacker.atk * 2, bState.p1);
+                    const rTarget = allTargets[Math.floor(Math.random() * allTargets.length)];
+                    const rSh = rTarget.c._shield || 0;
+                    const rActual = Math.max(0, rDmg - rSh);
+                    rTarget.c._shield = Math.max(0, rSh - rDmg);
+                    rTarget.c.hp -= rActual; actualDmg = rActual;
+                    logMsg += `🌀 暴走！${rTarget.side === 'ally' ? '⚠️味方' : '敵'}[${rTarget.c.name}]に${rActual}ダメージ！`;
+                }
+                break;
+            }
+            default: {
+                // 旧来の attack/heal/defense フォールバック
+                if (skill.type === 'attack') {
+                    const { dmg, log } = applyTeamBonus(attacker, skill.value, bState.p1);
+                    logMsg += log;
+                    const sh = target._shield || 0;
+                    const d = Math.max(0, dmg - sh);
+                    target._shield = Math.max(0, sh - dmg); target.hp -= d; actualDmg = d;
+                    logMsg += `💥 [${target.name}] に ${d} ダメージ！`;
+                } else if (skill.type === 'heal') {
+                    attacker.hp += skill.value; actualDmg = skill.value; fxKind = 'heal';
+                    logMsg += `💚 HP+${skill.value}！`;
+                } else if (skill.type === 'defense') {
+                    attacker._shield = (attacker._shield || 0) + skill.value; actualDmg = 0;
+                    logMsg += `🛡️ シールド+${skill.value}！`;
+                }
+            }
+        }
+    } else {
+        // 通常攻撃
+        isSkillMode = false;
+        const { dmg, log } = applyTeamBonus(attacker, attacker.atk, bState.p1);
+        logMsg += log;
+        const sh = target._shield || 0;
+        actualDmg = Math.max(0, dmg - sh);
+        target._shield = Math.max(0, sh - dmg);
+
+        // 反射チェック
+        if (target._reflect) {
+            delete target._reflect;
+            attacker.hp -= actualDmg;
+            logMsg += `🪞 反射！${actualDmg}ダメージが[${attacker.name}]に跳ね返った！`;
+            actualDmg = 0;
+        } else {
+            target.hp -= actualDmg;
+            logMsg += `💥 [${attacker.name}] → [${target.name}] に ${actualDmg} ダメージ！`;
+        }
+        bState._lastPlayerDmg = actualDmg; // mirror用に記録
     }
 
-    let actualDmg = 0;
-    if (damage > 0 && fxKind !== 'heal') {
-        const shield = target._shield || 0;
-        actualDmg = Math.max(0, damage - shield);
-        target._shield = Math.max(0, shield - damage);
-        target.hp -= actualDmg;
-        logMsg += `💥 [${attacker.name}] → [${target.name}] に ${actualDmg} ダメージ！`;
-    } else if (fxKind === 'skill' && attacker.skill?.type === 'heal') {
-        attacker.hp += attacker.skill.value;
-        actualDmg = attacker.skill.value;
-        fxKind = 'heal';
-    }
-
-    const fxTargetPlayer = fxKind === 'heal' ? 'p1' : 'p2';
-    const fxTargetIdx = fxKind === 'heal' ? attackerIdx : targetIdx;
+    const fxTargetPlayer = fxKind === 'heal' || fxKind === 'defense' ? 'p1' : 'p2';
+    const fxTargetIdx = fxKind === 'heal' || fxKind === 'defense' ? attackerIdx : targetIdx;
 
     await playBattleActionFx({
-        attackerPlayer: 'p1',
-        attackerIdx,
-        targetPlayer: fxTargetPlayer,
-        targetIdx: fxTargetIdx,
-        damage: actualDmg,
-        kind: fxKind,
-        bannerText: fxKind === 'skill' ? `✨ ${skillName}` : fxKind === 'heal' ? '💚 回復！' : '⚔️ 攻撃！',
+        attackerPlayer: 'p1', attackerIdx,
+        targetPlayer: fxTargetPlayer, targetIdx: fxTargetIdx,
+        damage: actualDmg, kind: fxKind,
+        bannerText: skillName ? `✨ ${skillName}` : fxKind === 'heal' ? '💚 回復！' : fxKind === 'defense' ? '🛡️ 防御！' : '⚔️ 攻撃！',
         skillName
     });
 
     document.getElementById('battle-field-log').innerHTML = logMsg;
     bState.attackerFieldIdx = null;
     bState.actionStep = null;
-    processFaintForPlayer(bState.p2, true);   // p2が倒れた = p1のキル
-    processFaintForPlayer(bState.p1, false);  // p1が倒れた = p2のキル
+    processFaintForPlayer(bState.p2, true);
+    processFaintForPlayer(bState.p1, false);
     battleFxLocked = false;
     if (checkBattleEnd()) return;
+
+    // アンコール処理：もう1ターン自分のターンを続ける
+    if (bState._encoreTurn) {
+        bState._encoreTurn = false;
+        bState.actionStep = 'pick_attacker';
+        document.getElementById('battle-field-log').innerHTML += '<br>🎤 アンコール！もう1回攻撃どうぞ！';
+        updateBattleUI();
+        return;
+    }
+
     switchTurn();
 }
 
@@ -1443,9 +1902,10 @@ function checkBattleEnd() {
         const today = new Date().toDateString();
         if (u && u.lastBattleMissionDate !== today) {
             u.lastBattleMissionDate = today;
-            u.bonusPackStock = (u.bonusPackStock ?? 0) + 1;
+            // packStock に直接加算（上限MAX_PACKS）
+            u.packStock = Math.min((u.packStock ?? 0) + 1, MAX_PACKS);
             saveUserData();
-            alert(`🎉 勝利！(${p1Kills}体撃破)\nデイリーミッション達成！特典パックを1個ストックに追加！`);
+            alert(`🎉 勝利！(${p1Kills}体撃破)\nデイリーミッション達成！パックを1個ストックに追加しました！`);
         } else {
             alert(`🎉 あなたの勝利！(${p1Kills}体撃破)`);
         }
@@ -1491,12 +1951,76 @@ async function executeCPUTurn() {
     const useSkill = Math.random() < 0.25 && attacker.rarity === 'UR' && attacker.skill && !bState.p2.usedSkills.has(attacker.id);
     if (useSkill) {
         const skill = attacker.skill;
-        fxKind = 'skill';
-        skillName = skill.name;
-        if (skill.type === 'attack') damage = skill.value;
-        else damage = Math.floor(damage * 1.5);
+        fxKind = 'skill'; skillName = skill.name;
         bState.p2.usedSkills.add(attacker.id);
         logMsg += `👑 CPU必殺技【${skill.name}】！<br>`;
+        switch (skill.type) {
+            case 'atk1': damage = skill.value; break;
+            case 'atk2':
+                bState.p1.field.forEach(c => { if(c&&isCardAlive(c)){const sh=c._shield||0;const d=Math.max(0,skill.value-sh);c._shield=Math.max(0,sh-skill.value);c.hp-=d;} });
+                damage = 0; break;
+            case 'heal':
+                bState.p2.field.forEach(c => { if(c&&isCardAlive(c))c.hp+=skill.value; });
+                damage = 0; fxKind='heal'; break;
+            case 'heal2': attacker.hp+=skill.value; damage=0; fxKind='heal'; break;
+            case 'defense':
+                bState.p2.field.forEach(c => { if(c&&isCardAlive(c))c._shield=(c._shield||0)+skill.value; });
+                damage = 0; break;
+            case 'revival': {
+                const dead=bState.p2.bench.findIndex(c=>c&&!isCardAlive(c));
+                if(dead>=0){bState.p2.bench[dead].hp=80;bState.p2.bench[dead]._shield=0;}
+                damage=0; fxKind='heal'; break;
+            }
+            case 'poison':
+                bState.p1.field.forEach(c=>{if(c&&isCardAlive(c))c._poison=(c._poison||0)+1;});
+                damage=0; break;
+            case 'drain': {
+                const d=attacker.atk; const sh=target._shield||0; const actual=Math.max(0,d-sh);
+                target._shield=Math.max(0,sh-d); target.hp-=actual; attacker.hp+=actual; damage=actual; break;
+            }
+            case 'timelock': {
+                const w=bState.p1.field.map((c,i)=>({c,i})).filter(x=>x.c&&isCardAlive(x.c)).sort((a,b)=>a.c.hp-b.c.hp)[0];
+                if(w) w.c._sealed=1; damage=0; break;
+            }
+            case 'reflect':
+                bState.p2.field.forEach(c=>{if(c&&isCardAlive(c))c._reflect=true;});
+                damage=0; break;
+            case 'lifelink': {
+                const alive=bState.p2.field.filter(isCardAlive);
+                if(alive.length>1){const avg=Math.floor(alive.reduce((s,c)=>s+c.hp,0)/alive.length);alive.forEach(c=>c.hp=avg);}
+                damage=0; fxKind='heal'; break;
+            }
+            case 'counter': {
+                const strongest=bState.p1.field.map((c,i)=>({c,i})).filter(x=>x.c&&isCardAlive(x.c)).sort((a,b)=>b.c.hp-a.c.hp)[0];
+                if(strongest){const d=attacker.atk*2;const sh=strongest.c._shield||0;const actual=Math.max(0,d-sh);strongest.c._shield=Math.max(0,sh-d);strongest.c.hp-=actual;damage=actual;}
+                else damage=0; break;
+            }
+            case 'encore': bState._cpuEncoreTurn=true; damage=0; fxKind='heal'; break;
+            // 新規17種（CPU版）
+            case 'burst': { const bd=attacker.atk*3; const bsh=target._shield||0; const ba=Math.max(0,bd-bsh); target._shield=Math.max(0,bsh-bd); target.hp-=ba; attacker.hp-=attacker.atk; damage=ba; break; }
+            case 'snipe': { const sa=[...bState.p1.field,...bState.p1.bench].filter(c=>c&&isCardAlive(c)).sort((a,b)=>a.hp-b.hp)[0]; if(sa){sa.hp-=skill.value;damage=skill.value;} break; }
+            case 'quake': { [...bState.p1.field,...bState.p1.bench].filter(c=>c&&isCardAlive(c)).forEach(c=>c.hp-=skill.value); damage=0; break; }
+            case 'blizzard': { bState.p1.field.forEach(c=>{if(c&&isCardAlive(c))c._sealed=2;}); damage=0; break; }
+            case 'curse': { bState.p1.field.forEach(c=>{if(c&&isCardAlive(c))c.atk=Math.floor(c.atk/2);}); damage=0; break; }
+            case 'swap': { if(bState.p1.bench.length>0){const si=bState.p1.field.findIndex(c=>c&&isCardAlive(c));const sb=bState.p1.bench.findIndex(c=>c&&isCardAlive(c));if(si>=0&&sb>=0)[bState.p1.field[si],bState.p1.bench[sb]]=[bState.p1.bench[sb],bState.p1.field[si]];} damage=0; break; }
+            case 'clone': { const cs=target._shield||0; const ca=Math.max(0,attacker.atk-cs); target._shield=Math.max(0,cs-attacker.atk); target.hp-=ca; damage=ca; break; }
+            case 'shield_break': { bState.p1.field.forEach(c=>{if(c&&isCardAlive(c)){c._shield=0;c._reflect=false;}}); const sbsh=target._shield||0; const sba=Math.max(0,attacker.atk-sbsh); target.hp-=sba; damage=sba; break; }
+            case 'berserker': { const maxhp=attacker.maxHp||attacker.hp; const mult=attacker.hp<=maxhp*0.5?2.0:1.5; const berd=Math.floor(attacker.atk*mult); const bersh=target._shield||0; const bera=Math.max(0,berd-bersh); target._shield=Math.max(0,bersh-berd); target.hp-=bera; damage=bera; break; }
+            case 'last_stand': { const lsd=attacker.hp<=10?150:30; const lssh=target._shield||0; const lsa=Math.max(0,lsd-lssh); target._shield=Math.max(0,lssh-lsd); target.hp-=lsa; damage=lsa; break; }
+            case 'sacrifice': { attacker.hp=0; bState.p1.field.forEach(c=>{if(c&&isCardAlive(c))c.hp-=skill.value;}); damage=skill.value; break; }
+            case 'chain': { const cr=[1.0,0.6,0.3]; bState.p1.field.forEach((c,i)=>{if(!c||!isCardAlive(c))return; const cd=Math.floor(attacker.atk*(cr[i]||0.2)); const csh=c._shield||0; const ca=Math.max(0,cd-csh); c._shield=Math.max(0,csh-cd); c.hp-=ca;}); damage=attacker.atk; break; }
+            case 'gravity': { bState.p1._gravityTurn=2; damage=0; break; }
+            case 'overload': { bState.p2.field.forEach(c=>{if(c&&isCardAlive(c)){c.atk+=10;c.hp-=10;}}); bState.p2.bench.forEach(c=>{if(c&&isCardAlive(c))c.atk+=10;}); damage=0; break; }
+            case 'mirror': { const md=bState._lastPlayerDmg||20; const msh=target._shield||0; const ma=Math.max(0,md-msh); target._shield=Math.max(0,msh-md); target.hp-=ma; damage=ma; break; }
+            case 'regen': { bState.p2.field.forEach(c=>{if(c&&isCardAlive(c))c._regen=(c._regen||0)+1;}); damage=0; fxKind='heal'; break; }
+            case 'rampage': { const rall=[...bState.p1.field,...bState.p2.field].filter(c=>c&&isCardAlive(c)); if(rall.length>0){const rt=rall[Math.floor(Math.random()*rall.length)]; const rd=attacker.atk*2; const rsh=rt._shield||0; const ra=Math.max(0,rd-rsh); rt._shield=Math.max(0,rsh-rd); rt.hp-=ra; damage=ra;} break; }
+            default: if(skill.type==='attack')damage=skill.value; else damage=Math.floor(damage*1.5);
+        }
+    }
+
+    // CPU通常攻撃にもチーム補正
+    if (damage > 0 && !useSkill) {
+        if (isFullTeamSameGroup(bState.p2)) damage = Math.floor(damage * 1.1);
     }
 
     if (Math.random() < 0.2) {
@@ -1517,9 +2041,29 @@ async function executeCPUTurn() {
     }
 
     const shield = target._shield || 0;
-    const actualDmg = Math.max(0, damage - shield);
+    let actualDmg = Math.max(0, damage - shield);
     target._shield = Math.max(0, shield - damage);
-    target.hp -= actualDmg;
+
+    // 封印チェック（封印中のカードは攻撃できない）
+    if (attacker._sealed && attacker._sealed > 0) {
+        attacker._sealed--;
+        logMsg += `⏳ [${attacker.name}]は封印中で行動不能！<br>`;
+        battleFxLocked = false;
+        switchTurn();
+        return;
+    }
+
+    // 反射チェック（攻撃対象に反射マークがあればダメージを跳ね返す）
+    if (target._reflect) {
+        delete target._reflect;
+        attacker.hp -= actualDmg;
+        logMsg += `🪞 反射！${actualDmg}ダメージが[${attacker.name}]に跳ね返った！<br>`;
+        actualDmg = 0;
+    } else {
+        target.hp -= actualDmg;
+    }
+    bState._lastEnemyDmg = actualDmg; // mirror用に記録
+
     logMsg += `🤖 [${attacker.name}] → [${target.name}] に ${actualDmg} ダメージ！`;
 
     await playBattleActionFx({
@@ -1545,10 +2089,38 @@ function switchTurn() {
     const bState = gameState.battle;
     bState.turn = bState.turn === 'p1' ? 'p2' : 'p1';
     isSkillMode = false;
+
+    // 毒ダメージ処理（p1ターン開始時 = 1ラウンド完了）
     if (bState.turn === 'p1') {
         bState.attackerFieldIdx = null;
         bState.actionStep = 'pick_attacker';
+        let poisonLog = '';
+        // 毒ダメージ・再生・重力カウントダウン
+        [...bState.p1.field, ...bState.p2.field].forEach(c => {
+            if (!c || !isCardAlive(c)) return;
+            // 毒
+            if (c._poison) {
+                c.hp -= 10; c._poison--; if (c._poison <= 0) delete c._poison;
+                poisonLog += `☠️ [${c.name}]毒ダメ10 `;
+            }
+            // 再生
+            if (c._regen) {
+                c.hp += 15; c._regen--; if (c._regen <= 0) delete c._regen;
+                poisonLog += `🌿 [${c.name}]再生+15HP `;
+            }
+        });
+        // 重力カウントダウン
+        if (bState.p1._gravityTurn > 0) bState.p1._gravityTurn--;
+        if (bState.p2._gravityTurn > 0) bState.p2._gravityTurn++; // CPU側は使わない
+        if (poisonLog) {
+            const logEl = document.getElementById('battle-field-log');
+            if (logEl) logEl.innerHTML += `<br>${poisonLog}`;
+            processFaintForPlayer(bState.p2, true);
+            processFaintForPlayer(bState.p1, false);
+            if (checkBattleEnd()) return;
+        }
     }
+
     updateBattleUI();
 }
 
@@ -1570,19 +2142,37 @@ function startOnlineMatchmaking(isHost) {
     const u = gameState.currentUser;
     const myFullDeck = u.deck.map(id => u.collection.find(c => c.id === id)).filter(Boolean);
     if (myFullDeck.length < BATTLE_DECK_SIZE) {
-        alert(`オンライン対戦にはデッキ${BATTLE_DECK_SIZE}枚が必要です。`);
+        alert(`オンライン対戦にはデッキ${BATTLE_DECK_SIZE}枚以上が必要です。`);
         return;
     }
 
-    showBattleFormationSelect(myFullDeck.slice(0, BATTLE_DECK_SIZE), (formation) => {
+    const sessionKey = `online_room_${roomInput}`;
+
+    // GUESTは編成前に部屋の存在を確認
+    if (!isHost) {
+        const existing = JSON.parse(localStorage.getItem(sessionKey) || 'null');
+        if (!existing || !existing.hostConnected) {
+            alert('部屋が見つかりません。\nHOSTに先に「部屋作成」してもらい、同じ4桁を入力してください。');
+            return;
+        }
+        if (existing.guestConnected) {
+            alert('この部屋はすでに満員です。別の部屋番号を使ってください。');
+            return;
+        }
+    }
+
+    // デッキ全枚数から5枚を選ぶ
+    showBattleFormationSelect(myFullDeck, (formation) => {
         const b = gameState.onlineBattle;
         b.roomNo = roomInput;
         b.role = isHost ? 'HOST' : 'GUEST';
         b.status = 'waiting';
         b.myFormation = formation;
         b.usedSkills = new Set();
+        b.myKills = 0;
+        b.enemyKills = 0;
+        b.skillModeOnline = false;
 
-        const sessionKey = `online_room_${b.roomNo}`;
         const battlePayload = serializeBattle({ field: formation.field, bench: formation.bench });
 
         if (isHost) {
@@ -1598,13 +2188,8 @@ function startOnlineMatchmaking(isHost) {
             };
             localStorage.setItem(sessionKey, JSON.stringify(roomData));
         } else {
+            // 再度読み込んで最新状態に書き込む
             const existing = JSON.parse(localStorage.getItem(sessionKey));
-            if (!existing || !existing.hostConnected) {
-                return alert('部屋が見つかりません。HOSTに先に部屋作成してもらってください。');
-            }
-            if (existing.guestConnected) {
-                return alert('この部屋は満員です。');
-            }
             existing.guestConnected = true;
             existing.guestData = { name: u.nickname, icon: u.icon, battle: battlePayload };
             localStorage.setItem(sessionKey, JSON.stringify(existing));
@@ -1616,11 +2201,17 @@ function startOnlineMatchmaking(isHost) {
         if (jrBtn) jrBtn.disabled = true;
         document.getElementById('online-wait-status').classList.remove('hidden');
 
-        document.getElementById('btn-cancel-room').onclick = () => {
-            clearInterval(onlinePollingInterval);
-            if (isHost) localStorage.removeItem(sessionKey);
-            initBattleSetup();
-        };
+        // cloneNode で多重バインドを防ぐ
+        const oldCancel = document.getElementById('btn-cancel-room');
+        if (oldCancel) {
+            const freshCancel = oldCancel.cloneNode(true);
+            oldCancel.parentNode.replaceChild(freshCancel, oldCancel);
+            freshCancel.addEventListener('click', () => {
+                clearInterval(onlinePollingInterval);
+                if (isHost) localStorage.removeItem(sessionKey);
+                initBattleSetup();
+            });
+        }
 
         onlinePollingInterval = setInterval(() => pollOnlineRoomStatus(sessionKey), 500);
     });
@@ -1813,21 +2404,26 @@ async function sendOnlineAttack(attackerIdx, targetIdx) {
     // 必殺技処理（オンライン）
     if (b.skillModeOnline && attacker.rarity === 'UR' && attacker.skill) {
         const skill = attacker.skill;
-        fxKind = 'skill';
-        skillName = skill.name;
+        fxKind = 'skill'; skillName = skill.name;
         if (!b.usedSkills) b.usedSkills = new Set();
         b.usedSkills.add(attacker.id);
-        if (skill.type === 'attack') {
-            damage = skill.value;
-            logMsg += `🌟 必殺技【${skill.name}】！<br>`;
-        } else if (skill.type === 'heal') {
-            attacker.hp += skill.value;
-            logMsg += `💚 必殺技【${skill.name}】でHP+${skill.value}！<br>`;
-            damage = 0;
-        } else if (skill.type === 'defense') {
-            attacker._shield = (attacker._shield || 0) + skill.value;
-            logMsg += `🛡️ 必殺技【${skill.name}】でシールド+${skill.value}！<br>`;
-            damage = 0;
+        logMsg += `🌟 必殺技【${skill.name}】！<br>`;
+        switch (skill.type) {
+            case 'atk1': damage = skill.value; break;
+            case 'atk2':
+                b.enemyField.forEach(c => { if(c&&c.hp>0){const sh=c._shield||0;const d=Math.max(0,skill.value-sh);c._shield=Math.max(0,sh-skill.value);c.hp-=d;} });
+                damage=0; break;
+            case 'heal':
+                b.myField.forEach(c => { if(c&&c.hp>0)c.hp+=skill.value; }); damage=0; fxKind='heal'; break;
+            case 'heal2': attacker.hp+=skill.value; damage=0; fxKind='heal'; break;
+            case 'defense':
+                b.myField.forEach(c => { if(c&&c.hp>0)c._shield=(c._shield||0)+skill.value; }); damage=0; break;
+            case 'revival': {
+                const dead=b.myBench.findIndex(c=>c&&c.hp<=0);
+                if(dead>=0){b.myBench[dead].hp=80;b.myBench[dead]._shield=0;}
+                damage=0; fxKind='heal'; break;
+            }
+            default: if(skill.type==='attack')damage=skill.value; else damage=attacker.atk;
         }
         b.skillModeOnline = false;
     }
@@ -2005,7 +2601,7 @@ function createDetailModalDOM() {
 
     const zoomOverlay = document.createElement('div');
     zoomOverlay.id = 'zoom-overlay';
-    zoomOverlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.92);z-index:2000;display:none;align-items:center;justify-content:center;cursor:zoom-out;';
+    zoomOverlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.92);z-index:4000;display:none;align-items:center;justify-content:center;cursor:zoom-out;';
     zoomOverlay.innerHTML = `<img id="zoom-img" style="max-width:90%;max-height:90vh;border-radius:12px;">`;
     zoomOverlay.addEventListener('click', () => { zoomOverlay.style.display='none'; });
     document.body.appendChild(zoomOverlay);
@@ -2039,9 +2635,7 @@ function createSettingModalDOM() {
             <div style="margin-bottom:15px;">
                 <label style="display:block;font-size:11px;color:#aaa;margin-bottom:4px;">推しグループ</label>
                 <select id="setting-select-oshi" style="width:100%;padding:6px;background:#111;border:1px solid #444;color:#fff;border-radius:4px;">
-                    <option value="TWICE">TWICE</option><option value="IVE">IVE</option>
-                    <option value="NewJeans">NewJeans</option><option value="aespa">aespa</option>
-                    <option value="LE SSERAFIM">LE SSERAFIM</option>
+                    ${GROUP_PACK_GROUPS.map(g => `<option value="${g}">${g}</option>`).join('')}
                 </select>
             </div>
             <div style="display:flex;gap:8px;">
@@ -2132,6 +2726,7 @@ function setupEventListeners() {
             if (tab === 'collection') renderCollection();
             else if (tab === 'mission') renderMission();
             else if (tab === 'battle') initBattleSetup();
+            else if (tab === 'deck') renderDeckEditor();
         });
     });
 
@@ -2219,6 +2814,130 @@ function setupEventListeners() {
 function showMainScreen() {
     document.getElementById('auth-screen').classList.add('hidden');
     document.getElementById('main-screen').classList.remove('hidden');
+}
+
+// ==========================================
+// 14. カード編成タブ
+// ==========================================
+function renderDeckEditor() {
+    const tab = document.getElementById('deck-tab');
+    if (!tab || !gameState.currentUser) return;
+    const u = gameState.currentUser;
+    const col = u.collection || [];
+    const deck = u.deck || [];
+
+    tab.innerHTML = `
+        <h2 style="font-size:18px;margin-bottom:6px;">🃏 カード編成</h2>
+        <p style="font-size:12px;color:#aaa;margin-bottom:12px;">デッキに入れるカードを選択（最大${DECK_MAX}枚・バトルは5枚を選んで出陣）</p>
+
+        <div style="background:#1e1e2e;border:1px solid #333;border-radius:10px;padding:12px;margin-bottom:14px;">
+            <p style="font-size:13px;font-weight:bold;margin-bottom:8px;">📋 現在のデッキ <span id="deck-count-label" style="color:#ff477e;">${deck.length}/${DECK_MAX}</span></p>
+            <div id="deck-current-list" style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;min-height:40px;"></div>
+            <p style="font-size:11px;color:#888;margin-top:8px;">※ カードをタップするとデッキから外せます</p>
+        </div>
+
+        <div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap;">
+            <select id="deck-filter-rarity" style="flex:1;min-width:100px;padding:6px;font-size:11px;background:#252525;border:1px solid #333;color:#fff;border-radius:6px;">
+                <option value="ALL">✨ 全レア度</option>
+                ${RARITY_ORDER.map(r => `<option value="${r}">${r}</option>`).join('')}
+            </select>
+            <select id="deck-filter-group" style="flex:1;min-width:100px;padding:6px;font-size:11px;background:#252525;border:1px solid #333;color:#fff;border-radius:6px;">
+                <option value="ALL">🎤 全グループ</option>
+                ${GROUP_PACK_GROUPS.map(g => `<option>${g}</option>`).join('')}
+            </select>
+        </div>
+
+        <p style="font-size:12px;color:#aaa;margin-bottom:8px;">コレクションからデッキに追加（タップで追加）</p>
+        <div id="deck-card-pool" style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;"></div>
+    `;
+
+    // フィルター変更
+    document.getElementById('deck-filter-rarity').addEventListener('change', () => refreshDeckPool());
+    document.getElementById('deck-filter-group').addEventListener('change', () => refreshDeckPool());
+
+    refreshDeckCurrent();
+    refreshDeckPool();
+}
+
+function refreshDeckCurrent() {
+    const u = gameState.currentUser; if (!u) return;
+    const el = document.getElementById('deck-current-list'); if (!el) return;
+    const countLabel = document.getElementById('deck-count-label');
+    if (countLabel) countLabel.textContent = `${u.deck.length}/${DECK_MAX}`;
+    el.innerHTML = '';
+
+    if (u.deck.length === 0) {
+        el.innerHTML = '<p style="font-size:12px;color:#666;grid-column:1/-1;">デッキにカードがありません</p>';
+        return;
+    }
+
+    u.deck.forEach(id => {
+        const card = u.collection.find(c => c.id === id);
+        if (!card) return;
+        const cardEl = createCardElement(card);
+        cardEl.style.cursor = 'pointer';
+        // タップでデッキから外す
+        cardEl.addEventListener('click', () => {
+            u.deck = u.deck.filter(did => did !== id);
+            saveUserData();
+            refreshDeckCurrent();
+            refreshDeckPool();
+        });
+        // バツ印
+        const rm = document.createElement('div');
+        rm.style.cssText = 'position:absolute;top:2px;right:2px;background:#ff3b30;color:#fff;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:bold;z-index:10;';
+        rm.textContent = '×';
+        cardEl.appendChild(rm);
+        el.appendChild(cardEl);
+    });
+}
+
+function refreshDeckPool() {
+    const u = gameState.currentUser; if (!u) return;
+    const pool = document.getElementById('deck-card-pool'); if (!pool) return;
+
+    const rarityF = document.getElementById('deck-filter-rarity')?.value || 'ALL';
+    const groupF  = document.getElementById('deck-filter-group')?.value  || 'ALL';
+
+    // コレクションから重複なし（name+rarity キー）
+    const seen = new Set();
+    let cards = [];
+    u.collection.forEach(c => {
+        if (!c || !c.name) return;
+        const key = `${c.name}__${c.rarity}`;
+        if (!seen.has(key)) { seen.add(key); cards.push(c); }
+    });
+
+    if (rarityF !== 'ALL') cards = cards.filter(c => c.rarity === rarityF);
+    if (groupF  !== 'ALL') cards = cards.filter(c => c.group === groupF);
+
+    pool.innerHTML = '';
+    if (cards.length === 0) {
+        pool.innerHTML = '<p style="font-size:12px;color:#666;grid-column:1/-1;text-align:center;padding:20px;">条件に合うカードがありません</p>';
+        return;
+    }
+
+    cards.forEach(card => {
+        const inDeck = u.deck.includes(card.id);
+        const cardEl = createCardElement(card);
+        cardEl.style.cursor = inDeck ? 'default' : 'pointer';
+        if (inDeck) {
+            cardEl.style.opacity = '0.45';
+            const badge = document.createElement('div');
+            badge.style.cssText = 'position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(76,217,100,0.85);color:#fff;font-size:10px;padding:3px 6px;border-radius:4px;font-weight:bold;z-index:5;';
+            badge.textContent = '✓ 編成済み';
+            cardEl.appendChild(badge);
+        } else {
+            cardEl.addEventListener('click', () => {
+                if (u.deck.length >= DECK_MAX) { alert(`デッキは最大${DECK_MAX}枚です！`); return; }
+                u.deck.push(card.id);
+                saveUserData();
+                refreshDeckCurrent();
+                refreshDeckPool();
+            });
+        }
+        pool.appendChild(cardEl);
+    });
 }
 
 // ==========================================

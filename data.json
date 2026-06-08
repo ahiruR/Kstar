@@ -1,279 +1,3709 @@
 {
   "cards": [
     {
-      "id": 1, "name": "ナヨン", "group": "TWICE", "rarity": "N", "hp": 75, "atk": 18,
+      "id": 1,
+      "name": "nayeon",
+      "group": "TWICE",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
       "img": "images/N/nayeon.jpg",
       "skill": null
     },
     {
-      "id": 2, "name": "ジョンヨン", "group": "TWICE", "rarity": "N", "hp": 75, "atk": 18,
-      "img": "images/N/jeongyeon.jpg",
+      "id": 2,
+      "name": "jeonyoung",
+      "group": "TWICE",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/jeonyoung.jpg",
       "skill": null
     },
     {
-      "id": 3, "name": "モモ", "group": "TWICE", "rarity": "N", "hp": 75, "atk": 18,
+      "id": 3,
+      "name": "momo",
+      "group": "TWICE",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
       "img": "images/N/momo.jpg",
       "skill": null
     },
     {
-      "id": 4, "name": "サナ", "group": "TWICE", "rarity": "N", "hp": 75, "atk": 18,
+      "id": 4,
+      "name": "sana",
+      "group": "TWICE",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
       "img": "images/N/sana.jpg",
       "skill": null
     },
     {
-      "id": 5, "name": "ジヒョ", "group": "TWICE", "rarity": "N", "hp": 75, "atk": 18,
+      "id": 5,
+      "name": "jihyo",
+      "group": "TWICE",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
       "img": "images/N/jihyo.jpg",
       "skill": null
     },
     {
-      "id": 6, "name": "ミナ", "group": "TWICE", "rarity": "N", "hp": 75, "atk": 18,
+      "id": 6,
+      "name": "mina",
+      "group": "TWICE",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
       "img": "images/N/mina.jpg",
       "skill": null
     },
     {
-      "id": 7, "name": "ダヒョン", "group": "TWICE", "rarity": "N", "hp": 75, "atk": 18,
+      "id": 7,
+      "name": "dahyun",
+      "group": "TWICE",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
       "img": "images/N/dahyun.jpg",
       "skill": null
     },
     {
-      "id": 8, "name": "チェヨン", "group": "TWICE", "rarity": "N", "hp": 75, "atk": 18,
+      "id": 8,
+      "name": "chaeyoung",
+      "group": "TWICE",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
       "img": "images/N/chaeyoung.jpg",
       "skill": null
     },
     {
-      "id": 9, "name": "ツウィ", "group": "TWICE", "rarity": "N", "hp": 75, "atk": 18,
+      "id": 9,
+      "name": "tzuyu",
+      "group": "TWICE",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
       "img": "images/N/tzuyu.jpg",
       "skill": null
     },
     {
-      "id": 10, "name": "ナヨン", "group": "TWICE", "rarity": "R", "hp": 80, "atk": 22,
+      "id": 10,
+      "name": "nayeon",
+      "group": "TWICE",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
       "img": "images/R/nayeon.jpg",
       "skill": null
     },
     {
-      "id": 11, "name": "ジョンヨン", "group": "TWICE", "rarity": "R", "hp": 80, "atk": 22,
-      "img": "images/R/jeongyeon.jpg",
+      "id": 11,
+      "name": "jeonyoung",
+      "group": "TWICE",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/jeonyoung.jpg",
       "skill": null
     },
     {
-      "id": 12, "name": "モモ", "group": "TWICE", "rarity": "R", "hp": 80, "atk": 22,
+      "id": 12,
+      "name": "momo",
+      "group": "TWICE",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
       "img": "images/R/momo.jpg",
       "skill": null
     },
     {
-      "id": 13, "name": "サナ", "group": "TWICE", "rarity": "R", "hp": 80, "atk": 22,
+      "id": 13,
+      "name": "sana",
+      "group": "TWICE",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
       "img": "images/R/sana.jpg",
       "skill": null
     },
     {
-      "id": 14, "name": "ジヒョ", "group": "TWICE", "rarity": "R", "hp": 80, "atk": 22,
+      "id": 14,
+      "name": "jihyo",
+      "group": "TWICE",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
       "img": "images/R/jihyo.jpg",
       "skill": null
     },
     {
-      "id": 15, "name": "ミナ", "group": "TWICE", "rarity": "R", "hp": 80, "atk": 22,
+      "id": 15,
+      "name": "mina",
+      "group": "TWICE",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
       "img": "images/R/mina.jpg",
       "skill": null
     },
     {
-      "id": 16, "name": "ダヒョン", "group": "TWICE", "rarity": "R", "hp": 80, "atk": 22,
+      "id": 16,
+      "name": "dahyun",
+      "group": "TWICE",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
       "img": "images/R/dahyun.jpg",
       "skill": null
     },
     {
-      "id": 17, "name": "チェヨン", "group": "TWICE", "rarity": "R", "hp": 80, "atk": 22,
+      "id": 17,
+      "name": "chaeyoung",
+      "group": "TWICE",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
       "img": "images/R/chaeyoung.jpg",
       "skill": null
     },
     {
-      "id": 18, "name": "ツウィ", "group": "TWICE", "rarity": "R", "hp": 80, "atk": 22,
+      "id": 18,
+      "name": "tzuyu",
+      "group": "TWICE",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
       "img": "images/R/tzuyu.jpg",
       "skill": null
     },
     {
-      "id": 19, "name": "ナヨン", "group": "TWICE", "rarity": "SR", "hp": 90, "atk": 26,
+      "id": 19,
+      "name": "nayeon",
+      "group": "TWICE",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
       "img": "images/SR/nayeon.jpg",
       "skill": null
     },
     {
-      "id": 20, "name": "ジョンヨン", "group": "TWICE", "rarity": "SR", "hp": 90, "atk": 26,
-      "img": "images/SR/jeongyeon.jpg",
+      "id": 20,
+      "name": "jeonyoung",
+      "group": "TWICE",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/jeonyoung.jpg",
       "skill": null
     },
     {
-      "id": 21, "name": "モモ", "group": "TWICE", "rarity": "SR", "hp": 90, "atk": 26,
+      "id": 21,
+      "name": "momo",
+      "group": "TWICE",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
       "img": "images/SR/momo.jpg",
       "skill": null
     },
     {
-      "id": 22, "name": "サナ", "group": "TWICE", "rarity": "SR", "hp": 90, "atk": 26,
+      "id": 22,
+      "name": "sana",
+      "group": "TWICE",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
       "img": "images/SR/sana.jpg",
       "skill": null
     },
     {
-      "id": 23, "name": "ジヒョ", "group": "TWICE", "rarity": "SR", "hp": 90, "atk": 26,
+      "id": 23,
+      "name": "jihyo",
+      "group": "TWICE",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
       "img": "images/SR/jihyo.jpg",
       "skill": null
     },
     {
-      "id": 24, "name": "ミナ", "group": "TWICE", "rarity": "SR", "hp": 90, "atk": 26,
+      "id": 24,
+      "name": "mina",
+      "group": "TWICE",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
       "img": "images/SR/mina.jpg",
       "skill": null
     },
     {
-      "id": 25, "name": "ダヒョン", "group": "TWICE", "rarity": "SR", "hp": 90, "atk": 26,
+      "id": 25,
+      "name": "dahyun",
+      "group": "TWICE",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
       "img": "images/SR/dahyun.jpg",
       "skill": null
     },
     {
-      "id": 26, "name": "チェヨン", "group": "TWICE", "rarity": "SR", "hp": 90, "atk": 26,
+      "id": 26,
+      "name": "chaeyoung",
+      "group": "TWICE",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
       "img": "images/SR/chaeyoung.jpg",
       "skill": null
     },
     {
-      "id": 27, "name": "ツウィ", "group": "TWICE", "rarity": "SR", "hp": 90, "atk": 26,
+      "id": 27,
+      "name": "tzuyu",
+      "group": "TWICE",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
       "img": "images/SR/tzuyu.jpg",
       "skill": null
     },
     {
-      "id": 28, "name": "ナヨン", "group": "TWICE", "rarity": "SSR", "hp": 100, "atk": 30,
+      "id": 28,
+      "name": "nayeon",
+      "group": "TWICE",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
       "img": "images/SSR/nayeon.jpg",
       "skill": null
     },
     {
-      "id": 29, "name": "ジョンヨン", "group": "TWICE", "rarity": "SSR", "hp": 100, "atk": 30,
-      "img": "images/SSR/jeongyeon.jpg",
+      "id": 29,
+      "name": "jeonyoung",
+      "group": "TWICE",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/jeonyoung.jpg",
       "skill": null
     },
     {
-      "id": 30, "name": "モモ", "group": "TWICE", "rarity": "SSR", "hp": 100, "atk": 30,
+      "id": 30,
+      "name": "momo",
+      "group": "TWICE",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
       "img": "images/SSR/momo.jpg",
       "skill": null
     },
     {
-      "id": 31, "name": "サナ", "group": "TWICE", "rarity": "SSR", "hp": 100, "atk": 30,
+      "id": 31,
+      "name": "sana",
+      "group": "TWICE",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
       "img": "images/SSR/sana.jpg",
       "skill": null
     },
     {
-      "id": 32, "name": "ジヒョ", "group": "TWICE", "rarity": "SSR", "hp": 100, "atk": 30,
+      "id": 32,
+      "name": "jihyo",
+      "group": "TWICE",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
       "img": "images/SSR/jihyo.jpg",
       "skill": null
     },
     {
-      "id": 33, "name": "ミナ", "group": "TWICE", "rarity": "SSR", "hp": 100, "atk": 30,
+      "id": 33,
+      "name": "mina",
+      "group": "TWICE",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
       "img": "images/SSR/mina.jpg",
       "skill": null
     },
     {
-      "id": 34, "name": "ダヒョン", "group": "TWICE", "rarity": "SSR", "hp": 100, "atk": 30,
+      "id": 34,
+      "name": "dahyun",
+      "group": "TWICE",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
       "img": "images/SSR/dahyun.jpg",
       "skill": null
     },
     {
-      "id": 35, "name": "チェヨン", "group": "TWICE", "rarity": "SSR", "hp": 100, "atk": 30,
+      "id": 35,
+      "name": "chaeyoung",
+      "group": "TWICE",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
       "img": "images/SSR/chaeyoung.jpg",
       "skill": null
     },
     {
-      "id": 36, "name": "ツウィ", "group": "TWICE", "rarity": "SSR", "hp": 100, "atk": 30,
+      "id": 36,
+      "name": "tzuyu",
+      "group": "TWICE",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
       "img": "images/SSR/tzuyu.jpg",
       "skill": null
     },
     {
-      "id": 37, "name": "ナヨン", "group": "TWICE", "rarity": "HR", "hp": 110, "atk": 35,
+      "id": 37,
+      "name": "nayeon",
+      "group": "TWICE",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
       "img": "images/HR/nayeon.jpg",
       "skill": null
     },
     {
-      "id": 38, "name": "ジョンヨン", "group": "TWICE", "rarity": "HR", "hp": 110, "atk": 35,
-      "img": "images/HR/jeongyeon.jpg",
+      "id": 38,
+      "name": "jeonyoung",
+      "group": "TWICE",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/jeonyoung.jpg",
       "skill": null
     },
     {
-      "id": 39, "name": "モモ", "group": "TWICE", "rarity": "HR", "hp": 110, "atk": 35,
+      "id": 39,
+      "name": "momo",
+      "group": "TWICE",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
       "img": "images/HR/momo.jpg",
       "skill": null
     },
     {
-      "id": 40, "name": "サナ", "group": "TWICE", "rarity": "HR", "hp": 110, "atk": 35,
+      "id": 40,
+      "name": "sana",
+      "group": "TWICE",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
       "img": "images/HR/sana.jpg",
       "skill": null
     },
     {
-      "id": 41, "name": "ジヒョ", "group": "TWICE", "rarity": "HR", "hp": 110, "atk": 35,
+      "id": 41,
+      "name": "jihyo",
+      "group": "TWICE",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
       "img": "images/HR/jihyo.jpg",
       "skill": null
     },
     {
-      "id": 42, "name": "ミナ", "group": "TWICE", "rarity": "HR", "hp": 110, "atk": 35,
+      "id": 42,
+      "name": "mina",
+      "group": "TWICE",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
       "img": "images/HR/mina.jpg",
       "skill": null
     },
     {
-      "id": 43, "name": "ダヒョン", "group": "TWICE", "rarity": "HR", "hp": 110, "atk": 35,
+      "id": 43,
+      "name": "dahyun",
+      "group": "TWICE",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
       "img": "images/HR/dahyun.jpg",
       "skill": null
     },
     {
-      "id": 44, "name": "チェヨン", "group": "TWICE", "rarity": "HR", "hp": 110, "atk": 35,
+      "id": 44,
+      "name": "chaeyoung",
+      "group": "TWICE",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
       "img": "images/HR/chaeyoung.jpg",
       "skill": null
     },
     {
-      "id": 45, "name": "ツウィ", "group": "TWICE", "rarity": "HR", "hp": 110, "atk": 35,
+      "id": 45,
+      "name": "tzuyu",
+      "group": "TWICE",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
       "img": "images/HR/tzuyu.jpg",
       "skill": null
     },
     {
-      "id": 46, "name": "ナヨン", "group": "TWICE", "rarity": "UR", "hp": 130, "atk": 40,
+      "id": 46,
+      "name": "nayeon",
+      "group": "TWICE",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
       "img": "images/UR/nayeon.jpg",
-      "skill":  { "name": "みわしましょう～!", "type": "attack", "value": 80, "desc": "相手に70攻撃！（URのみ使用可）" }
+      "skill": {
+        "name": "みわしましょう～!",
+        "type": "atk1",
+        "value": 85,
+        "desc": "敵1体に85の強烈なダメージを与える！"
+      }
     },
     {
-      "id": 47, "name": "ジョンヨン", "group": "TWICE", "rarity": "UR", "hp": 130, "atk": 40,
-      "img": "images/UR/jeongyeon.jpg",
-      "skill": { "name": "東京ドーム、いっくよ～!", "type": "attack", "value": 80, "desc": "相手に70攻撃！（URのみ使用可）" }
+      "id": 47,
+      "name": "jeonyoung",
+      "group": "TWICE",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/jeonyoung.jpg",
+      "skill": {
+        "name": "東京ドーム、いっくよ～!",
+        "type": "atk2",
+        "value": 35,
+        "desc": "相手バトル場全体に35ダメージ！"
+      }
     },
     {
-      "id": 48, "name": "モモ", "group": "TWICE", "rarity": "UR", "hp": 130, "atk": 40,
+      "id": 48,
+      "name": "momo",
+      "group": "TWICE",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
       "img": "images/UR/momo.jpg",
-      "skill": { "name": "にっこにっこにー", "type": "heal", "value": 60, "desc": "味方のHPを60回復！（URのみ使用可）" }
+      "skill": {
+        "name": "&@%#^*$€",
+        "type": "rampage",
+        "value": 0,
+        "desc": "言葉にならない！ATK×2でランダム攻撃！"
+      }
     },
     {
-      "id": 49, "name": "サナ", "group": "TWICE", "rarity": "UR", "hp": 130, "atk": 40,
+      "id": 49,
+      "name": "sana",
+      "group": "TWICE",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
       "img": "images/UR/sana.jpg",
-      "skill": { "name": "サナポッター", "type": "defence", "value": 70, "desc": "次回敵の攻撃を70防御！（URのみ使用可）" }
+      "skill": {
+        "name": "なぁ↑ももりん",
+        "type": "heal2",
+        "value": 75,
+        "desc": "ももりん♡自分1体のHPを75大回復！"
+      }
     },
     {
-      "id": 50, "name": "ジヒョ", "group": "TWICE", "rarity": "UR", "hp": 130, "atk": 40,
+      "id": 50,
+      "name": "jihyo",
+      "group": "TWICE",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
       "img": "images/UR/jihyo.jpg",
-      "skill": { "name": "よいしょ～", "type": "heal", "value": 60, "desc": "味方のHPを60回復！（URのみ使用可）" }
+      "skill": {
+        "name": "よいしょ～",
+        "type": "heal2",
+        "value": 75,
+        "desc": "自分1体のHPを75大回復！"
+      }
     },
     {
-      "id": 51, "name": "ミナ", "group": "TWICE", "rarity": "UR", "hp": 130, "atk": 40,
+      "id": 51,
+      "name": "mina",
+      "group": "TWICE",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
       "img": "images/UR/mina.jpg",
-      "skill": { "name": "ミッチゲッソ", "type": "attack", "value": 70, "desc": "相手に70攻撃！（URのみ使用可）" }
+      "skill": {
+        "name": "沼れ",
+        "type": "curse",
+        "value": 0,
+        "desc": "沼にはまれ！相手場全体のATKを半分に！（永続）"
+      }
     },
     {
-      "id": 52, "name": "ダヒョン", "group": "TWICE", "rarity": "UR", "hp": 130, "atk": 40,
+      "id": 52,
+      "name": "dahyun",
+      "group": "TWICE",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
       "img": "images/UR/dahyun.jpg",
-      "skill": { "name": "ビ、ビビンバァ!", "type": "attack", "value": 70, "desc": "相手に70攻撃！（URのみ使用可）" }
+      "skill": {
+        "name": "ビ、ビビンバァ!",
+        "type": "burst",
+        "value": 0,
+        "desc": "ATK×3の大ダメージ！でも自分もATK分のダメージ！"
+      }
     },
     {
-      "id": 53, "name": "チェヨン", "group": "TWICE", "rarity": "UR", "hp": 130, "atk": 40,
+      "id": 53,
+      "name": "chaeyoung",
+      "group": "TWICE",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
       "img": "images/UR/chaeyoung.jpg",
-      "skill":  { "name": "ふたちゅくくり", "type": "heal", "value": 60, "desc": "味方のHPを60回復！（URのみ使用可）" }
+      "skill": {
+        "name": "ふたちゅくくり",
+        "type": "regen",
+        "value": 0,
+        "desc": "自分バトル場全体に3ターン毎ターン15HP再生を付与！"
+      }
     },
     {
-      "id": 54, "name": "ツウィ", "group": "TWICE", "rarity": "UR", "hp": 130, "atk": 40,
+      "id": 54,
+      "name": "tzuyu",
+      "group": "TWICE",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
       "img": "images/UR/tzuyu.jpg",
-      "skill":  { "name": "だまれ！", "type": "attack", "value": 70, "desc": "相手に70攻撃！（URのみ使用可）" }
+      "skill": {
+        "name": "だまれ！",
+        "type": "snipe",
+        "value": 90,
+        "desc": "相手全カード（ベンチ含む）の最もHP低い敵に90ダメージ！"
+      }
     },
     {
-      "id": 1000, "name": "ウォニョン", "group": "IVE", "rarity": "UR", "hp": 180, "atk": 50,
-      "img": "images/wonyoung.jpg",
-      "skill": { "name": "絶対的センター", "type": "heal", "value": 60, "desc": "味方のHPを60回復！（URのみ使用可）" }
+      "id": 55,
+      "name": "wonyoung",
+      "group": "IVE",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/wonyoung.jpg",
+      "skill": null
+    },
+    {
+      "id": 56,
+      "name": "rei",
+      "group": "IVE",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/rei.jpg",
+      "skill": null
+    },
+    {
+      "id": 57,
+      "name": "gaeul",
+      "group": "IVE",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/gaeul.jpg",
+      "skill": null
+    },
+    {
+      "id": 58,
+      "name": "yujin",
+      "group": "IVE",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/yujin.jpg",
+      "skill": null
+    },
+    {
+      "id": 59,
+      "name": "leeseo",
+      "group": "IVE",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/leeseo.jpg",
+      "skill": null
+    },
+    {
+      "id": 60,
+      "name": "liz",
+      "group": "IVE",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/liz.jpg",
+      "skill": null
+    },
+    {
+      "id": 67,
+      "name": "wonyoung",
+      "group": "IVE",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/wonyoung.jpg",
+      "skill": null
+    },
+    {
+      "id": 68,
+      "name": "rei",
+      "group": "IVE",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/rei.jpg",
+      "skill": null
+    },
+    {
+      "id": 69,
+      "name": "gaeul",
+      "group": "IVE",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/gaeul.jpg",
+      "skill": null
+    },
+    {
+      "id": 70,
+      "name": "yujin",
+      "group": "IVE",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/yujin.jpg",
+      "skill": null
+    },
+    {
+      "id": 71,
+      "name": "leeseo",
+      "group": "IVE",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/leeseo.jpg",
+      "skill": null
+    },
+    {
+      "id": 72,
+      "name": "liz",
+      "group": "IVE",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/liz.jpg",
+      "skill": null
+    },
+    {
+      "id": 73,
+      "name": "wonyoung",
+      "group": "IVE",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/wonyoung.jpg",
+      "skill": null
+    },
+    {
+      "id": 74,
+      "name": "rei",
+      "group": "IVE",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/rei.jpg",
+      "skill": null
+    },
+    {
+      "id": 75,
+      "name": "gaeul",
+      "group": "IVE",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/gaeul.jpg",
+      "skill": null
+    },
+    {
+      "id": 76,
+      "name": "yujin",
+      "group": "IVE",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/yujin.jpg",
+      "skill": null
+    },
+    {
+      "id": 77,
+      "name": "leeseo",
+      "group": "IVE",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/leeseo.jpg",
+      "skill": null
+    },
+    {
+      "id": 78,
+      "name": "liz",
+      "group": "IVE",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/liz.jpg",
+      "skill": null
+    },
+    {
+      "id": 79,
+      "name": "wonyoung",
+      "group": "IVE",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/wonyoung.jpg",
+      "skill": null
+    },
+    {
+      "id": 80,
+      "name": "rei",
+      "group": "IVE",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/rei.jpg",
+      "skill": null
+    },
+    {
+      "id": 81,
+      "name": "gaeul",
+      "group": "IVE",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/gaeul.jpg",
+      "skill": null
+    },
+    {
+      "id": 82,
+      "name": "yujin",
+      "group": "IVE",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/yujin.jpg",
+      "skill": null
+    },
+    {
+      "id": 83,
+      "name": "leeseo",
+      "group": "IVE",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/leeseo.jpg",
+      "skill": null
+    },
+    {
+      "id": 84,
+      "name": "liz",
+      "group": "IVE",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/liz.jpg",
+      "skill": null
+    },
+    {
+      "id": 85,
+      "name": "wonyoung",
+      "group": "IVE",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/wonyoung.jpg",
+      "skill": null
+    },
+    {
+      "id": 86,
+      "name": "rei",
+      "group": "IVE",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/rei.jpg",
+      "skill": null
+    },
+    {
+      "id": 87,
+      "name": "gaeul",
+      "group": "IVE",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/gaeul.jpg",
+      "skill": null
+    },
+    {
+      "id": 88,
+      "name": "yujin",
+      "group": "IVE",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/yujin.jpg",
+      "skill": null
+    },
+    {
+      "id": 89,
+      "name": "leeseo",
+      "group": "IVE",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/leeseo.jpg",
+      "skill": null
+    },
+    {
+      "id": 90,
+      "name": "liz",
+      "group": "IVE",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/liz.jpg",
+      "skill": null
+    },
+    {
+      "id": 91,
+      "name": "wonyoung",
+      "group": "IVE",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/wonyoung.jpg",
+      "skill": {
+        "name": "はたしてだれなのーか",
+        "type": "drain",
+        "value": 0,
+        "desc": "相手1体にATK分ダメージ＆同量だけ自分が回復！"
+      }
+    },
+    {
+      "id": 92,
+      "name": "rei",
+      "group": "IVE",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/rei.jpg",
+      "skill": {
+        "name": "コンsドリーム",
+        "type": "poison",
+        "value": 3,
+        "desc": "相手バトル場全体に毒を付与！3ターン毎ターン10ダメージ！"
+      }
+    },
+    {
+      "id": 93,
+      "name": "gaeul",
+      "group": "IVE",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/gaeul.jpg",
+      "skill": {
+        "name": "あいへぼん",
+        "type": "lifelink",
+        "value": 0,
+        "desc": "自分の場全員のHPを平均値に統一！"
+      }
+    },
+    {
+      "id": 94,
+      "name": "yujin",
+      "group": "IVE",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/yujin.jpg",
+      "skill": {
+        "name": "とろろそばでござる",
+        "type": "revival",
+        "value": 80,
+        "desc": "倒されたカードをHP80で復活！（キルカウント不変）"
+      }
+    },
+    {
+      "id": 95,
+      "name": "leeseo",
+      "group": "IVE",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/leeseo.jpg",
+      "skill": {
+        "name": "シャボン玉事件",
+        "type": "reflect",
+        "value": 0,
+        "desc": "自分の場全体に反射マーク！次の攻撃をそのまま跳ね返す！"
+      }
+    },
+    {
+      "id": 96,
+      "name": "liz",
+      "group": "IVE",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/liz.jpg",
+      "skill": {
+        "name": "じゃがいもの歌",
+        "type": "encore",
+        "value": 0,
+        "desc": "このターン終了後、もう1ターン連続行動できる！"
+      }
+    },
+    {
+      "id": 97,
+      "name": "minji",
+      "group": "NewJeans",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/minji.jpg",
+      "skill": null
+    },
+    {
+      "id": 98,
+      "name": "hanni",
+      "group": "NewJeans",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/hanni.jpg",
+      "skill": null
+    },
+    {
+      "id": 99,
+      "name": "danielle",
+      "group": "NewJeans",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/danielle.jpg",
+      "skill": null
+    },
+    {
+      "id": 100,
+      "name": "haerin",
+      "group": "NewJeans",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/haerin.jpg",
+      "skill": null
+    },
+    {
+      "id": 101,
+      "name": "hyein",
+      "group": "NewJeans",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/hyein.jpg",
+      "skill": null
+    },
+    {
+      "id": 102,
+      "name": "minji",
+      "group": "NewJeans",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/minji.jpg",
+      "skill": null
+    },
+    {
+      "id": 103,
+      "name": "hanni",
+      "group": "NewJeans",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/hanni.jpg",
+      "skill": null
+    },
+    {
+      "id": 104,
+      "name": "danielle",
+      "group": "NewJeans",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/danielle.jpg",
+      "skill": null
+    },
+    {
+      "id": 105,
+      "name": "haerin",
+      "group": "NewJeans",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/haerin.jpg",
+      "skill": null
+    },
+    {
+      "id": 106,
+      "name": "hyein",
+      "group": "NewJeans",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/hyein.jpg",
+      "skill": null
+    },
+    {
+      "id": 107,
+      "name": "minji",
+      "group": "NewJeans",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/minji.jpg",
+      "skill": null
+    },
+    {
+      "id": 108,
+      "name": "hanni",
+      "group": "NewJeans",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/hanni.jpg",
+      "skill": null
+    },
+    {
+      "id": 109,
+      "name": "danielle",
+      "group": "NewJeans",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/danielle.jpg",
+      "skill": null
+    },
+    {
+      "id": 110,
+      "name": "haerin",
+      "group": "NewJeans",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/haerin.jpg",
+      "skill": null
+    },
+    {
+      "id": 111,
+      "name": "hyein",
+      "group": "NewJeans",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/hyein.jpg",
+      "skill": null
+    },
+    {
+      "id": 112,
+      "name": "minji",
+      "group": "NewJeans",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/minji.jpg",
+      "skill": null
+    },
+    {
+      "id": 113,
+      "name": "hanni",
+      "group": "NewJeans",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/hanni.jpg",
+      "skill": null
+    },
+    {
+      "id": 114,
+      "name": "danielle",
+      "group": "NewJeans",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/danielle.jpg",
+      "skill": null
+    },
+    {
+      "id": 115,
+      "name": "haerin",
+      "group": "NewJeans",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/haerin.jpg",
+      "skill": null
+    },
+    {
+      "id": 116,
+      "name": "hyein",
+      "group": "NewJeans",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/hyein.jpg",
+      "skill": null
+    },
+    {
+      "id": 117,
+      "name": "minji",
+      "group": "NewJeans",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/minji.jpg",
+      "skill": null
+    },
+    {
+      "id": 118,
+      "name": "hanni",
+      "group": "NewJeans",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/hanni.jpg",
+      "skill": null
+    },
+    {
+      "id": 119,
+      "name": "danielle",
+      "group": "NewJeans",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/danielle.jpg",
+      "skill": null
+    },
+    {
+      "id": 120,
+      "name": "haerin",
+      "group": "NewJeans",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/haerin.jpg",
+      "skill": null
+    },
+    {
+      "id": 121,
+      "name": "hyein",
+      "group": "NewJeans",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/hyein.jpg",
+      "skill": null
+    },
+    {
+      "id": 122,
+      "name": "minji",
+      "group": "NewJeans",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/minji.jpg",
+      "skill": {
+        "name": "チャンミョ...?",
+        "type": "timelock",
+        "value": 0,
+        "desc": "ん？相手の最弱カードを1ターン封印！"
+      }
+    },
+    {
+      "id": 123,
+      "name": "hanni",
+      "group": "NewJeans",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/hanni.jpg",
+      "skill": {
+        "name": "オッチョラゴ～",
+        "type": "shield_break",
+        "value": 0,
+        "desc": "どうするの！相手の防御を全解除＆ATKダメ！"
+      }
+    },
+    {
+      "id": 124,
+      "name": "danielle",
+      "group": "NewJeans",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/danielle.jpg",
+      "skill": {
+        "name": "アイゴー、オマイド!",
+        "type": "sacrifice",
+        "value": 90,
+        "desc": "ありがとう…自分を犠牲に相手全体に90ダメ！"
+      }
+    },
+    {
+      "id": 125,
+      "name": "haerin",
+      "group": "NewJeans",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/haerin.jpg",
+      "skill": {
+        "name": "クニャン...",
+        "type": "snipe",
+        "value": 90,
+        "desc": "そっと狙う…ベンチ含む相手最弱に90ダメ！"
+      }
+    },
+    {
+      "id": 126,
+      "name": "hyein",
+      "group": "NewJeans",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/hyein.jpg",
+      "skill": {
+        "name": "オンマ～！これ見て～!",
+        "type": "atk2",
+        "value": 35,
+        "desc": "お母さん見て！相手バトル場全体に35ダメ！"
+      }
+    },
+    {
+      "id": 127,
+      "name": "chaewon",
+      "group": "LE SSERAFIM",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/chaewon.jpg",
+      "skill": null
+    },
+    {
+      "id": 128,
+      "name": "sakura",
+      "group": "LE SSERAFIM",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/sakura.jpg",
+      "skill": null
+    },
+    {
+      "id": 129,
+      "name": "yunjin",
+      "group": "LE SSERAFIM",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/yunjin.jpg",
+      "skill": null
+    },
+    {
+      "id": 130,
+      "name": "kazuha",
+      "group": "LE SSERAFIM",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/kazuha.jpg",
+      "skill": null
+    },
+    {
+      "id": 131,
+      "name": "eunchae",
+      "group": "LE SSERAFIM",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/eunchae.jpg",
+      "skill": null
+    },
+    {
+      "id": 132,
+      "name": "chaewon",
+      "group": "LE SSERAFIM",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/chaewon.jpg",
+      "skill": null
+    },
+    {
+      "id": 133,
+      "name": "sakura",
+      "group": "LE SSERAFIM",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/sakura.jpg",
+      "skill": null
+    },
+    {
+      "id": 134,
+      "name": "yunjin",
+      "group": "LE SSERAFIM",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/yunjin.jpg",
+      "skill": null
+    },
+    {
+      "id": 135,
+      "name": "kazuha",
+      "group": "LE SSERAFIM",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/kazuha.jpg",
+      "skill": null
+    },
+    {
+      "id": 136,
+      "name": "eunchae",
+      "group": "LE SSERAFIM",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/eunchae.jpg",
+      "skill": null
+    },
+    {
+      "id": 137,
+      "name": "chaewon",
+      "group": "LE SSERAFIM",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/chaewon.jpg",
+      "skill": null
+    },
+    {
+      "id": 138,
+      "name": "sakura",
+      "group": "LE SSERAFIM",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/sakura.jpg",
+      "skill": null
+    },
+    {
+      "id": 139,
+      "name": "yunjin",
+      "group": "LE SSERAFIM",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/yunjin.jpg",
+      "skill": null
+    },
+    {
+      "id": 140,
+      "name": "kazuha",
+      "group": "LE SSERAFIM",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/kazuha.jpg",
+      "skill": null
+    },
+    {
+      "id": 141,
+      "name": "eunchae",
+      "group": "LE SSERAFIM",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/eunchae.jpg",
+      "skill": null
+    },
+    {
+      "id": 142,
+      "name": "chaewon",
+      "group": "LE SSERAFIM",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/chaewon.jpg",
+      "skill": null
+    },
+    {
+      "id": 143,
+      "name": "sakura",
+      "group": "LE SSERAFIM",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/sakura.jpg",
+      "skill": null
+    },
+    {
+      "id": 144,
+      "name": "yunjin",
+      "group": "LE SSERAFIM",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/yunjin.jpg",
+      "skill": null
+    },
+    {
+      "id": 145,
+      "name": "kazuha",
+      "group": "LE SSERAFIM",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/kazuha.jpg",
+      "skill": null
+    },
+    {
+      "id": 146,
+      "name": "eunchae",
+      "group": "LE SSERAFIM",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/eunchae.jpg",
+      "skill": null
+    },
+    {
+      "id": 147,
+      "name": "chaewon",
+      "group": "LE SSERAFIM",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/chaewon.jpg",
+      "skill": null
+    },
+    {
+      "id": 148,
+      "name": "sakura",
+      "group": "LE SSERAFIM",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/sakura.jpg",
+      "skill": null
+    },
+    {
+      "id": 149,
+      "name": "yunjin",
+      "group": "LE SSERAFIM",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/yunjin.jpg",
+      "skill": null
+    },
+    {
+      "id": 150,
+      "name": "kazuha",
+      "group": "LE SSERAFIM",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/kazuha.jpg",
+      "skill": null
+    },
+    {
+      "id": 151,
+      "name": "eunchae",
+      "group": "LE SSERAFIM",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/eunchae.jpg",
+      "skill": null
+    },
+    {
+      "id": 152,
+      "name": "chaewon",
+      "group": "LE SSERAFIM",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/chaewon.jpg",
+      "skill": {
+        "name": "可愛くてごめん!",
+        "type": "defense",
+        "value": 65,
+        "desc": "可愛い盾！自分バトル場全体にシールド+65！"
+      }
+    },
+    {
+      "id": 153,
+      "name": "sakura",
+      "group": "LE SSERAFIM",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/sakura.jpg",
+      "skill": {
+        "name": "何してんの?",
+        "type": "gravity",
+        "value": 0,
+        "desc": "何してんの！相手は2ターンベンチ交換禁止！"
+      }
+    },
+    {
+      "id": 154,
+      "name": "yunjin",
+      "group": "LE SSERAFIM",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/yunjin.jpg",
+      "skill": {
+        "name": "ファン・ガングン!",
+        "type": "counter",
+        "value": 0,
+        "desc": "ファン・ガングン！相手最強敵にATK×2の一撃！"
+      }
+    },
+    {
+      "id": 155,
+      "name": "kazuha",
+      "group": "LE SSERAFIM",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/kazuha.jpg",
+      "skill": {
+        "name": "神秘トマト",
+        "type": "poison",
+        "value": 3,
+        "desc": "謎のトマト…相手全体に毒付与！3T毎10ダメ！"
+      }
+    },
+    {
+      "id": 156,
+      "name": "eunchae",
+      "group": "LE SSERAFIM",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/eunchae.jpg",
+      "skill": {
+        "name": "ハガナヨ!",
+        "type": "reflect",
+        "value": 0,
+        "desc": "するな！次の攻撃をそのまま跳ね返す！"
+      }
+    },
+    {
+      "id": 157,
+      "name": "karina",
+      "group": "aespa",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/karina.jpg",
+      "skill": null
+    },
+    {
+      "id": 158,
+      "name": "giselle",
+      "group": "aespa",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/giselle.jpg",
+      "skill": null
+    },
+    {
+      "id": 159,
+      "name": "winter",
+      "group": "aespa",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/winter.jpg",
+      "skill": null
+    },
+    {
+      "id": 160,
+      "name": "ningning",
+      "group": "aespa",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/ningning.jpg",
+      "skill": null
+    },
+    {
+      "id": 161,
+      "name": "karina",
+      "group": "aespa",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/karina.jpg",
+      "skill": null
+    },
+    {
+      "id": 162,
+      "name": "giselle",
+      "group": "aespa",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/giselle.jpg",
+      "skill": null
+    },
+    {
+      "id": 163,
+      "name": "winter",
+      "group": "aespa",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/winter.jpg",
+      "skill": null
+    },
+    {
+      "id": 164,
+      "name": "ningning",
+      "group": "aespa",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/ningning.jpg",
+      "skill": null
+    },
+    {
+      "id": 165,
+      "name": "karina",
+      "group": "aespa",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/karina.jpg",
+      "skill": null
+    },
+    {
+      "id": 166,
+      "name": "giselle",
+      "group": "aespa",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/giselle.jpg",
+      "skill": null
+    },
+    {
+      "id": 167,
+      "name": "winter",
+      "group": "aespa",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/winter.jpg",
+      "skill": null
+    },
+    {
+      "id": 168,
+      "name": "ningning",
+      "group": "aespa",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/ningning.jpg",
+      "skill": null
+    },
+    {
+      "id": 169,
+      "name": "karina",
+      "group": "aespa",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/karina.jpg",
+      "skill": null
+    },
+    {
+      "id": 170,
+      "name": "giselle",
+      "group": "aespa",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/giselle.jpg",
+      "skill": null
+    },
+    {
+      "id": 171,
+      "name": "winter",
+      "group": "aespa",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/winter.jpg",
+      "skill": null
+    },
+    {
+      "id": 172,
+      "name": "ningning",
+      "group": "aespa",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/ningning.jpg",
+      "skill": null
+    },
+    {
+      "id": 173,
+      "name": "karina",
+      "group": "aespa",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/karina.jpg",
+      "skill": null
+    },
+    {
+      "id": 174,
+      "name": "giselle",
+      "group": "aespa",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/giselle.jpg",
+      "skill": null
+    },
+    {
+      "id": 175,
+      "name": "winter",
+      "group": "aespa",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/winter.jpg",
+      "skill": null
+    },
+    {
+      "id": 176,
+      "name": "ningning",
+      "group": "aespa",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/ningning.jpg",
+      "skill": null
+    },
+    {
+      "id": 177,
+      "name": "karina",
+      "group": "aespa",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/karina.jpg",
+      "skill": {
+        "name": "宿舎のハンター",
+        "type": "chain",
+        "value": 0,
+        "desc": "一人ずつ仕留める！相手場を連鎖攻撃（減衰あり）！"
+      }
+    },
+    {
+      "id": 178,
+      "name": "giselle",
+      "group": "aespa",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/giselle.jpg",
+      "skill": {
+        "name": "それな！",
+        "type": "atk2",
+        "value": 35,
+        "desc": "それな！相手バトル場全体に35ダメージ！"
+      }
+    },
+    {
+      "id": 179,
+      "name": "winter",
+      "group": "aespa",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/winter.jpg",
+      "skill": {
+        "name": "コキコキッ!",
+        "type": "burst",
+        "value": 0,
+        "desc": "コキコキATK×3の爆発！でも自分もATK分ダメージ！"
+      }
+    },
+    {
+      "id": 180,
+      "name": "ningning",
+      "group": "aespa",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/ningning.jpg",
+      "skill": {
+        "name": "アハハハハ!!!",
+        "type": "overload",
+        "value": 0,
+        "desc": "笑いが止まらない！全カードATK+10！場に10ダメ"
+      }
+    },
+    {
+      "id": 181,
+      "name": "ruka",
+      "group": "BABYMONSTER",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/ruka.jpg",
+      "skill": null
+    },
+    {
+      "id": 182,
+      "name": "pharita",
+      "group": "BABYMONSTER",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/pharita.jpg",
+      "skill": null
+    },
+    {
+      "id": 183,
+      "name": "asa",
+      "group": "BABYMONSTER",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/asa.jpg",
+      "skill": null
+    },
+    {
+      "id": 184,
+      "name": "ahyeon",
+      "group": "BABYMONSTER",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/ahyeon.jpg",
+      "skill": null
+    },
+    {
+      "id": 185,
+      "name": "rami",
+      "group": "BABYMONSTER",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/rami.jpg",
+      "skill": null
+    },
+    {
+      "id": 186,
+      "name": "rora",
+      "group": "BABYMONSTER",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/rora.jpg",
+      "skill": null
+    },
+    {
+      "id": 187,
+      "name": "chiquita",
+      "group": "BABYMONSTER",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/chiquita.jpg",
+      "skill": null
+    },
+    {
+      "id": 188,
+      "name": "ruka",
+      "group": "BABYMONSTER",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/ruka.jpg",
+      "skill": null
+    },
+    {
+      "id": 189,
+      "name": "pharita",
+      "group": "BABYMONSTER",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/pharita.jpg",
+      "skill": null
+    },
+    {
+      "id": 190,
+      "name": "asa",
+      "group": "BABYMONSTER",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/asa.jpg",
+      "skill": null
+    },
+    {
+      "id": 191,
+      "name": "ahyeon",
+      "group": "BABYMONSTER",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/ahyeon.jpg",
+      "skill": null
+    },
+    {
+      "id": 192,
+      "name": "rami",
+      "group": "BABYMONSTER",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/rami.jpg",
+      "skill": null
+    },
+    {
+      "id": 193,
+      "name": "rora",
+      "group": "BABYMONSTER",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/rora.jpg",
+      "skill": null
+    },
+    {
+      "id": 194,
+      "name": "chiquita",
+      "group": "BABYMONSTER",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/chiquita.jpg",
+      "skill": null
+    },
+    {
+      "id": 195,
+      "name": "ruka",
+      "group": "BABYMONSTER",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/ruka.jpg",
+      "skill": null
+    },
+    {
+      "id": 196,
+      "name": "pharita",
+      "group": "BABYMONSTER",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/pharita.jpg",
+      "skill": null
+    },
+    {
+      "id": 197,
+      "name": "asa",
+      "group": "BABYMONSTER",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/asa.jpg",
+      "skill": null
+    },
+    {
+      "id": 198,
+      "name": "ahyeon",
+      "group": "BABYMONSTER",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/ahyeon.jpg",
+      "skill": null
+    },
+    {
+      "id": 199,
+      "name": "rami",
+      "group": "BABYMONSTER",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/rami.jpg",
+      "skill": null
+    },
+    {
+      "id": 200,
+      "name": "rora",
+      "group": "BABYMONSTER",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/rora.jpg",
+      "skill": null
+    },
+    {
+      "id": 201,
+      "name": "chiquita",
+      "group": "BABYMONSTER",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/chiquita.jpg",
+      "skill": null
+    },
+    {
+      "id": 202,
+      "name": "ruka",
+      "group": "BABYMONSTER",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/ruka.jpg",
+      "skill": null
+    },
+    {
+      "id": 203,
+      "name": "pharita",
+      "group": "BABYMONSTER",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/pharita.jpg",
+      "skill": null
+    },
+    {
+      "id": 204,
+      "name": "asa",
+      "group": "BABYMONSTER",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/asa.jpg",
+      "skill": null
+    },
+    {
+      "id": 205,
+      "name": "ahyeon",
+      "group": "BABYMONSTER",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/ahyeon.jpg",
+      "skill": null
+    },
+    {
+      "id": 206,
+      "name": "rami",
+      "group": "BABYMONSTER",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/rami.jpg",
+      "skill": null
+    },
+    {
+      "id": 207,
+      "name": "rora",
+      "group": "BABYMONSTER",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/rora.jpg",
+      "skill": null
+    },
+    {
+      "id": 208,
+      "name": "chiquita",
+      "group": "BABYMONSTER",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/chiquita.jpg",
+      "skill": null
+    },
+    {
+      "id": 209,
+      "name": "ruka",
+      "group": "BABYMONSTER",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/ruka.jpg",
+      "skill": null
+    },
+    {
+      "id": 210,
+      "name": "pharita",
+      "group": "BABYMONSTER",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/pharita.jpg",
+      "skill": null
+    },
+    {
+      "id": 211,
+      "name": "asa",
+      "group": "BABYMONSTER",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/asa.jpg",
+      "skill": null
+    },
+    {
+      "id": 212,
+      "name": "ahyeon",
+      "group": "BABYMONSTER",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/ahyeon.jpg",
+      "skill": null
+    },
+    {
+      "id": 213,
+      "name": "rami",
+      "group": "BABYMONSTER",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/rami.jpg",
+      "skill": null
+    },
+    {
+      "id": 214,
+      "name": "rora",
+      "group": "BABYMONSTER",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/rora.jpg",
+      "skill": null
+    },
+    {
+      "id": 215,
+      "name": "chiquita",
+      "group": "BABYMONSTER",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/chiquita.jpg",
+      "skill": null
+    },
+    {
+      "id": 216,
+      "name": "ruka",
+      "group": "BABYMONSTER",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/ruka.jpg",
+      "skill": {
+        "name": "ニホンゴ・ムジュカシイ",
+        "type": "timelock",
+        "value": 0,
+        "desc": "相手の最弱カードを1ターン封印！言葉が通じない…"
+      }
+    },
+    {
+      "id": 217,
+      "name": "pharita",
+      "group": "BABYMONSTER",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/pharita.jpg",
+      "skill": {
+        "name": "プリンセスになりたい",
+        "type": "defense",
+        "value": 65,
+        "desc": "プリンセスのように！自分全体にシールド+65！"
+      }
+    },
+    {
+      "id": 218,
+      "name": "asa",
+      "group": "BABYMONSTER",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/asa.jpg",
+      "skill": {
+        "name": "マイ・ベストフレンド・ベッド",
+        "type": "regen",
+        "value": 0,
+        "desc": "ぐっすり…自分場全体に3ターン毎ターン15HP再生！"
+      }
+    },
+    {
+      "id": 219,
+      "name": "ahyeon",
+      "group": "BABYMONSTER",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/ahyeon.jpg",
+      "skill": {
+        "name": "ソルロンタン!",
+        "type": "heal2",
+        "value": 75,
+        "desc": "滋養強壮！自分1体のHPを75大回復！"
+      }
+    },
+    {
+      "id": 220,
+      "name": "rami",
+      "group": "BABYMONSTER",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/rami.jpg",
+      "skill": {
+        "name": "チキンチョア",
+        "type": "heal",
+        "value": 25,
+        "desc": "自分バトル場全体を25回復！チキン最高！"
+      }
+    },
+    {
+      "id": 221,
+      "name": "rora",
+      "group": "BABYMONSTER",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/rora.jpg",
+      "skill": {
+        "name": "ノット・ハルモニ!!",
+        "type": "counter",
+        "value": 0,
+        "desc": "おばあちゃんじゃない！相手最強敵にATK×2の反撃！"
+      }
+    },
+    {
+      "id": 222,
+      "name": "chiquita",
+      "group": "BABYMONSTER",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/chiquita.jpg",
+      "skill": {
+        "name": "ノリノリ・マンドゥ",
+        "type": "encore",
+        "value": 0,
+        "desc": "ノリノリで！もう1ターン連続行動できる！"
+      }
+    },
+    {
+      "id": 223,
+      "name": "jisoo",
+      "group": "BLACKPINK",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/jisoo.jpg",
+      "skill": null
+    },
+    {
+      "id": 224,
+      "name": "jennie",
+      "group": "BLACKPINK",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/jennie.jpg",
+      "skill": null
+    },
+    {
+      "id": 225,
+      "name": "rose",
+      "group": "BLACKPINK",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/rose.jpg",
+      "skill": null
+    },
+    {
+      "id": 226,
+      "name": "lisa",
+      "group": "BLACKPINK",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/lisa.jpg",
+      "skill": null
+    },
+    {
+      "id": 227,
+      "name": "jisoo",
+      "group": "BLACKPINK",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/jisoo.jpg",
+      "skill": null
+    },
+    {
+      "id": 228,
+      "name": "jennie",
+      "group": "BLACKPINK",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/jennie.jpg",
+      "skill": null
+    },
+    {
+      "id": 229,
+      "name": "rose",
+      "group": "BLACKPINK",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/rose.jpg",
+      "skill": null
+    },
+    {
+      "id": 230,
+      "name": "lisa",
+      "group": "BLACKPINK",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/lisa.jpg",
+      "skill": null
+    },
+    {
+      "id": 231,
+      "name": "jisoo",
+      "group": "BLACKPINK",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/jisoo.jpg",
+      "skill": null
+    },
+    {
+      "id": 232,
+      "name": "jennie",
+      "group": "BLACKPINK",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/jennie.jpg",
+      "skill": null
+    },
+    {
+      "id": 233,
+      "name": "rose",
+      "group": "BLACKPINK",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/rose.jpg",
+      "skill": null
+    },
+    {
+      "id": 234,
+      "name": "lisa",
+      "group": "BLACKPINK",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/lisa.jpg",
+      "skill": null
+    },
+    {
+      "id": 235,
+      "name": "jisoo",
+      "group": "BLACKPINK",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/jisoo.jpg",
+      "skill": null
+    },
+    {
+      "id": 236,
+      "name": "jennie",
+      "group": "BLACKPINK",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/jennie.jpg",
+      "skill": null
+    },
+    {
+      "id": 237,
+      "name": "rose",
+      "group": "BLACKPINK",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/rose.jpg",
+      "skill": null
+    },
+    {
+      "id": 238,
+      "name": "lisa",
+      "group": "BLACKPINK",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/lisa.jpg",
+      "skill": null
+    },
+    {
+      "id": 239,
+      "name": "jisoo",
+      "group": "BLACKPINK",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/jisoo.jpg",
+      "skill": null
+    },
+    {
+      "id": 240,
+      "name": "jennie",
+      "group": "BLACKPINK",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/jennie.jpg",
+      "skill": null
+    },
+    {
+      "id": 241,
+      "name": "rose",
+      "group": "BLACKPINK",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/rose.jpg",
+      "skill": null
+    },
+    {
+      "id": 242,
+      "name": "lisa",
+      "group": "BLACKPINK",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/lisa.jpg",
+      "skill": null
+    },
+    {
+      "id": 243,
+      "name": "jisoo",
+      "group": "BLACKPINK",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/jisoo.jpg",
+      "skill": {
+        "name": "アンニョン、私はジスだよ",
+        "type": "gravity",
+        "value": 0,
+        "desc": "私はジス！相手は2ターンベンチ交換禁止！"
+      }
+    },
+    {
+      "id": 244,
+      "name": "jennie",
+      "group": "BLACKPINK",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/jennie.jpg",
+      "skill": {
+        "name": "私は怖くないから先に行くね！",
+        "type": "berserker",
+        "value": 0,
+        "desc": "先陣を切る！HP依存で攻撃倍率UP！"
+      }
+    },
+    {
+      "id": 245,
+      "name": "rose",
+      "group": "BLACKPINK",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/rose.jpg",
+      "skill": {
+        "name": "モグモグ・チップマンクス",
+        "type": "drain",
+        "value": 0,
+        "desc": "ムシャムシャ！ATKダメージ＆自分が同量回復！"
+      }
+    },
+    {
+      "id": 246,
+      "name": "lisa",
+      "group": "BLACKPINK",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/lisa.jpg",
+      "skill": {
+        "name": "100億₩の広告くれたら前髪あげる",
+        "type": "last_stand",
+        "value": 0,
+        "desc": "本気出す！HP10以下で150の瀕死の一撃！"
+      }
+    },
+    {
+      "id": 247,
+      "name": "mako",
+      "group": "NiziU",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/mako.jpg",
+      "skill": null
+    },
+    {
+      "id": 248,
+      "name": "riku",
+      "group": "NiziU",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/riku.jpg",
+      "skill": null
+    },
+    {
+      "id": 249,
+      "name": "rima",
+      "group": "NiziU",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/rima.jpg",
+      "skill": null
+    },
+    {
+      "id": 250,
+      "name": "rio",
+      "group": "NiziU",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/rio.jpg",
+      "skill": null
+    },
+    {
+      "id": 251,
+      "name": "maya",
+      "group": "NiziU",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/maya.jpg",
+      "skill": null
+    },
+    {
+      "id": 252,
+      "name": "miihi",
+      "group": "NiziU",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/miihi.jpg",
+      "skill": null
+    },
+    {
+      "id": 253,
+      "name": "mayuka",
+      "group": "NiziU",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/mayuka.jpg",
+      "skill": null
+    },
+    {
+      "id": 254,
+      "name": "ayaka",
+      "group": "NiziU",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/ayaka.jpg",
+      "skill": null
+    },
+    {
+      "id": 255,
+      "name": "nina",
+      "group": "NiziU",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/nina.jpg",
+      "skill": null
+    },
+    {
+      "id": 256,
+      "name": "mako",
+      "group": "NiziU",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/mako.jpg",
+      "skill": null
+    },
+    {
+      "id": 257,
+      "name": "riku",
+      "group": "NiziU",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/riku.jpg",
+      "skill": null
+    },
+    {
+      "id": 258,
+      "name": "rima",
+      "group": "NiziU",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/rima.jpg",
+      "skill": null
+    },
+    {
+      "id": 259,
+      "name": "rio",
+      "group": "NiziU",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/rio.jpg",
+      "skill": null
+    },
+    {
+      "id": 260,
+      "name": "maya",
+      "group": "NiziU",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/maya.jpg",
+      "skill": null
+    },
+    {
+      "id": 261,
+      "name": "miihi",
+      "group": "NiziU",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/miihi.jpg",
+      "skill": null
+    },
+    {
+      "id": 262,
+      "name": "mayuka",
+      "group": "NiziU",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/mayuka.jpg",
+      "skill": null
+    },
+    {
+      "id": 263,
+      "name": "ayaka",
+      "group": "NiziU",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/ayaka.jpg",
+      "skill": null
+    },
+    {
+      "id": 264,
+      "name": "nina",
+      "group": "NiziU",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/nina.jpg",
+      "skill": null
+    },
+    {
+      "id": 265,
+      "name": "mako",
+      "group": "NiziU",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/mako.jpg",
+      "skill": null
+    },
+    {
+      "id": 266,
+      "name": "riku",
+      "group": "NiziU",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/riku.jpg",
+      "skill": null
+    },
+    {
+      "id": 267,
+      "name": "rima",
+      "group": "NiziU",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/rima.jpg",
+      "skill": null
+    },
+    {
+      "id": 268,
+      "name": "rio",
+      "group": "NiziU",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/rio.jpg",
+      "skill": null
+    },
+    {
+      "id": 269,
+      "name": "maya",
+      "group": "NiziU",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/maya.jpg",
+      "skill": null
+    },
+    {
+      "id": 270,
+      "name": "miihi",
+      "group": "NiziU",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/miihi.jpg",
+      "skill": null
+    },
+    {
+      "id": 271,
+      "name": "mayuka",
+      "group": "NiziU",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/mayuka.jpg",
+      "skill": null
+    },
+    {
+      "id": 272,
+      "name": "ayaka",
+      "group": "NiziU",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/ayaka.jpg",
+      "skill": null
+    },
+    {
+      "id": 273,
+      "name": "nina",
+      "group": "NiziU",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/nina.jpg",
+      "skill": null
+    },
+    {
+      "id": 274,
+      "name": "mako",
+      "group": "NiziU",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/mako.jpg",
+      "skill": null
+    },
+    {
+      "id": 275,
+      "name": "riku",
+      "group": "NiziU",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/riku.jpg",
+      "skill": null
+    },
+    {
+      "id": 276,
+      "name": "rima",
+      "group": "NiziU",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/rima.jpg",
+      "skill": null
+    },
+    {
+      "id": 277,
+      "name": "rio",
+      "group": "NiziU",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/rio.jpg",
+      "skill": null
+    },
+    {
+      "id": 278,
+      "name": "maya",
+      "group": "NiziU",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/maya.jpg",
+      "skill": null
+    },
+    {
+      "id": 279,
+      "name": "miihi",
+      "group": "NiziU",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/miihi.jpg",
+      "skill": null
+    },
+    {
+      "id": 280,
+      "name": "mayuka",
+      "group": "NiziU",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/mayuka.jpg",
+      "skill": null
+    },
+    {
+      "id": 281,
+      "name": "ayaka",
+      "group": "NiziU",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/ayaka.jpg",
+      "skill": null
+    },
+    {
+      "id": 282,
+      "name": "nina",
+      "group": "NiziU",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/nina.jpg",
+      "skill": null
+    },
+    {
+      "id": 283,
+      "name": "mako",
+      "group": "NiziU",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/mako.jpg",
+      "skill": null
+    },
+    {
+      "id": 284,
+      "name": "riku",
+      "group": "NiziU",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/riku.jpg",
+      "skill": null
+    },
+    {
+      "id": 285,
+      "name": "rima",
+      "group": "NiziU",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/rima.jpg",
+      "skill": null
+    },
+    {
+      "id": 286,
+      "name": "rio",
+      "group": "NiziU",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/rio.jpg",
+      "skill": null
+    },
+    {
+      "id": 287,
+      "name": "maya",
+      "group": "NiziU",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/maya.jpg",
+      "skill": null
+    },
+    {
+      "id": 288,
+      "name": "miihi",
+      "group": "NiziU",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/miihi.jpg",
+      "skill": null
+    },
+    {
+      "id": 289,
+      "name": "mayuka",
+      "group": "NiziU",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/mayuka.jpg",
+      "skill": null
+    },
+    {
+      "id": 290,
+      "name": "ayaka",
+      "group": "NiziU",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/ayaka.jpg",
+      "skill": null
+    },
+    {
+      "id": 291,
+      "name": "nina",
+      "group": "NiziU",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/nina.jpg",
+      "skill": null
+    },
+    {
+      "id": 292,
+      "name": "mako",
+      "group": "NiziU",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/mako.jpg",
+      "skill": {
+        "name": "トゥギャザーしようぜ",
+        "type": "lifelink",
+        "value": 0,
+        "desc": "みんなで一緒に！自分場全員のHPを平均値に統一！"
+      }
+    },
+    {
+      "id": 293,
+      "name": "riku",
+      "group": "NiziU",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/riku.jpg",
+      "skill": {
+        "name": "喋らんとけば美人",
+        "type": "reflect",
+        "value": 0,
+        "desc": "黙って美しく…次の攻撃をそのまま跳ね返す！"
+      }
+    },
+    {
+      "id": 294,
+      "name": "rima",
+      "group": "NiziU",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/rima.jpg",
+      "skill": {
+        "name": "トリリンガル・パニック",
+        "type": "blizzard",
+        "value": 0,
+        "desc": "言語混乱！相手バトル場全体を2ターン凍結！"
+      }
+    },
+    {
+      "id": 295,
+      "name": "rio",
+      "group": "NiziU",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/rio.jpg",
+      "skill": {
+        "name": "あ、間違えちゃった",
+        "type": "rampage",
+        "value": 0,
+        "desc": "あれ間違えた…ATK×2でランダム対象を攻撃！味方も!?"
+      }
+    },
+    {
+      "id": 296,
+      "name": "maya",
+      "group": "NiziU",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/maya.jpg",
+      "skill": {
+        "name": "宿舎のオカン・ビーム",
+        "type": "curse",
+        "value": 0,
+        "desc": "お母さんモード！相手場全体のATKを半分に！（永続）"
+      }
+    },
+    {
+      "id": 297,
+      "name": "miihi",
+      "group": "NiziU",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/miihi.jpg",
+      "skill": {
+        "name": "トトロのパン、どこ?",
+        "type": "snipe",
+        "value": 90,
+        "desc": "探し出した！ベンチ含む相手全員の最弱に90ダメ！"
+      }
+    },
+    {
+      "id": 298,
+      "name": "mayuka",
+      "group": "NiziU",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/mayuka.jpg",
+      "skill": {
+        "name": "カメレオン・シンクロ",
+        "type": "clone",
+        "value": 0,
+        "desc": "シンクロして2回攻撃！通常攻撃を2回行う！"
+      }
+    },
+    {
+      "id": 299,
+      "name": "ayaka",
+      "group": "NiziU",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/ayaka.jpg",
+      "skill": {
+        "name": "テニス講座",
+        "type": "atk1",
+        "value": 85,
+        "desc": "ラケットで一撃！特定の敵に85の強打！"
+      }
+    },
+    {
+      "id": 300,
+      "name": "nina",
+      "group": "NiziU",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/nina.jpg",
+      "skill": {
+        "name": "ワンちゃん・ハグ",
+        "type": "heal",
+        "value": 25,
+        "desc": "ハグで癒し！自分バトル場全体を25回復！"
+      }
+    },
+    {
+      "id": 301,
+      "name": "yunah",
+      "group": "ILLIT",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/yunah.jpg",
+      "skill": null
+    },
+    {
+      "id": 302,
+      "name": "minju",
+      "group": "ILLIT",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/minju.jpg",
+      "skill": null
+    },
+    {
+      "id": 303,
+      "name": "moka",
+      "group": "ILLIT",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/moka.jpg",
+      "skill": null
+    },
+    {
+      "id": 304,
+      "name": "wonhee",
+      "group": "ILLIT",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/wonhee.jpg",
+      "skill": null
+    },
+    {
+      "id": 305,
+      "name": "iroha",
+      "group": "ILLIT",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/iroha.jpg",
+      "skill": null
+    },
+    {
+      "id": 306,
+      "name": "yunah",
+      "group": "ILLIT",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/yunah.jpg",
+      "skill": null
+    },
+    {
+      "id": 307,
+      "name": "minju",
+      "group": "ILLIT",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/minju.jpg",
+      "skill": null
+    },
+    {
+      "id": 308,
+      "name": "moka",
+      "group": "ILLIT",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/moka.jpg",
+      "skill": null
+    },
+    {
+      "id": 309,
+      "name": "wonhee",
+      "group": "ILLIT",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/wonhee.jpg",
+      "skill": null
+    },
+    {
+      "id": 310,
+      "name": "iroha",
+      "group": "ILLIT",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/iroha.jpg",
+      "skill": null
+    },
+    {
+      "id": 311,
+      "name": "yunah",
+      "group": "ILLIT",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/yunah.jpg",
+      "skill": null
+    },
+    {
+      "id": 312,
+      "name": "minju",
+      "group": "ILLIT",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/minju.jpg",
+      "skill": null
+    },
+    {
+      "id": 313,
+      "name": "moka",
+      "group": "ILLIT",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/moka.jpg",
+      "skill": null
+    },
+    {
+      "id": 314,
+      "name": "wonhee",
+      "group": "ILLIT",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/wonhee.jpg",
+      "skill": null
+    },
+    {
+      "id": 315,
+      "name": "iroha",
+      "group": "ILLIT",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/iroha.jpg",
+      "skill": null
+    },
+    {
+      "id": 316,
+      "name": "yunah",
+      "group": "ILLIT",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/yunah.jpg",
+      "skill": null
+    },
+    {
+      "id": 317,
+      "name": "minju",
+      "group": "ILLIT",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/minju.jpg",
+      "skill": null
+    },
+    {
+      "id": 318,
+      "name": "moka",
+      "group": "ILLIT",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/moka.jpg",
+      "skill": null
+    },
+    {
+      "id": 319,
+      "name": "wonhee",
+      "group": "ILLIT",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/wonhee.jpg",
+      "skill": null
+    },
+    {
+      "id": 320,
+      "name": "iroha",
+      "group": "ILLIT",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/iroha.jpg",
+      "skill": null
+    },
+    {
+      "id": 321,
+      "name": "yunah",
+      "group": "ILLIT",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/yunah.jpg",
+      "skill": null
+    },
+    {
+      "id": 322,
+      "name": "minju",
+      "group": "ILLIT",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/minju.jpg",
+      "skill": null
+    },
+    {
+      "id": 323,
+      "name": "moka",
+      "group": "ILLIT",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/moka.jpg",
+      "skill": null
+    },
+    {
+      "id": 324,
+      "name": "wonhee",
+      "group": "ILLIT",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/wonhee.jpg",
+      "skill": null
+    },
+    {
+      "id": 325,
+      "name": "iroha",
+      "group": "ILLIT",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/iroha.jpg",
+      "skill": null
+    },
+    {
+      "id": 326,
+      "name": "yunah",
+      "group": "ILLIT",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/yunah.jpg",
+      "skill": {
+        "name": "私がポテトチップスに見えますか?",
+        "type": "mirror",
+        "value": 0,
+        "desc": "見えません！前回の相手ダメをそのまま返す！"
+      }
+    },
+    {
+      "id": 327,
+      "name": "minju",
+      "group": "ILLIT",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/minju.jpg",
+      "skill": {
+        "name": "楽しいぃ？",
+        "type": "quake",
+        "value": 22,
+        "desc": "楽しくなれ！相手全員（ベンチ含む）に22ダメ！"
+      }
+    },
+    {
+      "id": 328,
+      "name": "moka",
+      "group": "ILLIT",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/moka.jpg",
+      "skill": {
+        "name": "コーヒーじゃないです、モカです",
+        "type": "swap",
+        "value": 0,
+        "desc": "混同しないで！相手の場とベンチを強制交換！"
+      }
+    },
+    {
+      "id": 329,
+      "name": "wonhee",
+      "group": "ILLIT",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/wonhee.jpg",
+      "skill": {
+        "name": "ダーリン",
+        "type": "regen",
+        "value": 0,
+        "desc": "ダーリン♡自分場全体に3ターン毎ターン15HP再生！"
+      }
+    },
+    {
+      "id": 330,
+      "name": "iroha",
+      "group": "ILLIT",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/iroha.jpg",
+      "skill": {
+        "name": "たぁこやき～",
+        "type": "atk1",
+        "value": 85,
+        "desc": "たこ焼き一発！特定の敵に85の集中攻撃！"
+      }
+    },
+    {
+      "id": 331,
+      "name": "名井 南",
+      "group": "MISAMO",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/MISAMOmina.jpg",
+      "skill": null
+    },
+    {
+      "id": 332,
+      "name": "湊崎 紗夏",
+      "group": "MISAMO",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/MISAMOsana.jpg",
+      "skill": null
+    },
+    {
+      "id": 333,
+      "name": "平井 もも",
+      "group": "MISAMO",
+      "rarity": "N",
+      "hp": 80,
+      "atk": 15,
+      "img": "images/N/MISAMOmomo.jpg",
+      "skill": null
+    },
+    {
+      "id": 334,
+      "name": "名井 南",
+      "group": "MISAMO",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/MISAMOmina.jpg",
+      "skill": null
+    },
+    {
+      "id": 335,
+      "name": "湊崎 紗夏",
+      "group": "MISAMO",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/MISAMOsana.jpg",
+      "skill": null
+    },
+    {
+      "id": 336,
+      "name": "平井 もも",
+      "group": "MISAMO",
+      "rarity": "R",
+      "hp": 100,
+      "atk": 20,
+      "img": "images/R/MISAMOmomo.jpg",
+      "skill": null
+    },
+    {
+      "id": 337,
+      "name": "名井 南",
+      "group": "MISAMO",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/MISAMOmina.jpg",
+      "skill": null
+    },
+    {
+      "id": 338,
+      "name": "湊崎 紗夏",
+      "group": "MISAMO",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/MISAMOsana.jpg",
+      "skill": null
+    },
+    {
+      "id": 339,
+      "name": "平井 もも",
+      "group": "MISAMO",
+      "rarity": "SR",
+      "hp": 125,
+      "atk": 27,
+      "img": "images/SR/MISAMOmomo.jpg",
+      "skill": null
+    },
+    {
+      "id": 340,
+      "name": "名井 南",
+      "group": "MISAMO",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/MISAMOmina.jpg",
+      "skill": null
+    },
+    {
+      "id": 341,
+      "name": "湊崎 紗夏",
+      "group": "MISAMO",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/MISAMOsana.jpg",
+      "skill": null
+    },
+    {
+      "id": 342,
+      "name": "平井 もも",
+      "group": "MISAMO",
+      "rarity": "SSR",
+      "hp": 155,
+      "atk": 35,
+      "img": "images/SSR/MISAMOmomo.jpg",
+      "skill": null
+    },
+    {
+      "id": 343,
+      "name": "名井 南",
+      "group": "MISAMO",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/MISAMOmina.jpg",
+      "skill": null
+    },
+    {
+      "id": 344,
+      "name": "湊崎 紗夏",
+      "group": "MISAMO",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/MISAMOsana.jpg",
+      "skill": null
+    },
+    {
+      "id": 345,
+      "name": "平井 もも",
+      "group": "MISAMO",
+      "rarity": "HR",
+      "hp": 190,
+      "atk": 45,
+      "img": "images/HR/MISAMOmomo.jpg",
+      "skill": null
+    },
+    {
+      "id": 346,
+      "name": "名井 南",
+      "group": "MISAMO",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/MISAMOmina.jpg",
+      "skill": {
+        "name": "沼れ",
+        "type": "curse",
+        "value": 0,
+        "desc": "沼にはまれ！相手場全体のATKを半分に！（永続）"
+      }
+    },
+    {
+      "id": 347,
+      "name": "湊崎 紗夏",
+      "group": "MISAMO",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/MISAMOsana.jpg",
+      "skill": {
+        "name": "なぁ↑ももりん",
+        "type": "heal2",
+        "value": 75,
+        "desc": "ももりん♡自分1体のHPを75大回復！"
+      }
+    },
+    {
+      "id": 348,
+      "name": "平井 もも",
+      "group": "MISAMO",
+      "rarity": "UR",
+      "hp": 230,
+      "atk": 55,
+      "img": "images/UR/MISAMOmomo.jpg",
+      "skill": {
+        "name": "&@%#^*$€",
+        "type": "rampage",
+        "value": 0,
+        "desc": "言葉にならない！ATK×2でランダム攻撃！"
+      }
     }
   ],
   "quizzes": {
@@ -281,13 +3711,23 @@
       {
         "id": "IVE_0",
         "question": "IVEのデビュー曲のタイトルは何でしょう？",
-        "choices": ["LOVE DIVE", "I AM", "ATTITUDE", "ELEVEN"],
+        "choices": [
+          "LOVE DIVE",
+          "I AM",
+          "ATTITUDE",
+          "ELEVEN"
+        ],
         "answer": 3
       },
       {
         "id": "IVE_1",
         "question": "IVEのデビュー日はいつでしょう？",
-        "choices": ["2021年12月1日", "2022年12月1日", "2021年6月1日", "2022年6月1日"],
+        "choices": [
+          "2021年12月1日",
+          "2022年12月1日",
+          "2021年6月1日",
+          "2022年6月1日"
+        ],
         "answer": 0
       }
     ],
@@ -295,13 +3735,23 @@
       {
         "id": "aespa_0",
         "question": "aespaのデビュー曲のタイトルは何でしょう？",
-        "choices": ["Supernova", "Savage", "Next Level", "Black Mamba"],
+        "choices": [
+          "Supernova",
+          "Savage",
+          "Next Level",
+          "Black Mamba"
+        ],
         "answer": 3
       },
       {
         "id": "aespa_1",
         "question": "aespaのデビュー日はいつでしょう？",
-        "choices": ["2019年12月31日", "2020年11月17日", "2021年6月18日", "2022年10月1日"],
+        "choices": [
+          "2019年12月31日",
+          "2020年11月17日",
+          "2021年6月18日",
+          "2022年10月1日"
+        ],
         "answer": 1
       }
     ],
@@ -309,13 +3759,23 @@
       {
         "id": "NewJeans_0",
         "question": "NewJeansのデビュー曲のタイトルは何でしょう？",
-        "choices": ["Attention", "Hype Boy", "Cookie", "OMG"],
+        "choices": [
+          "Attention",
+          "Hype Boy",
+          "Cookie",
+          "OMG"
+        ],
         "answer": 0
       },
       {
         "id": "NewJeans_1",
         "question": "NewJeansのデビュー日はいつでしょう？",
-        "choices": ["2022年7月22日", "2022年7月7日", "2022年8月7日", "2022年8月22日"],
+        "choices": [
+          "2022年7月22日",
+          "2022年7月7日",
+          "2022年8月7日",
+          "2022年8月22日"
+        ],
         "answer": 0
       }
     ],
@@ -323,13 +3783,23 @@
       {
         "id": "TWICE_0",
         "question": "TWICEのデビュー曲のタイトルは何でしょう？",
-        "choices": ["CHEER UP", "Like OOH-AHH", "TT", "FANCY"],
+        "choices": [
+          "CHEER UP",
+          "Like OOH-AHH",
+          "TT",
+          "FANCY"
+        ],
         "answer": 1
       },
       {
         "id": "TWICE_1",
         "question": "TWICEのデビュー日はいつでしょう？",
-        "choices": ["2014年7月7日", "2015年7月7日", "2014年10月20日", "2015年10月20日"],
+        "choices": [
+          "2014年7月7日",
+          "2015年7月7日",
+          "2014年10月20日",
+          "2015年10月20日"
+        ],
         "answer": 3
       }
     ],
@@ -337,13 +3807,143 @@
       {
         "id": "LESSERAFIM_0",
         "question": "LE SSERAFIMのデビュー曲のタイトルは何でしょう？",
-        "choices": ["CRAZY", "UNFORGIVEN", "FEARLESS", "ANTIFRAGILE"],
+        "choices": [
+          "CRAZY",
+          "UNFORGIVEN",
+          "FEARLESS",
+          "ANTIFRAGILE"
+        ],
         "answer": 2
       },
       {
         "id": "LESSERAFIM_1",
         "question": "LE SSERAFIMのデビュー日はいつでしょう？",
-        "choices": ["2022年8月5日", "2022年5月2日", "2022年8月2日", "2022年5月5日"],
+        "choices": [
+          "2022年8月5日",
+          "2022年5月2日",
+          "2022年8月2日",
+          "2022年5月5日"
+        ],
+        "answer": 1
+      }
+    ],
+    "BLACKPINK": [
+      {
+        "id": "BLACKPINK_0",
+        "question": "BLACKPINKのデビュー曲は？(BOOMBAYEHと？)",
+        "choices": [
+          "WHISTLE",
+          "DDU-DU DDU-DU",
+          "Kill This Love",
+          "How You Like That"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "BLACKPINK_1",
+        "question": "BLACKPINKのデビュー日は？",
+        "choices": [
+          "2016年5月5日",
+          "2016年6月6日",
+          "2016年7月7日",
+          "2016年8月8日"
+        ],
+        "answer": 3
+      }
+    ],
+    "NiziU": [
+      {
+        "id": "NiziU_0",
+        "question": "NiziUのデビュー曲は？",
+        "choices": [
+          "Step and a Step",
+          "Make you happy",
+          "Take a picture",
+          "Super Bloom"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "NiziU_1",
+        "question": "NiziUのデビュー日は？",
+        "choices": [
+          "2020年12月22日",
+          "2020年12月2日",
+          "2021年12月22日",
+          "2021年12月2日"
+        ],
+        "answer": 1
+      }
+    ],
+    "BABYMONSTER": [
+      {
+        "id": "BABYMONSTER_0",
+        "question": "BABYMONSTERのデビュー曲は？",
+        "choices": [
+          "BATTER UP",
+          "LIKE THAT",
+          "SHEESH",
+          "FOREVER"
+        ],
+        "answer": 3
+      },
+      {
+        "id": "BABYMONSTER_1",
+        "question": "BABYMONSTERのデビュー日は？",
+        "choices": [
+          "2024年10月1日",
+          "2023年10月1日",
+          "2024年4月1日",
+          "2023年4月1日"
+        ],
+        "answer": 2
+      }
+    ],
+    "ILLIT": [
+      {
+        "id": "ILLIT_0",
+        "question": "ILLITのデビュー曲は？",
+        "choices": [
+          "Magnetic",
+          "Almond Chocolate",
+          "It's Me",
+          "Cherish"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "ILLIT_1",
+        "question": "ILLITのデビュー日は？",
+        "choices": [
+          "2024年3月1日",
+          "2025年4月16日",
+          "2024年4月5日",
+          "2025年3月25日"
+        ],
+        "answer": 3
+      }
+    ],
+    "MISAMO": [
+      {
+        "id": "MISAMO_0",
+        "question": "MISAMOのデビュー曲は？",
+        "choices": [
+          "Do not touch",
+          "Bouquet",
+          "Marshmallow",
+          "Identity"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "MISAMO_1",
+        "question": "MISAMOのデビュー日は？",
+        "choices": [
+          "2024年8月10日",
+          "2023年7月26日",
+          "2024年4月11日",
+          "2023年6月14日"
+        ],
         "answer": 1
       }
     ]
