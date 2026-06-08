@@ -1127,14 +1127,21 @@ function showBattleFormationSelect(deck5, callback) {
                 if (nextSlot.type === 'field') formation.field[nextSlot.idx] = cloneBattleCard(card);
                 else formation.bench[nextSlot.idx] = cloneBattleCard(card);
                 remaining.splice(i, 1);
-                if (nextSlot.type === 'field') {
-                    if (nextSlot.idx < FIELD_SLOTS - 1) nextSlot.idx++;
-                    else nextSlot = { type: 'bench', idx: 0 };
-                } else if (nextSlot.idx < BENCH_SLOTS - 1) nextSlot.idx++;
-                if (remaining.length === 0) {
+
+                // 場3体＋ベンチ2体の計5枚が揃ったら終了
+                const fieldFull = formation.field.every(c => c !== null);
+                const benchFull = formation.bench.every(c => c !== null);
+                if (fieldFull && benchFull) {
                     overlay.remove();
                     callback(formation);
                     return;
+                }
+
+                if (nextSlot.type === 'field') {
+                    if (nextSlot.idx < FIELD_SLOTS - 1) nextSlot.idx++;
+                    else nextSlot = { type: 'bench', idx: 0 };
+                } else {
+                    nextSlot.idx++;
                 }
                 updateStatus();
                 renderGrid();
