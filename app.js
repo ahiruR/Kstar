@@ -2125,8 +2125,42 @@ function switchTurn() {
 }
 
 // ==========================================
-// 10. オンライン1vs1（場3+ベンチ2）
+// 10. オンライン1vs1（Firebase Realtime Database）
 // ==========================================
+const FIREBASE_URL = 'https://kstar-game-default-rtdb.firebaseio.com';
+
+// Firebase REST API ラッパー
+async function fbGet(path) {
+    try {
+        const res = await fetch(`${FIREBASE_URL}/${path}.json`);
+        if (!res.ok) return null;
+        return await res.json();
+    } catch { return null; }
+}
+async function fbSet(path, data) {
+    try {
+        await fetch(`${FIREBASE_URL}/${path}.json`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+    } catch(e) { console.error('fbSet error:', e); }
+}
+async function fbUpdate(path, data) {
+    try {
+        await fetch(`${FIREBASE_URL}/${path}.json`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+    } catch(e) { console.error('fbUpdate error:', e); }
+}
+async function fbDelete(path) {
+    try {
+        await fetch(`${FIREBASE_URL}/${path}.json`, { method: 'DELETE' });
+    } catch(e) { console.error('fbDelete error:', e); }
+}
+
 function serializeBattle(player) {
     return { field: player.field, bench: player.bench };
 }
@@ -2146,23 +2180,26 @@ function startOnlineMatchmaking(isHost) {
         return;
     }
 
-    const sessionKey = `online_room_${roomInput}`;
-
-    // GUESTは編成前に部屋の存在を確認
+    // GUESTは先に部屋確認
     if (!isHost) {
-        const existing = JSON.parse(localStorage.getItem(sessionKey) || 'null');
-        if (!existing || !existing.hostConnected) {
-            alert('部屋が見つかりません。\nHOSTに先に「部屋作成」してもらい、同じ4桁を入力してください。');
-            return;
-        }
-        if (existing.guestConnected) {
-            alert('この部屋はすでに満員です。別の部屋番号を使ってください。');
-            return;
-        }
+        fbGet(`rooms/${roomInput}`).then(existing => {
+            if (!existing || !existing.hostConnected) {
+                alert('部屋が見つかりません。\nHOSTに先に「部屋作成」してもらい、同じ4桁を入力してください。');
+                return;
+            }
+            if (existing.guestConnected) {
+                alert('この部屋はすでに満員です。別の部屋番号を使ってください。');
+                return;
+            }
+            _doMatchmaking(isHost, roomInput, myFullDeck);
+        });
+    } else {
+        _doMatchmaking(isHost, roomInput, myFullDeck);
     }
+}
 
-    // デッキ全枚数から5枚を選ぶ
-    showBattleFormationSelect(myFullDeck, (formation) => {
+function _doMatchmaking(isHost, roomInput, myFullDeck) {
+    showBattleFormationSelect(myFullDeck, async (formation) => {
         const b = gameState.onlineBattle;
         b.roomNo = roomInput;
         b.role = isHost ? 'HOST' : 'GUEST';
@@ -2173,26 +2210,28 @@ function startOnlineMatchmaking(isHost) {
         b.enemyKills = 0;
         b.skillModeOnline = false;
 
+        const u = gameState.currentUser;
         const battlePayload = serializeBattle({ field: formation.field, bench: formation.bench });
+        const path = `rooms/${roomInput}`;
 
         if (isHost) {
-            const roomData = {
-                roomNo: b.roomNo,
+            await fbSet(path, {
+                roomNo: roomInput,
                 hostConnected: true,
                 guestConnected: false,
-                hostData: { name: u.nickname, icon: u.icon, battle: battlePayload },
+                hostData: { name: u.nickname, icon: u.icon || '🎤', battle: battlePayload },
                 guestData: null,
                 turn: 'HOST',
                 actionSignal: null,
                 createdAt: Date.now()
-            };
-            localStorage.setItem(sessionKey, JSON.stringify(roomData));
+            });
         } else {
-            // 再度読み込んで最新状態に書き込む
-            const existing = JSON.parse(localStorage.getItem(sessionKey));
-            existing.guestConnected = true;
-            existing.guestData = { name: u.nickname, icon: u.icon, battle: battlePayload };
-            localStorage.setItem(sessionKey, JSON.stringify(existing));
+            await fbUpdate(path, {
+                guestConnected: true,
+                'guestData/name': u.nickname,
+                'guestData/icon': u.icon || '🎤',
+                'guestData/battle': battlePayload
+            });
         }
 
         const crBtn = document.getElementById('btn-create-room');
@@ -2201,19 +2240,19 @@ function startOnlineMatchmaking(isHost) {
         if (jrBtn) jrBtn.disabled = true;
         document.getElementById('online-wait-status').classList.remove('hidden');
 
-        // cloneNode で多重バインドを防ぐ
+        // キャンセルボタン
         const oldCancel = document.getElementById('btn-cancel-room');
         if (oldCancel) {
             const freshCancel = oldCancel.cloneNode(true);
             oldCancel.parentNode.replaceChild(freshCancel, oldCancel);
-            freshCancel.addEventListener('click', () => {
+            freshCancel.addEventListener('click', async () => {
                 clearInterval(onlinePollingInterval);
-                if (isHost) localStorage.removeItem(sessionKey);
+                if (isHost) await fbDelete(path);
                 initBattleSetup();
             });
         }
 
-        onlinePollingInterval = setInterval(() => pollOnlineRoomStatus(sessionKey), 500);
+        onlinePollingInterval = setInterval(() => pollOnlineRoomStatus(path), 1000);
     });
 }
 
@@ -2229,115 +2268,97 @@ function loadOnlineBattleState(roomData) {
     b.turn = roomData.turn;
 
     if (b.role === 'HOST') {
-        b.myField = JSON.parse(JSON.stringify(hostB.field));
-        b.myBench = JSON.parse(JSON.stringify(hostB.bench));
+        b.myField   = JSON.parse(JSON.stringify(hostB.field));
+        b.myBench   = JSON.parse(JSON.stringify(hostB.bench || []));
         b.enemyField = JSON.parse(JSON.stringify(guestB.field));
-        b.enemyBench = JSON.parse(JSON.stringify(guestB.bench));
+        b.enemyBench = JSON.parse(JSON.stringify(guestB.bench || []));
     } else {
-        b.myField = JSON.parse(JSON.stringify(guestB.field));
-        b.myBench = JSON.parse(JSON.stringify(guestB.bench));
+        b.myField   = JSON.parse(JSON.stringify(guestB.field));
+        b.myBench   = JSON.parse(JSON.stringify(guestB.bench || []));
         b.enemyField = JSON.parse(JSON.stringify(hostB.field));
-        b.enemyBench = JSON.parse(JSON.stringify(hostB.bench));
+        b.enemyBench = JSON.parse(JSON.stringify(hostB.bench || []));
     }
     b.attackerFieldIdx = null;
-    b.actionStep = b.turn === b.role ? 'pick_attacker' : null;
+    b.actionStep = 'pick_attacker';
 }
 
-function syncOnlineBattleToRoom(sessionKey) {
-    const roomData = JSON.parse(localStorage.getItem(sessionKey));
-    if (!roomData) return;
+async function syncOnlineBattleToRoom(path) {
     const b = gameState.onlineBattle;
-    const payload = { field: b.myField, bench: b.myBench };
-    if (b.role === 'HOST') roomData.hostData.battle = payload;
-    else roomData.guestData.battle = payload;
-    localStorage.setItem(sessionKey, JSON.stringify(roomData));
+    let payload;
+    if (b.role === 'HOST') {
+        payload = { 'hostData/battle': serializeBattle({ field: b.myField, bench: b.myBench }) };
+    } else {
+        payload = { 'guestData/battle': serializeBattle({ field: b.myField, bench: b.myBench }) };
+    }
+    await fbUpdate(path, payload);
 }
 
-function pollOnlineRoomStatus(sessionKey) {
-    const roomData = JSON.parse(localStorage.getItem(sessionKey));
+async function pollOnlineRoomStatus(path) {
+    const roomData = await fbGet(path);
     const b = gameState.onlineBattle;
     if (!roomData) return;
 
     const logEl = document.getElementById('room-info-log');
-    if (logEl) logEl.innerHTML = `部屋 <b>${b.roomNo}</b> 待機中 [${b.role}]`;
+    if (logEl) logEl.innerHTML = `部屋 <b>${b.roomNo}</b> で待機中... [${b.role}]`;
 
     if (b.status === 'waiting' && roomData.hostConnected && roomData.guestConnected && roomData.guestData?.battle) {
         b.status = 'playing';
         clearInterval(onlinePollingInterval);
+        loadOnlineBattleState(roomData);
         document.getElementById('battle-setup-zone').classList.add('hidden');
         document.getElementById('battle-field').classList.remove('hidden');
-        loadOnlineBattleState(roomData);
-        document.getElementById('battle-field-log').innerHTML = '🌐 マッチング成立！場のカードをタップして攻撃！';
+        document.getElementById('battle-field-log').innerHTML = '🌐 マッチング成立！バトル開始！';
         updateOnlineBattleUI();
-        onlinePollingInterval = setInterval(() => listenOnlineActions(sessionKey), 500);
+        onlinePollingInterval = setInterval(() => listenOnlineActions(path), 1000);
     }
 }
 
 function onlinePlayerAlive(field, bench) {
-    return countAliveField(field) > 0 || bench.some(isCardAlive);
+    return [...(field||[]), ...(bench||[])].some(c => c && isCardAlive(c));
 }
 
 function updateOnlineBattleUI() {
     const b = gameState.onlineBattle;
-    const isHostView = b.role === 'HOST';
+    const isMyTurn = b.turn === b.role;
 
-    const bfP1 = document.getElementById('bf-p1-name');
-    const bfP2 = document.getElementById('bf-p2-name');
-    if (bfP1) bfP1.textContent = isHostView ? `${b.p1Icon} ${b.p1Name} (あなた)` : `${b.p2Icon} ${b.p2Name}`;
-    if (bfP2) bfP2.textContent = isHostView ? `${b.p2Icon} ${b.p2Name}` : `${b.p1Icon} ${b.p1Name} (あなた)`;
+    // フィールド描画
+    renderOnlineSlotsRow('p2-field', b.enemyField, false, false);
+    renderOnlineSlotsRow('p2-bench', b.enemyBench, false, false);
+    renderOnlineSlotsRow('p1-field', b.myField, isMyTurn && b.actionStep === 'pick_target', true);
+    renderOnlineSlotsRow('p1-bench', b.myBench, false, false);
 
-    const p1FieldEl = document.getElementById('p1-field');
-    const p1BenchEl = document.getElementById('p1-bench');
-    const p2FieldEl = document.getElementById('p2-field');
-    const p2BenchEl = document.getElementById('p2-bench');
+    const n1 = document.getElementById('bf-p1-name');
+    const n2 = document.getElementById('bf-p2-name');
+    if (n1) n1.textContent = `${b.role==='HOST'?b.p1Icon:b.p2Icon} ${b.role==='HOST'?b.p1Name:b.p2Name}`;
+    if (n2) n2.textContent = `${b.role==='HOST'?b.p2Icon:b.p1Icon} ${b.role==='HOST'?b.p2Name:b.p1Name}`;
 
-    const enemyOpts = buildOnlineEnemyOpts(b);
-    enemyOpts.battlePlayer = 'p2';
-    enemyOpts.battleZone = 'field';
-    const mineOpts = buildOnlineMineOpts(b);
-    mineOpts.battlePlayer = 'p1';
-    mineOpts.battleZone = 'field';
+    const az = document.getElementById('battle-actions');
+    if (!az) return;
+    az.innerHTML = '';
 
-    renderSlotsRow(p2FieldEl, b.enemyField, enemyOpts);
-    renderSlotsRow(p2BenchEl, b.enemyBench, { battlePlayer: 'p2', battleZone: 'bench' });
-    renderSlotsRow(p1FieldEl, b.myField, mineOpts);
-    renderSlotsRow(p1BenchEl, b.myBench, { isMine: true, battlePlayer: 'p1', battleZone: 'bench' });
-
-    const actionZone = document.getElementById('battle-actions');
-    if (!actionZone) return;
-    actionZone.innerHTML = '';
-
-    if (b.turn !== b.role) {
-        actionZone.innerHTML = `<p style="text-align:center;color:#aaa;font-size:12px;">⌛ 相手のターン...</p>`;
-        return;
-    }
-
-    if (!onlinePlayerAlive(b.myField, b.myBench)) {
-        actionZone.innerHTML = `<p style="text-align:center;color:#ff477e;">場にカードがありません</p>`;
+    if (!isMyTurn) {
+        az.innerHTML = `<p style="text-align:center;color:#aaa;font-size:12px;">⌛ 相手のターンを待っています...</p>`;
         return;
     }
 
     if (b.actionStep === 'pick_attacker') {
-        actionZone.innerHTML = `<p style="text-align:center;color:#4cd964;font-size:12px;font-weight:bold;">攻撃カードをタップ</p>
-            <p class="battle-hint">長押しでカード詳細</p>`;
+        az.innerHTML = `<p style="text-align:center;color:#4cd964;font-size:12px;font-weight:bold;">攻撃カードをタップしてください</p>`;
     } else if (b.actionStep === 'pick_target') {
         const atk = b.myField[b.attackerFieldIdx];
-        actionZone.innerHTML = `<p style="text-align:center;color:#ff477e;font-size:12px;font-weight:bold;">攻撃対象をタップ（${atk ? atk.name : ''}）</p>`;
+        az.innerHTML = `<p style="text-align:center;color:#ff477e;font-size:12px;font-weight:bold;">攻撃対象をタップ（${atk ? atk.name : ''}）</p>`;
 
-        // URカード必殺技ボタン（オンライン）
+        // UR必殺技ボタン
         if (atk && atk.rarity === 'UR' && atk.skill) {
             if (!b.usedSkills) b.usedSkills = new Set();
             if (!b.usedSkills.has(atk.id)) {
                 const skillBtn = document.createElement('button');
                 skillBtn.textContent = `✨ 必殺技: ${atk.skill.name}`;
-                skillBtn.style.background = 'linear-gradient(45deg,#9b59b6,#8e44ad)';
-                skillBtn.style.marginTop = '8px';
+                skillBtn.style.cssText = 'background:linear-gradient(45deg,#9b59b6,#8e44ad);margin-top:6px;';
                 skillBtn.addEventListener('click', () => {
                     b.skillModeOnline = true;
-                    document.getElementById('battle-field-log').innerHTML =
-                        `🌟 必殺技「${atk.skill.name}」を選択！対象をタップ！`;
+                    document.getElementById('battle-field-log').innerHTML = `🌟 必殺技「${atk.skill.name}」選択！対象をタップ！`;
                 });
-                actionZone.appendChild(skillBtn);
+                az.appendChild(skillBtn);
             }
         }
 
@@ -2351,57 +2372,55 @@ function updateOnlineBattleUI() {
             b.skillModeOnline = false;
             updateOnlineBattleUI();
         });
-        actionZone.appendChild(cancelBtn);
+        az.appendChild(cancelBtn);
     }
 }
 
-function buildOnlineMineOpts(b) {
-    const opts = { isMine: true };
-    if (b.actionStep === 'pick_attacker') {
-        opts.selectableAttacker = true;
-        opts.onClick = (idx) => {
-            if (!isCardAlive(b.myField[idx])) return;
-            b.attackerFieldIdx = idx;
-            b.actionStep = 'pick_target';
-            updateOnlineBattleUI();
-        };
-    }
-    if (b.attackerFieldIdx != null) opts.attackerSelectedIdx = b.attackerFieldIdx;
-    return opts;
-}
-
-function buildOnlineEnemyOpts(b) {
-    const opts = {};
-    if (b.actionStep === 'pick_target') {
-        opts.selectableTarget = true;
-        opts.onClick = (idx) => {
-            if (!isCardAlive(b.enemyField[idx])) return;
-            sendOnlineAttack(b.attackerFieldIdx, idx);
-        };
-    }
-    return opts;
+function renderOnlineSlotsRow(elId, cards, isTargetable, isAttacker) {
+    const el = document.getElementById(elId);
+    if (!el) return;
+    el.innerHTML = '';
+    const b = gameState.onlineBattle;
+    (cards || []).forEach((card, idx) => {
+        if (!card) return;
+        const cardEl = createCardElement(card, { showHp: true });
+        addLongPress(cardEl, () => showGachaCardDetail(card, document.body));
+        if (isAttacker && b.actionStep === 'pick_attacker' && isCardAlive(card)) {
+            cardEl.style.cursor = 'pointer';
+            cardEl.addEventListener('click', () => {
+                b.attackerFieldIdx = idx;
+                b.actionStep = 'pick_target';
+                updateOnlineBattleUI();
+            });
+        }
+        if (isTargetable && isCardAlive(card)) {
+            cardEl.style.cursor = 'pointer';
+            cardEl.classList.add('targetable');
+            cardEl.addEventListener('click', () => sendOnlineAttack(b.attackerFieldIdx, idx));
+        }
+        if (!isCardAlive(card)) cardEl.style.opacity = '0.35';
+        el.appendChild(cardEl);
+    });
 }
 
 async function sendOnlineAttack(attackerIdx, targetIdx) {
     if (battleFxLocked) return;
     const b = gameState.onlineBattle;
-    const sessionKey = `online_room_${b.roomNo}`;
+    const path = `rooms/${b.roomNo}`;
     const attacker = b.myField[attackerIdx];
     const target = b.enemyField[targetIdx];
-    if (!attacker || !target) return;
+    if (!attacker || !target || !isCardAlive(attacker) || !isCardAlive(target)) return;
 
     battleFxLocked = true;
     let damage = attacker.atk;
+    let logMsg = '';
     let fxKind = 'attack';
     let skillName = null;
-    let logMsg = '';
-    const u = gameState.currentUser;
-    if (u && attacker.group === u.oshiGroup) {
-        damage = Math.floor(damage * 1.2);
-        logMsg += '✨ 推し補正！<br>';
-    }
 
-    // 必殺技処理（オンライン）
+    const u = gameState.currentUser;
+    if (u && attacker.group === u.oshiGroup) { damage = Math.floor(damage * 1.2); logMsg += '✨ 推し補正！<br>'; }
+
+    // 必殺技処理
     if (b.skillModeOnline && attacker.rarity === 'UR' && attacker.skill) {
         const skill = attacker.skill;
         fxKind = 'skill'; skillName = skill.name;
@@ -2410,172 +2429,121 @@ async function sendOnlineAttack(attackerIdx, targetIdx) {
         logMsg += `🌟 必殺技【${skill.name}】！<br>`;
         switch (skill.type) {
             case 'atk1': damage = skill.value; break;
-            case 'atk2':
-                b.enemyField.forEach(c => { if(c&&c.hp>0){const sh=c._shield||0;const d=Math.max(0,skill.value-sh);c._shield=Math.max(0,sh-skill.value);c.hp-=d;} });
-                damage=0; break;
-            case 'heal':
-                b.myField.forEach(c => { if(c&&c.hp>0)c.hp+=skill.value; }); damage=0; fxKind='heal'; break;
+            case 'atk2': b.enemyField.forEach(c=>{if(c&&isCardAlive(c)){const sh=c._shield||0;const d=Math.max(0,skill.value-sh);c._shield=Math.max(0,sh-skill.value);c.hp-=d;}}); damage=0; break;
+            case 'heal': b.myField.forEach(c=>{if(c&&isCardAlive(c))c.hp+=skill.value;}); damage=0; fxKind='heal'; break;
             case 'heal2': attacker.hp+=skill.value; damage=0; fxKind='heal'; break;
-            case 'defense':
-                b.myField.forEach(c => { if(c&&c.hp>0)c._shield=(c._shield||0)+skill.value; }); damage=0; break;
-            case 'revival': {
-                const dead=b.myBench.findIndex(c=>c&&c.hp<=0);
-                if(dead>=0){b.myBench[dead].hp=80;b.myBench[dead]._shield=0;}
-                damage=0; fxKind='heal'; break;
-            }
-            default: if(skill.type==='attack')damage=skill.value; else damage=attacker.atk;
+            case 'defense': b.myField.forEach(c=>{if(c&&isCardAlive(c))c._shield=(c._shield||0)+skill.value;}); damage=0; break;
+            case 'revival': { const dead=b.myBench.findIndex(c=>c&&!isCardAlive(c)); if(dead>=0){b.myBench[dead].hp=80;b.myBench[dead]._shield=0;} damage=0; fxKind='heal'; break; }
+            case 'poison': b.enemyField.forEach(c=>{if(c&&isCardAlive(c))c._poison=(c._poison||0)+1;}); damage=0; break;
+            case 'drain': { const sh=target._shield||0; const a=Math.max(0,damage-sh); target._shield=Math.max(0,sh-damage); target.hp-=a; attacker.hp+=a; damage=a; break; }
+            case 'timelock': { const w=b.enemyField.map((c,i)=>({c,i})).filter(x=>x.c&&isCardAlive(x.c)).sort((a,b)=>a.c.hp-b.c.hp)[0]; if(w)w.c._sealed=1; damage=0; break; }
+            case 'reflect': b.myField.forEach(c=>{if(c&&isCardAlive(c))c._reflect=true;}); damage=0; break;
+            case 'counter': { const s=b.enemyField.map((c,i)=>({c,i})).filter(x=>x.c&&isCardAlive(x.c)).sort((a,b)=>b.c.hp-a.c.hp)[0]; if(s){const sh=s.c._shield||0;const a=Math.max(0,attacker.atk*2-sh);s.c._shield=Math.max(0,sh-attacker.atk*2);s.c.hp-=a;damage=a;} break; }
+            default: damage = skill.value || attacker.atk;
         }
         b.skillModeOnline = false;
     }
 
-    const shield = target._shield || 0;
-    const actualDmg = Math.max(0, damage - shield);
-    target._shield = Math.max(0, shield - damage);
-    if (damage > 0) target.hp -= actualDmg;
-    logMsg += damage > 0
-        ? `💥 [${attacker.name}] → [${target.name}] に ${actualDmg} ダメージ！`
-        : '';
-
-    await playBattleActionFx({
-        attackerPlayer: 'p1',
-        attackerIdx,
-        targetPlayer: 'p2',
-        targetIdx,
-        damage: actualDmg,
-        kind: fxKind,
-        bannerText: fxKind === 'skill' ? `✨ ${skillName}` : '⚔️ 攻撃！',
-        skillName
-    });
-
-    const roomData = JSON.parse(localStorage.getItem(sessionKey));
-    if (!roomData) { battleFxLocked = false; return; }
-
-    if (b.role === 'HOST') {
-        roomData.hostData.battle = { field: b.myField, bench: b.myBench };
-        roomData.guestData.battle = { field: b.enemyField, bench: b.enemyBench };
-    } else {
-        roomData.guestData.battle = { field: b.myField, bench: b.myBench };
-        roomData.hostData.battle = { field: b.enemyField, bench: b.enemyBench };
+    if (damage > 0) {
+        if (target._reflect) { delete target._reflect; attacker.hp -= damage; logMsg += `🪞 反射！${damage}ダメが返った！`; damage = 0; }
+        else { const sh = target._shield||0; const a = Math.max(0,damage-sh); target._shield=Math.max(0,sh-damage); target.hp -= a; damage = a; }
+        if (damage > 0) logMsg += `💥 [${attacker.name}]→[${target.name}]に${damage}ダメ！`;
     }
 
-    roomData.turn = b.role === 'HOST' ? 'GUEST' : 'HOST';
-    roomData.actionSignal = {
-        sender: b.role,
-        attackerIdx,
-        targetIdx,
-        damage: actualDmg,
-        attackerName: attacker.name,
-        targetName: target.name,
-        timestamp: Date.now()
-    };
-    localStorage.setItem(sessionKey, JSON.stringify(roomData));
+    document.getElementById('battle-field-log').innerHTML = logMsg;
 
-    b.turn = roomData.turn;
+    // Firebaseに書き込み
+    const newTurn = b.role === 'HOST' ? 'GUEST' : 'HOST';
+    const updateData = {
+        turn: newTurn,
+        actionSignal: {
+            sender: b.role,
+            log: logMsg,
+            timestamp: Date.now()
+        }
+    };
+    if (b.role === 'HOST') updateData['hostData/battle'] = serializeBattle({ field: b.myField, bench: b.myBench });
+    else updateData['guestData/battle'] = serializeBattle({ field: b.myField, bench: b.myBench });
+
+    // 相手のフィールドも書き込む
+    if (b.role === 'HOST') updateData['guestData/battle'] = serializeBattle({ field: b.enemyField, bench: b.enemyBench });
+    else updateData['hostData/battle'] = serializeBattle({ field: b.enemyField, bench: b.enemyBench });
+
+    await fbUpdate(path, updateData);
+    b.turn = newTurn;
     b.attackerFieldIdx = null;
     b.actionStep = null;
-    b.skillModeOnline = false;
-    document.getElementById('battle-field-log').innerHTML = logMsg ||
-        `💥 [${attacker.name}] → [${target.name}] に ${actualDmg} ダメージ！`;
     battleFxLocked = false;
-    checkOnlineFaint(sessionKey);
+    checkOnlineFaint(path);
     updateOnlineBattleUI();
 }
 
-function listenOnlineActions(sessionKey) {
-    const roomData = JSON.parse(localStorage.getItem(sessionKey));
+async function listenOnlineActions(path) {
+    const roomData = await fbGet(path);
     if (!roomData) return;
     const b = gameState.onlineBattle;
 
-    if (roomData.actionSignal && roomData.actionSignal.sender !== b.role) {
-        const sig = roomData.actionSignal;
-        loadOnlineBattleState(roomData);
-        updateOnlineBattleUI();
-
-        if (!battleFxLocked) {
-            battleFxLocked = true;
-            playBattleActionFx({
-                attackerPlayer: 'p2',
-                attackerIdx: sig.attackerIdx ?? 0,
-                targetPlayer: 'p1',
-                targetIdx: sig.targetIdx ?? 0,
-                damage: sig.damage ?? 0,
-                kind: 'attack',
-                bannerText: '⚔️ 相手の攻撃！'
-            }).then(() => {
-                document.getElementById('battle-field-log').innerHTML =
-                    `⚔️ [${sig.attackerName}] → [${sig.targetName}] に ${sig.damage} ダメージ！`;
-                battleFxLocked = false;
-            });
-        }
-
-        roomData.actionSignal = null;
-        roomData.turn = b.role;
-        localStorage.setItem(sessionKey, JSON.stringify(roomData));
+    // 相手のターンから自分のターンに変わった
+    if (roomData.turn === b.role && b.turn !== b.role) {
         b.turn = b.role;
+        // 最新データで状態更新
+        const hostB = roomData.hostData?.battle;
+        const guestB = roomData.guestData?.battle;
+        if (b.role === 'HOST') {
+            b.myField   = JSON.parse(JSON.stringify(hostB?.field || b.myField));
+            b.myBench   = JSON.parse(JSON.stringify(hostB?.bench || b.myBench));
+            b.enemyField = JSON.parse(JSON.stringify(guestB?.field || b.enemyField));
+            b.enemyBench = JSON.parse(JSON.stringify(guestB?.bench || b.enemyBench));
+        } else {
+            b.myField   = JSON.parse(JSON.stringify(guestB?.field || b.myField));
+            b.myBench   = JSON.parse(JSON.stringify(guestB?.bench || b.myBench));
+            b.enemyField = JSON.parse(JSON.stringify(hostB?.field || b.enemyField));
+            b.enemyBench = JSON.parse(JSON.stringify(hostB?.bench || b.enemyBench));
+        }
+        if (roomData.actionSignal?.log) {
+            document.getElementById('battle-field-log').innerHTML = '相手: ' + roomData.actionSignal.log;
+        }
         b.actionStep = 'pick_attacker';
-
-        checkOnlineFaint(sessionKey);
-        updateOnlineBattleUI();
-    } else if (roomData.turn !== b.turn) {
-        b.turn = roomData.turn;
-        loadOnlineBattleState(roomData);
-        b.actionStep = b.turn === b.role ? 'pick_attacker' : null;
+        checkOnlineFaint(path);
         updateOnlineBattleUI();
     }
 }
 
-function checkOnlineFaint(sessionKey) {
+function checkOnlineFaint(path) {
     const b = gameState.onlineBattle;
     if (!b.myKills) b.myKills = 0;
     if (!b.enemyKills) b.enemyKills = 0;
 
-    // 倒れたカードをカウントしてベンチ補充
-    b.myField.forEach((card, idx) => {
-        if (card && card.hp <= 0) {
-            b.enemyKills++;
-            const benchIdx = b.myBench.findIndex(isCardAlive);
-            if (benchIdx >= 0) { b.myField[idx] = b.myBench[benchIdx]; b.myBench[benchIdx] = null; }
-            else b.myField[idx] = null;
-        }
-    });
     b.enemyField.forEach((card, idx) => {
-        if (card && card.hp <= 0) {
+        if (card && !isCardAlive(card)) {
             b.myKills++;
-            const benchIdx = b.enemyBench.findIndex(isCardAlive);
-            if (benchIdx >= 0) { b.enemyField[idx] = b.enemyBench[benchIdx]; b.enemyBench[benchIdx] = null; }
+            const bench = b.enemyBench.findIndex(c => c && isCardAlive(c));
+            if (bench >= 0) { b.enemyField[idx] = b.enemyBench[bench]; b.enemyBench[bench] = null; }
             else b.enemyField[idx] = null;
         }
     });
-
-    syncOnlineBattleToRoom(sessionKey);
-
-    // 3本先取チェック
-    const myWon  = b.myKills >= KILLS_TO_WIN  || !onlinePlayerAlive(b.enemyField, b.enemyBench);
-    const enWon  = b.enemyKills >= KILLS_TO_WIN || !onlinePlayerAlive(b.myField, b.myBench);
-    if (myWon) endOnlineBattle(sessionKey, true);
-    else if (enWon) endOnlineBattle(sessionKey, false);
-}
-
-function processFaintSlots(field, bench) {
-    field.forEach((card, idx) => {
-        if (card && card.hp <= 0) {
-            const benchIdx = bench.findIndex(isCardAlive);
-            if (benchIdx >= 0) {
-                field[idx] = bench[benchIdx];
-                bench[benchIdx] = null;
-            } else field[idx] = null;
+    b.myField.forEach((card, idx) => {
+        if (card && !isCardAlive(card)) {
+            b.enemyKills++;
+            const bench = b.myBench.findIndex(c => c && isCardAlive(c));
+            if (bench >= 0) { b.myField[idx] = b.myBench[bench]; b.myBench[bench] = null; }
+            else b.myField[idx] = null;
         }
     });
+
+    const myWon  = b.myKills >= KILLS_TO_WIN || !onlinePlayerAlive(b.enemyField, b.enemyBench);
+    const enWon  = b.enemyKills >= KILLS_TO_WIN || !onlinePlayerAlive(b.myField, b.myBench);
+    if (myWon) endOnlineBattle(path, true);
+    else if (enWon) endOnlineBattle(path, false);
 }
 
-function endOnlineBattle(sessionKey, won) {
+async function endOnlineBattle(path, won) {
     clearInterval(onlinePollingInterval);
-    localStorage.removeItem(sessionKey);
+    await fbDelete(path);
     gameState.onlineBattle.status = 'ended';
     alert(won ? '🏆 あなたの勝利！' : '😭 敗北しました...');
     resetBattleScreen();
 }
-// ==========================================
 // 11. UI・モーダル生成
 // ==========================================
 function createDetailModalDOM() {
