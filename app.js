@@ -23,7 +23,7 @@
 // 1. 定数・設定
 // ==========================================
 // レアリティ確率（通常パック）
-const RARITY_PROB_NORMAL = { LR: 0.003, UR: 0.01, HR: 0.03, SSR: 0.06, SR: 0.15, R: 0.30, N: 0.447 }; 
+const RARITY_PROB_NORMAL = { LR: 0.003, UR: 0.01, HR: 0.03, SSR: 0.06, SR: 0.15, R: 0.30, N: 0.447 };
 // グループパック確率（低め）
 const RARITY_PROB_GROUP  = { LR: 0, UR: 0.005, HR: 0.015, SSR: 0.04, SR: 0.10, R: 0.25, N: 0.59 };
 const RARITY_ORDER = ['LR','UR','HR','SSR','SR','R','N'];
@@ -2263,7 +2263,7 @@ function _doMatchmaking(isHost, roomInput, myFullDeck) {
             });
         }
 
-        onlinePollingInterval = setInterval(() => pollOnlineRoomStatus(path), 1000);
+        onlinePollingInterval = setInterval(() => pollOnlineRoomStatus(path), 800);
     });
 }
 
@@ -2320,7 +2320,7 @@ async function pollOnlineRoomStatus(path) {
         document.getElementById('battle-field').classList.remove('hidden');
         document.getElementById('battle-field-log').innerHTML = '🌐 マッチング成立！バトル開始！';
         updateOnlineBattleUI();
-        onlinePollingInterval = setInterval(() => listenOnlineActions(path), 1000);
+        onlinePollingInterval = setInterval(() => listenOnlineActions(path), 300);
     }
 }
 
@@ -2494,26 +2494,33 @@ async function listenOnlineActions(path) {
     if (!roomData) return;
     const b = gameState.onlineBattle;
 
+    // 同じ actionSignal を2回処理しない
+    const sigTs = roomData.actionSignal?.timestamp || 0;
+    if (sigTs && sigTs === b._lastProcessedSignalTs) return;
+
     // 相手のターンから自分のターンに変わった
     if (roomData.turn === b.role && b.turn !== b.role) {
         b.turn = b.role;
+        if (sigTs) b._lastProcessedSignalTs = sigTs;
+
         // 最新データで状態更新
         const hostB = roomData.hostData?.battle;
         const guestB = roomData.guestData?.battle;
         if (b.role === 'HOST') {
-            b.myField   = JSON.parse(JSON.stringify(hostB?.field || b.myField));
-            b.myBench   = JSON.parse(JSON.stringify(hostB?.bench || b.myBench));
+            b.myField    = JSON.parse(JSON.stringify(hostB?.field  || b.myField));
+            b.myBench    = JSON.parse(JSON.stringify(hostB?.bench  || b.myBench));
             b.enemyField = JSON.parse(JSON.stringify(guestB?.field || b.enemyField));
             b.enemyBench = JSON.parse(JSON.stringify(guestB?.bench || b.enemyBench));
         } else {
-            b.myField   = JSON.parse(JSON.stringify(guestB?.field || b.myField));
-            b.myBench   = JSON.parse(JSON.stringify(guestB?.bench || b.myBench));
-            b.enemyField = JSON.parse(JSON.stringify(hostB?.field || b.enemyField));
-            b.enemyBench = JSON.parse(JSON.stringify(hostB?.bench || b.enemyBench));
+            b.myField    = JSON.parse(JSON.stringify(guestB?.field || b.myField));
+            b.myBench    = JSON.parse(JSON.stringify(guestB?.bench || b.myBench));
+            b.enemyField = JSON.parse(JSON.stringify(hostB?.field  || b.enemyField));
+            b.enemyBench = JSON.parse(JSON.stringify(hostB?.bench  || b.enemyBench));
         }
         if (roomData.actionSignal?.log) {
-            document.getElementById('battle-field-log').innerHTML = '相手: ' + roomData.actionSignal.log;
+            document.getElementById('battle-field-log').innerHTML = '⚔️ 相手: ' + roomData.actionSignal.log;
         }
+        b.attackerFieldIdx = null;
         b.actionStep = 'pick_attacker';
         checkOnlineFaint(path);
         updateOnlineBattleUI();
