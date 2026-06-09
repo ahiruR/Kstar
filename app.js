@@ -23,7 +23,7 @@
 // 1. 定数・設定
 // ==========================================
 // レアリティ確率（通常パック）
-const RARITY_PROB_NORMAL = { LR: 0.01, UR: 0.03, HR: 0.06, SSR: 0.1, SR: 0.2, R: 0.25, N: 0.35 };
+const RARITY_PROB_NORMAL = { LR: 0.35, UR: 0.03, HR: 0.06, SSR: 0.1, SR: 0.2, R: 0.25, N: 0.01 };
 // グループパック確率（低め）
 const RARITY_PROB_GROUP  = { LR: 0, UR: 0.02, HR: 0.05, SSR: 0.13, SR: 0.2, R: 0.3, N: 0.5 };
 const RARITY_ORDER = ['LR','UR','HR','SSR','SR','R','N'];
