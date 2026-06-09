@@ -3712,12 +3712,162 @@
       "rarity": "LR",
       "hp": 250,
       "atk": 70,
-      "img": "UR/special.jpg",
+      "img": "LR/special.jpg",
       "skill": {
         "name": "木端微塵",
         "type": "atk2",
         "value": 50,
         "desc": "まるで人がゴミのようだ！50damageをバトル場の全敵に攻撃！"
+      }
+    },
+    {
+      "id": 350,
+      "name": "nayeon",
+      "group": "TWICE",
+      "rarity": "LR",
+      "hp": 250,
+      "atk": 70,
+      "img": "LR/nayeon.jpg",
+      "skill": {
+        "name": "POP!",
+        "type": "burst",
+        "value": 0,
+        "desc": "POP！ATK×3の爆発攻撃！でも自分もATK分のダメージ！"
+      }
+    },
+    {
+      "id": 351,
+      "name": "tzuyu",
+      "group": "TWICE",
+      "rarity": "LR",
+      "hp": 250,
+      "atk": 70,
+      "img": "LR/tzuyu.jpg",
+      "skill": {
+        "name": "Run Away!",
+        "type": "encore",
+        "value": 0,
+        "desc": "Run Away！このターン後もう1ターン連続で行動できる！"
+      }
+    },
+    {
+      "id": 352,
+      "name": "jihyo",
+      "group": "TWICE",
+      "rarity": "LR",
+      "hp": 250,
+      "atk": 70,
+      "img": "LR/jihyo.jpg",
+      "skill": {
+        "name": "Killin'Me Good!",
+        "type": "counter",
+        "value": 0,
+        "desc": "Killin'Me Good！相手で最もHPが高い敵にATK×2の特大ダメージ！"
+      }
+    },
+    {
+      "id": 353,
+      "name": "chaeyoung",
+      "group": "TWICE",
+      "rarity": "LR",
+      "hp": 250,
+      "atk": 70,
+      "img": "LR/chaeyoung.jpg",
+      "skill": {
+        "name": "Shoot!",
+        "type": "snipe",
+        "value": 90,
+        "desc": "Shoot！ベンチ含む相手全員の最もHP低い敵に90ダメージ！"
+      }
+    },
+    {
+      "id": 354,
+      "name": "MISAMO",
+      "group": "MISAMO",
+      "rarity": "LR",
+      "hp": 250,
+      "atk": 70,
+      "img": "LR/misamo.jpg",
+      "skill": {
+        "name": "do not touch!",
+        "type": "reflect",
+        "value": 0,
+        "desc": "do not touch！自分の場全体に反射マーク！次の攻撃をそのまま跳ね返す！"
+      }
+    },
+    {
+      "id": 355,
+      "name": "chaewon",
+      "group": "LE SSERAFIM",
+      "rarity": "LR",
+      "hp": 250,
+      "atk": 70,
+      "img": "LR/chaewon.jpg",
+      "skill": {
+        "name": "first love!",
+        "type": "drain",
+        "value": 0,
+        "desc": "first love！相手1体にATK分ダメージ＆同量だけ自分が回復！"
+      }
+    },
+    {
+      "id": 356,
+      "name": "sana",
+      "group": "TWICE",
+      "rarity": "LR",
+      "hp": 250,
+      "atk": 70,
+      "img": "LR/sana.jpg",
+      "skill": {
+        "name": "卒業!",
+        "type": "sacrifice",
+        "value": 90,
+        "desc": "卒業！自分を犠牲に相手バトル場全体に90ダメージ！"
+      }
+    },
+    {
+      "id": 357,
+      "name": "tzuyu",
+      "group": "TWICE",
+      "rarity": "LR",
+      "hp": 250,
+      "atk": 70,
+      "img": "LR/tzuyu2.jpg",
+      "skill": {
+        "name": "プラネタリウム!",
+        "type": "sacrifice",
+        "value": 90,
+        "desc": "プラネタリウム！自分を犠牲に相手バトル場全体に90ダメージ！"
+      }
+    },
+    {
+      "id": 358,
+      "name": "nayeon",
+      "group": "TWICE",
+      "rarity": "LR",
+      "hp": 250,
+      "atk": 70,
+      "img": "LR/nayeon2.jpg",
+      "skill": {
+        "name": "気まぐれロマンティック!",
+        "type": "rampage",
+        "value": 0,
+        "desc": "気まぐれ！ATK×2でランダム攻撃！"
+      }
+    },
+    {
+      "id": 359,
+      "name": "J.Y. PARK",
+      "group": "SPECIAL",
+      "rarity": "LR",
+      "hp": 250,
+      "atk": 70,
+      "img": "LR/jypark.jpg",
+      "skill": {
+        "name": "餅ゴリ",
+        "type": "atk2",
+        "value": 50,
+        "desc": "真実、誠実、謙虚！バトル場の全敵に50ダメージ攻撃！"
       }
     }
   ],
