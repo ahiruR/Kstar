@@ -23,9 +23,9 @@
 // 1. 定数・設定
 // ==========================================
 // レアリティ確率（通常パック）
-const RARITY_PROB_NORMAL = { LR: 0.003, UR: 0.01, HR: 0.03, SSR: 0.06, SR: 0.15, R: 0.30, N: 0.447 };
+const RARITY_PROB_NORMAL = { LR: 0.01, UR: 0.03, HR: 0.06, SSR: 0.1, SR: 0.2, R: 0.25, N: 0.35 };
 // グループパック確率（低め）
-const RARITY_PROB_GROUP  = { LR: 0, UR: 0.005, HR: 0.015, SSR: 0.04, SR: 0.10, R: 0.25, N: 0.59 };
+const RARITY_PROB_GROUP  = { LR: 0, UR: 0.02, HR: 0.05, SSR: 0.13, SR: 0.2, R: 0.3, N: 0.5 };
 const RARITY_ORDER = ['LR','UR','HR','SSR','SR','R','N'];
 const RARITY_WEIGHTS = { LR: 7, UR: 6, HR: 5, SSR: 4, SR: 3, R: 2, N: 1 };
 
